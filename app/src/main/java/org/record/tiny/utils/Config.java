@@ -12,6 +12,7 @@ public class Config {
 
     public static final int DELAYED_TIME = 1800;
     public static final String DEFAULT_FONT_FILE = "font.ttf";
+    public static final String DATABASE_NAME = "record.realm";
 
     /**
      * 设置全局字体

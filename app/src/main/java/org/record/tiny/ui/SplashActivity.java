@@ -27,7 +27,7 @@ public class SplashActivity extends MvpActivity<SplashPresenter> implements Spla
 
     @Override
     public void startMainActivity() {
-        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+        startActivity(new Intent(this, MainActivity.class));
         SplashActivity.this.finish();
     }
 
@@ -37,9 +37,12 @@ public class SplashActivity extends MvpActivity<SplashPresenter> implements Spla
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
     public void error(int error) {
 
     }
-
-
 }

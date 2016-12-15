@@ -8,9 +8,14 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 @SuppressWarnings("All")
 public class Config {
+    public static final boolean DEBUG = true;
+
     public static final int DELAYED_TIME = 1800;
     public static final String DEFAULT_FONT_FILE = "font.ttf";
 
+    /**
+     * 设置全局字体
+     */
     public static void configDefaultFont() {
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath(DEFAULT_FONT_FILE)
@@ -22,11 +27,12 @@ public class Config {
      * @return 应用所有需要的权限
      */
     public static String[] getAllPermissions() {
-        return new String[]{Manifest.permission.LOCATION_HARDWARE,
+        return new String[]{
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.INTERNET,
                 Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_PHONE_STATE};
     }
 }

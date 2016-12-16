@@ -2,15 +2,22 @@ package org.record.tiny.ui.view;
 
 import android.app.Activity;
 import android.support.annotation.UiThread;
-import android.util.Log;
 
 import com.tbruyelle.rxpermissions.RxPermissions;
 
 import org.record.tiny.base.BasePresenter;
+import org.record.tiny.ui.model.ViewModel;
 import org.record.tiny.utils.Callback;
+import org.record.tiny.utils.ChinaNumTrans;
 import org.record.tiny.utils.Config;
 import org.record.tiny.utils.Error;
 import org.record.tiny.utils.LocationUtil;
+import org.record.tiny.utils.RealmUtils;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import rx.functions.Action1;
 
@@ -19,6 +26,7 @@ public class SplashPresenter extends BasePresenter<SplashView> {
     private static final String TAG = SplashPresenter.class.getSimpleName();
 
     private String mLocalInfo = "";
+    private ViewModel mViewModel = new ViewModel();
 
     public SplashPresenter(SplashView context) {
         attachView(context);
@@ -33,6 +41,7 @@ public class SplashPresenter extends BasePresenter<SplashView> {
                         @Override
                         @UiThread
                         public void Done() {
+                            RealmUtils.getInstance().insertObject(mViewModel);
                             mvpView.startMainActivity();
                         }
                     });
@@ -53,15 +62,16 @@ public class SplashPresenter extends BasePresenter<SplashView> {
      * 从网络拉取数据
      */
     public void getData(Callback.simpleCallBack done) {
+        getTimeInfo();
         getLocalInfo(done);
     }
 
     private void getLocalInfo(final Callback.simpleCallBack done) {
         LocationUtil.getInstance().start(new Callback.TCallBack<String>() {
             @Override
-            public void Done(String city) {
-                Log.d(TAG, "Done: " + city);
+            public void Done(String address) {
                 if (done != null) {
+                    mViewModel.setAddress(address);
                     done.Done();
                 }
             }
@@ -73,5 +83,23 @@ public class SplashPresenter extends BasePresenter<SplashView> {
     }
 
     private void getTimeInfo() {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date curDate = new Date(System.currentTimeMillis());
+        String str = formatter.format(curDate);
+        try {
+            Date date = formatter.parse(str);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            int year = calendar.get(Calendar.YEAR);
+            int month = calendar.get(Calendar.MONTH);
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+            mViewModel.setDay(ChinaNumTrans.convertNumber(day));
+            mViewModel.setMonth(ChinaNumTrans.convertNumber(month));
+            mViewModel.setYear(ChinaNumTrans.simpleConvertNumber(year));
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }

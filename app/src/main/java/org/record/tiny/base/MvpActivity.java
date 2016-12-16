@@ -9,8 +9,8 @@ public abstract class MvpActivity<P extends BasePresenter> extends BaseActivity 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mvpPresenter = createPresenter();
         super.onCreate(savedInstanceState);
+        mvpPresenter = createPresenter();
     }
 
     protected abstract P createPresenter();

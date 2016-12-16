@@ -1,8 +1,10 @@
 package org.record.tiny.ui.model;
 
 
+import io.realm.RealmObject;
+
 @SuppressWarnings("All")
-public class Article {
+public class Article extends RealmObject {
     private int id;
     // 年
     private String year;

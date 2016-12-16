@@ -15,7 +15,7 @@ public class LocationUtil {
     private static LocationUtil instance;
     private LocationClient mLocationClient = null;
     private BDLocationListener mListener = null;
-    private Callback.TCallBack<String> mCityCallBack;
+    private Callback.TCallBack<String> mAddressCallBack;
 
     private LocationUtil() {
     }
@@ -31,9 +31,9 @@ public class LocationUtil {
         return instance;
     }
 
-    public void start(Callback.TCallBack<String> city) {
-        if (city != null) {
-            mCityCallBack = city;
+    public void start(Callback.TCallBack<String> address) {
+        if (address != null) {
+            mAddressCallBack = address;
 
             setLocationConfig();
             registerLocation();
@@ -51,7 +51,6 @@ public class LocationUtil {
             mLocationClient.unRegisterLocationListener(mListener);
         }
     }
-
 
     private void setLocationConfig() {
         mLocationClient = new LocationClient(RecordApplication.getContext());
@@ -72,16 +71,27 @@ public class LocationUtil {
         mLocationClient.setLocOption(option);
     }
 
+    private String filterLocal(String local) {
+        //把数字徒变成特殊字符
+        local = local.replaceAll("\\d+", "#");
+        return local.substring(0, local.indexOf("#"));
+    }
+
     class LocationListener implements BDLocationListener {
         @Override
         public void onReceiveLocation(BDLocation location) {
             if (location != null) {
-                if (mCityCallBack != null) {
-                    mCityCallBack.Done(location.getCity());
+                if (mAddressCallBack != null) {
+                    if (location.getPoiList().size() != 0) {
+                        String local = location.getPoiList().get(0).getName();
+                        mAddressCallBack.Done(filterLocal(local));
+                    } else {
+                        mAddressCallBack.Done(location.getCity());
+                    }
                 }
             } else {
-                if (mCityCallBack != null) {
-                    mCityCallBack.Done("");
+                if (mAddressCallBack != null) {
+                    mAddressCallBack.Done(null);
                 }
             }
 

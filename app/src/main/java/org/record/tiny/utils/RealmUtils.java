@@ -1,5 +1,7 @@
 package org.record.tiny.utils;
 
+import org.record.tiny.ui.RecordApplication;
+
 import java.util.List;
 
 import io.realm.Realm;
@@ -14,6 +16,7 @@ public class RealmUtils {
     private static RealmUtils instance;
 
     private RealmUtils() {
+        Realm.init(RecordApplication.getContext());
         initRealm();
     }
 
@@ -31,7 +34,6 @@ public class RealmUtils {
     private void initRealm() {
         Realm.getInstance(new RealmConfiguration.Builder().name(DATABASE_NAME).build());
     }
-
 
     public RealmResults<? extends RealmObject> queryObjects(Class<? extends RealmObject> clazz) {
         Realm realm = Realm.getDefaultInstance();

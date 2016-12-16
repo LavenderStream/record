@@ -16,6 +16,14 @@ public class BasePresenter<V> {
     protected ApiStores apiStores;
     private CompositeSubscription mCompositeSubscription;
 
+    /**
+     * 使用了butterknife注入框架，在setContentView方法中注册view
+     * 不能再attachView方法中直接开始业务，所以提供一个start方法
+     * 需要的时候进行复写
+     */
+    protected void start() {
+    }
+
     public void attachView(V mvpView) {
         this.mvpView = mvpView;
         apiStores = AppClient.retrofit().create(ApiStores.class);

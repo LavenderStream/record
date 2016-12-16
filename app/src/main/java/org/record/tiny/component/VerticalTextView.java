@@ -1,47 +1,42 @@
 package org.record.tiny.component;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.view.Gravity;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.record.tiny.R;
+
 @SuppressWarnings("All")
-public class VerticalTextView extends TextView {
-    final boolean topDown;
+public class VerticalTextView extends LinearLayout {
+    private Context mContext;
+
+    public VerticalTextView(Context context) {
+        this(context, null);
+    }
 
     public VerticalTextView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        final int gravity = getGravity();
-        if (Gravity.isVertical(gravity) && (gravity & Gravity.VERTICAL_GRAVITY_MASK) == Gravity.BOTTOM) {
-            setGravity((gravity & Gravity.HORIZONTAL_GRAVITY_MASK) | Gravity.TOP);
-            topDown = false;
-        } else
-            topDown = true;
+        this(context, attrs, 0);
     }
 
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(heightMeasureSpec, widthMeasureSpec);
-        setMeasuredDimension(getMeasuredHeight(), getMeasuredWidth());
+    public VerticalTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        mContext = context;
+        initView();
     }
 
-
-    @Override
-    protected boolean setFrame(int l, int t, int r, int b) {
-        return super.setFrame(l, t, l + (b - t), t + (r - l));
+    private void initView() {
+        setOrientation(LinearLayout.HORIZONTAL);
     }
 
-    @Override
-    public void draw(Canvas canvas) {
-        if (topDown) {
-            canvas.translate(getHeight(), 0);
-            canvas.rotate(90);
-        } else {
-            canvas.translate(0, getWidth());
-            canvas.rotate(-90);
+    public void setText(String text) {
+        String[] echoArray = text.split("\n");
+        int echoCounts = echoArray.length;
+        for (int i = echoArray.length - 1; i >= 0; i--) {
+            TextView textView = (TextView) View.inflate(mContext, R.layout.vertical_textview, null);
+            textView.setText(echoArray[i].replace(" ", "\n"));
+            addView(textView);
         }
-        canvas.clipRect(0, 0, getWidth(), getHeight(), android.graphics.Region.Op.REPLACE);
-        super.draw(canvas);
     }
 }

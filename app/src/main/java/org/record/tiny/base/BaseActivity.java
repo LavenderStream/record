@@ -1,6 +1,7 @@
 package org.record.tiny.base;
 
-import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +22,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 @SuppressWarnings("All")
 public class BaseActivity extends AppCompatActivity {
-    public Activity mActivity;
+    public BaseActivity mActivity;
     public ApiStores apiStores = AppClient.retrofit().create(ApiStores.class);
     private CompositeSubscription mCompositeSubscription;
 
@@ -70,8 +71,7 @@ public class BaseActivity extends AppCompatActivity {
         mCompositeSubscription.add(subscription);
     }
 
-    public void onUnsubscribe() {
-        //取消注册，以避免内存泄露
+    private void onUnsubscribe() {
         if (mCompositeSubscription != null && mCompositeSubscription.hasSubscriptions())
             mCompositeSubscription.unsubscribe();
     }
@@ -79,5 +79,18 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
+
+    public void addFragment(int containerViewId, Fragment fragment) {
+        addFragment(containerViewId, fragment, false);
+    }
+
+    public void addFragment(int containerViewId, Fragment fragment, boolean addBackStack) {
+        FragmentTransaction fragmentTransaction = this.getFragmentManager().beginTransaction();
+        fragmentTransaction.add(containerViewId, fragment, fragment.getClass().getSimpleName());
+        if (addBackStack)
+            fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }

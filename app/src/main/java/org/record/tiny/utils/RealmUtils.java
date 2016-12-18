@@ -40,6 +40,16 @@ public class RealmUtils {
         return realm.where(clazz).findAll();
     }
 
+    public void updateObject(final RealmObject object) {
+        Realm realm = Realm.getDefaultInstance();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                RealmObject obj = realm.where(object.getClass()).equalTo("age", 1).findFirst();
+            }
+        });
+    }
+
     public void insertObject(final RealmObject object) {
         Realm realm = Realm.getDefaultInstance();
         realm.executeTransaction(new Realm.Transaction() {

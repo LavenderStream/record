@@ -23,19 +23,14 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="r6RkxMaxjfoLkhuALPGNzHDGTR4bcSEe"/>
 
-        <activity android:name=".ui.SplashActivity">
+        <activity android:name=".ui.view.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity"/>
-        <activity android:name=".ui.PreviewActivity"/>
-        <activity
-            android:name=".ui.EditActivity"
-            android:windowSoftInputMode="stateVisible|adjustResize"/>
-
+        <activity android:name=".ui.view.MainActivity"/>
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"

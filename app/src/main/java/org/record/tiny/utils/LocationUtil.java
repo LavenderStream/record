@@ -74,13 +74,16 @@ public class LocationUtil {
     private String filterLocal(String local) {
         //把数字徒变成特殊字符
         local = local.replaceAll("\\d+", "#");
-        return local.substring(0, local.indexOf("#"));
+        LogUtils.d("LocationUtil -> filterLocal: " + local);
+        if (local.contains("#"))
+            return local.substring(0, local.indexOf("#"));
+        return local;
     }
 
     class LocationListener implements BDLocationListener {
         @Override
         public void onReceiveLocation(BDLocation location) {
-            if (location != null) {
+            if (location != null && location.getPoiList() != null) {
                 if (mAddressCallBack != null) {
                     if (location.getPoiList().size() != 0) {
                         String local = location.getPoiList().get(0).getName();

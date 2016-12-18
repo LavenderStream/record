@@ -21,7 +21,7 @@ public class BasePresenter<V> {
      * 不能再attachView方法中直接开始业务，所以提供一个start方法
      * 需要的时候进行复写
      */
-    protected void start() {
+    public void start() {
     }
 
     public void attachView(V mvpView) {

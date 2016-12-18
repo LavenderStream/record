@@ -1,4 +1,4 @@
-package org.record.tiny.ui;
+package org.record.tiny.ui.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,6 @@ import android.view.WindowManager;
 
 import org.record.tiny.R;
 import org.record.tiny.base.MvpActivity;
-import org.record.tiny.ui.view.SplashPresenter;
-import org.record.tiny.ui.view.SplashView;
 
 @SuppressWarnings("All")
 public class SplashActivity extends MvpActivity<SplashPresenter> implements SplashView {
@@ -27,7 +25,7 @@ public class SplashActivity extends MvpActivity<SplashPresenter> implements Spla
 
     @Override
     public void startMainActivity() {
-        startActivity(new Intent(this, EditActivity.class));
+        startActivity(new Intent(this, MainActivity.class));
         SplashActivity.this.finish();
     }
 

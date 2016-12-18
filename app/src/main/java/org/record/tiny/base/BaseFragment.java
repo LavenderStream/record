@@ -1,24 +1,21 @@
 package org.record.tiny.base;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.View;
 
-import butterknife.ButterKnife;
 import rx.Subscription;
 import rx.subscriptions.CompositeSubscription;
 
 
 @SuppressWarnings("All")
 public class BaseFragment extends Fragment {
-    public Activity mActivity;
+    public BaseActivity mActivity;
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this, view);
-        mActivity = getActivity();
+        mActivity = (BaseActivity) getActivity();
     }
 
     @Override

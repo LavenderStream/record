@@ -1,4 +1,4 @@
-package org.record.tiny.ui.view;
+package org.record.tiny.ui.fragment;
 
 import org.record.tiny.base.BaseView;
 
@@ -11,6 +11,7 @@ public interface EditView extends BaseView {
     void getLocal(String local);
 
     void getTitle(String title);
+    void getContent(String content);
 
     /**
      * 开始分享

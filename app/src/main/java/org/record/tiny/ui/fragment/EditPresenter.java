@@ -1,4 +1,4 @@
-package org.record.tiny.ui.view;
+package org.record.tiny.ui.fragment;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -6,15 +6,19 @@ import android.view.View;
 
 import org.record.tiny.base.BasePresenter;
 import org.record.tiny.ui.RecordApplication;
+import org.record.tiny.ui.model.Article;
 import org.record.tiny.ui.model.ViewModel;
 import org.record.tiny.utils.DisplayUtil;
 import org.record.tiny.utils.Error;
+import org.record.tiny.utils.EventIntent;
+import org.record.tiny.utils.LogUtils;
 import org.record.tiny.utils.RealmUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import io.realm.Realm;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;
@@ -23,16 +27,57 @@ import rx.functions.Func1;
 public class EditPresenter extends BasePresenter<EditView> {
 
     private String mSharedFilePath;
+    private ViewModel mViewModel;
+    private Article mArticle;
 
     public EditPresenter(EditView context) {
         attachView(context);
     }
 
     public void start() {
-        ViewModel viewModel = (ViewModel) RealmUtils.getInstance().queryObjects(ViewModel.class).first();
+        mArticle = (Article) EventIntent.getInstance().get("intent_article");
+        setView(mArticle);
+    }
 
-        mvpView.getLocal(viewModel.getAddress());
-        mvpView.getTitle(viewModel.getYear() + "年 \n" + viewModel.getMonth() + "月 " + viewModel.getDay() + "日");
+    private void setView(Article article) {
+        if (article == null) {
+            mViewModel = (ViewModel) RealmUtils.getInstance().queryObjects(ViewModel.class).first();
+            mvpView.getLocal(mViewModel.getAddress());
+            mvpView.getTitle(mViewModel.getYear() + "年 \n" + mViewModel.getMonth() + "月 " + mViewModel.getDay() + "日");
+        } else {
+            mvpView.getContent(article.getContext());
+            mvpView.getLocal(article.getLocal());
+            mvpView.getTitle(article.getYear() + "年 \n" + article.getMonth() + "月 " + article.getDay() + "日");
+        }
+    }
+
+    @Override
+    public void detachView() {
+        super.detachView();
+    }
+
+    public void saveArticle(String location, String content) {
+        LogUtils.d("EditPresenter -> saveArticle: " + mArticle);
+        LogUtils.d("EditPresenter -> saveArticle: " + content);
+        LogUtils.d("EditPresenter -> saveArticle: " + location);
+        if (mArticle == null) {
+            mArticle = new Article();
+            mArticle.setId(System.currentTimeMillis() / 1000);
+            mArticle.setYear(mViewModel.getYear());
+            mArticle.setMonth(mViewModel.getMonth());
+            mArticle.setDay(mViewModel.getDay());
+            mArticle.setContext(content);
+            mArticle.setLocal(location);
+
+            RealmUtils.getInstance().insertObject(mArticle);
+        } else {
+            Realm.getDefaultInstance().beginTransaction();
+            mArticle.setContext(content);
+            mArticle.setLocal(location);
+
+            Realm.getDefaultInstance().commitTransaction();
+        }
+
     }
 
     public void save2Bitmap(View view) {

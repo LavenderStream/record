@@ -2,10 +2,12 @@ package org.record.tiny.ui.model;
 
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 @SuppressWarnings("All")
 public class Article extends RealmObject {
-    private int id;
+    @PrimaryKey
+    private long id;
     // 年
     private String year;
     // 月
@@ -19,11 +21,11 @@ public class Article extends RealmObject {
     // 位置
     private String local;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -31,6 +31,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.view.MainActivity"/>
+
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"

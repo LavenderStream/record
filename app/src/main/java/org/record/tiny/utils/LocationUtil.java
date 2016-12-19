@@ -74,7 +74,6 @@ public class LocationUtil {
     private String filterLocal(String local) {
         //把数字徒变成特殊字符
         local = local.replaceAll("\\d+", "#");
-        LogUtils.d("LocationUtil -> filterLocal: " + local);
         if (local.contains("#"))
             return local.substring(0, local.indexOf("#"));
         return local;

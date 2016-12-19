@@ -9,15 +9,15 @@ import org.record.tiny.utils.Config;
 public class RecordApplication extends Application {
     protected static Context sContext;
 
+    public static Context getContext() {
+        return sContext;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
         sContext = getApplicationContext();
 
         Config.configDefaultFont();
-    }
-
-    public static Context getContext() {
-        return sContext;
     }
 }

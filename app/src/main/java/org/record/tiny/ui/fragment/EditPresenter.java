@@ -13,6 +13,7 @@ import org.record.tiny.utils.Error;
 import org.record.tiny.utils.EventIntent;
 import org.record.tiny.utils.LogUtils;
 import org.record.tiny.utils.RealmUtils;
+import org.record.tiny.utils.RxBus;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,9 +35,33 @@ public class EditPresenter extends BasePresenter<EditView> {
         attachView(context);
     }
 
+    private boolean flag = false;
     public void start() {
         mArticle = (Article) EventIntent.getInstance().get("intent_article");
         setView(mArticle);
+
+        LogUtils.d("EditPresenter -> start: ");
+        LogUtils.d("EditPresenter -> flag: " + flag);
+        Observable observable = RxBus.getInstance().toObserverable(Article.class);
+
+        Subscriber subscriber = new Subscriber<Article>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(Article o) {
+                LogUtils.d("EditPresenter -> onNext: " + o);
+                flag = true;
+            }
+        };
+        addSubscription(observable, subscriber);
     }
 
     private void setView(Article article) {

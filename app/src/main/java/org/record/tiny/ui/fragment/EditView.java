@@ -11,6 +11,7 @@ public interface EditView extends BaseView {
     void getLocal(String local);
 
     void getTitle(String title);
+
     void getContent(String content);
 
     /**

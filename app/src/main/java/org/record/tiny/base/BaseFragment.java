@@ -11,6 +11,7 @@ import rx.subscriptions.CompositeSubscription;
 @SuppressWarnings("All")
 public class BaseFragment extends Fragment {
     public BaseActivity mActivity;
+    private CompositeSubscription mCompositeSubscription;
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -23,8 +24,6 @@ public class BaseFragment extends Fragment {
         super.onDestroy();
         onUnsubscribe();
     }
-
-    private CompositeSubscription mCompositeSubscription;
 
     public void onUnsubscribe() {
         //取消注册，以避免内存泄露

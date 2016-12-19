@@ -13,12 +13,15 @@ import org.record.tiny.utils.Config;
 import org.record.tiny.utils.Error;
 import org.record.tiny.utils.LocationUtil;
 import org.record.tiny.utils.RealmUtils;
+import org.record.tiny.utils.RxCountDown;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import rx.Observable;
+import rx.Subscriber;
 import rx.functions.Action1;
 
 @SuppressWarnings("All")
@@ -41,6 +44,7 @@ public class SplashPresenter extends BasePresenter<SplashView> {
                         @Override
                         @UiThread
                         public void Done() {
+                            onUnsubscribe();
                             RealmUtils.getInstance().insertObject(mViewModel);
                             mvpView.startMainActivity();
                         }
@@ -62,6 +66,7 @@ public class SplashPresenter extends BasePresenter<SplashView> {
      * 从网络拉取数据
      */
     public void getData(Callback.simpleCallBack done) {
+        startDemons();
         getTimeInfo();
         getLocalInfo(done);
     }
@@ -81,6 +86,29 @@ public class SplashPresenter extends BasePresenter<SplashView> {
     private void getWeatherInfo() {
 
     }
+
+    private void startDemons() {
+        Observable observable = RxCountDown.countdown(4);
+        Subscriber subscriber = new Subscriber<Integer>() {
+            @Override
+            public void onCompleted() {
+                LocationUtil.getInstance().stop();
+                RealmUtils.getInstance().insertObject(mViewModel);
+                mvpView.startMainActivity();
+            }
+
+            @Override
+            public void onError(Throwable e) {
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+            }
+        };
+
+        addSubscription(observable, subscriber);
+    }
+
 
     private void getTimeInfo() {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

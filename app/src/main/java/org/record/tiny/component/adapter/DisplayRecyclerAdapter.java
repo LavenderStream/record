@@ -13,16 +13,7 @@ import java.util.List;
 @SuppressWarnings("All")
 public class DisplayRecyclerAdapter extends SimpleRecyclerAdapter<Article> {
 
-    public interface OnItemListener {
-        void onItemClick(int postion);
-    }
-
     OnItemListener mOnItemListener = null;
-
-    public void setOnItemListening(OnItemListener l) {
-        mOnItemListener = l;
-    }
-
     private Context mContext;
     private List<Article> nDatas;
 
@@ -30,6 +21,10 @@ public class DisplayRecyclerAdapter extends SimpleRecyclerAdapter<Article> {
         super(ctx, list);
         mContext = ctx;
         nDatas = list;
+    }
+
+    public void setOnItemListening(OnItemListener l) {
+        mOnItemListener = l;
     }
 
     @Override
@@ -48,6 +43,10 @@ public class DisplayRecyclerAdapter extends SimpleRecyclerAdapter<Article> {
                     mOnItemListener.onItemClick(position);
             }
         });
+    }
+
+    public interface OnItemListener {
+        void onItemClick(int postion);
     }
 }
 

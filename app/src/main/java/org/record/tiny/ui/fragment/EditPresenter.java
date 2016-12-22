@@ -4,25 +4,25 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.view.View;
 
+import com.apkfuns.logutils.LogUtils;
+
 import org.record.tiny.base.BasePresenter;
+import org.record.tiny.net.RxSubscriber;
 import org.record.tiny.ui.RecordApplication;
 import org.record.tiny.ui.model.Article;
 import org.record.tiny.ui.model.ViewModel;
 import org.record.tiny.utils.DisplayUtil;
 import org.record.tiny.utils.Error;
 import org.record.tiny.utils.EventIntent;
-import org.record.tiny.utils.LogUtils;
 import org.record.tiny.utils.RealmUtils;
-import org.record.tiny.utils.RxBus;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import io.reactivex.Flowable;
+import io.reactivex.functions.Function;
 import io.realm.Realm;
-import rx.Observable;
-import rx.Subscriber;
-import rx.functions.Func1;
 
 @SuppressWarnings("All")
 public class EditPresenter extends BasePresenter<EditView> {
@@ -39,29 +39,6 @@ public class EditPresenter extends BasePresenter<EditView> {
     public void start() {
         mArticle = (Article) EventIntent.getInstance().get("intent_article");
         setView(mArticle);
-
-        LogUtils.d("EditPresenter -> start: ");
-        LogUtils.d("EditPresenter -> flag: " + flag);
-        Observable observable = RxBus.getInstance().toObserverable(Article.class);
-
-        Subscriber subscriber = new Subscriber<Article>() {
-            @Override
-            public void onCompleted() {
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onNext(Article o) {
-                LogUtils.d("EditPresenter -> onNext: " + o);
-                flag = true;
-            }
-        };
-        addSubscription(observable, subscriber);
     }
 
     private void setView(Article article) {
@@ -106,33 +83,31 @@ public class EditPresenter extends BasePresenter<EditView> {
     }
 
     public void save2Bitmap(View view) {
-        Observable observable = Observable.just(view)
-                .map(new Func1<View, String>() {
+        Flowable observable = Flowable.just(view)
+                .map(new Function<View, String>() {
                     @Override
-                    public String call(View view) {
+                    public String apply(View view) throws Exception {
                         Bitmap bitmap = convertViewToBitmap(view);
-
                         return saveBitmap(bitmap);
                     }
                 });
-
-        Subscriber subscriber = new Subscriber<String>() {
+        addSubscription(observable, new RxSubscriber<String>() {
             @Override
-            public void onCompleted() {
+            public void onNext(String filePath) {
+                mSharedFilePath = filePath;
                 mvpView.startShare(mSharedFilePath);
             }
 
             @Override
-            public void onError(Throwable e) {
+            public void onError(Throwable t) {
                 mvpView.error(Error.SAVE_BITMAP_ERROR);
             }
 
             @Override
-            public void onNext(String filePath) {
-                mSharedFilePath = filePath;
+            public void onComplete() {
+
             }
-        };
-        addSubscription(observable, subscriber);
+        });
     }
 
 

@@ -2,6 +2,8 @@ package org.record.tiny.utils;
 
 import android.support.annotation.NonNull;
 
+import com.apkfuns.logutils.LogUtils;
+
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.Map;

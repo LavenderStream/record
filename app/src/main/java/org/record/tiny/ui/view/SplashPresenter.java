@@ -3,9 +3,10 @@ package org.record.tiny.ui.view;
 import android.app.Activity;
 import android.support.annotation.UiThread;
 
-import com.tbruyelle.rxpermissions.RxPermissions;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import org.record.tiny.base.BasePresenter;
+import org.record.tiny.net.RxSubscriber;
 import org.record.tiny.ui.model.ViewModel;
 import org.record.tiny.utils.Callback;
 import org.record.tiny.utils.ChinaNumTrans;
@@ -20,9 +21,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import rx.Observable;
-import rx.Subscriber;
-import rx.functions.Action1;
+import io.reactivex.Flowable;
+import io.reactivex.functions.Consumer;
 
 @SuppressWarnings("All")
 public class SplashPresenter extends BasePresenter<SplashView> {
@@ -36,9 +36,9 @@ public class SplashPresenter extends BasePresenter<SplashView> {
     }
 
     public void start(Activity activity) {
-        new RxPermissions(activity).request(Config.getAllPermissions()).subscribe(new Action1<Boolean>() {
+        new RxPermissions(activity).request(Config.getAllPermissions()).subscribe(new Consumer<Boolean>() {
             @Override
-            public void call(Boolean granted) {
+            public void accept(Boolean granted) throws Exception {
                 if (granted) {
                     getData(new Callback.simpleCallBack() {
                         @Override
@@ -88,25 +88,25 @@ public class SplashPresenter extends BasePresenter<SplashView> {
     }
 
     private void startDemons() {
-        Observable observable = RxCountDown.countdown(4);
-        Subscriber subscriber = new Subscriber<Integer>() {
+        Flowable observable = RxCountDown.countdown(4);
+
+        addSubscription(observable, new RxSubscriber<Integer>() {
             @Override
-            public void onCompleted() {
+            public void onNext(Integer o) {
+            }
+
+            @Override
+            public void onError(Throwable t) {
+            }
+
+            @Override
+            public void onComplete() {
+                onUnsubscribe();
                 LocationUtil.getInstance().stop();
                 RealmUtils.getInstance().insertObject(mViewModel);
                 mvpView.startMainActivity();
             }
-
-            @Override
-            public void onError(Throwable e) {
-            }
-
-            @Override
-            public void onNext(Integer integer) {
-            }
-        };
-
-        addSubscription(observable, subscriber);
+        });
     }
 
 

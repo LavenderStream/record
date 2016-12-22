@@ -1,20 +1,27 @@
 package org.record.tiny.base;
 
 
+import android.util.Log;
+
 import org.record.tiny.net.ApiStores;
 import org.record.tiny.net.AppClient;
+import org.record.tiny.net.RxSubscriber;
 
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
-import rx.subscriptions.CompositeSubscription;
+import io.reactivex.Flowable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 @SuppressWarnings("All")
 public class BasePresenter<V> {
+    private static final String TAG = BasePresenter.class.getSimpleName();
+
     public V mvpView;
     protected ApiStores apiStores;
-    private CompositeSubscription mCompositeSubscription;
+    private CompositeDisposable mCompositeDisposable;
 
     /**
      * 使用了butterknife注入框架，在setContentView方法中注册view
@@ -36,18 +43,38 @@ public class BasePresenter<V> {
 
     //RXjava取消注册，以避免内存泄露
     public void onUnsubscribe() {
-        if (mCompositeSubscription != null && mCompositeSubscription.hasSubscriptions()) {
-            mCompositeSubscription.unsubscribe();
+        if (mCompositeDisposable != null) {
+            mCompositeDisposable.clear();
         }
     }
 
-    public void addSubscription(Observable observable, Subscriber subscriber) {
-        if (mCompositeSubscription == null) {
-            mCompositeSubscription = new CompositeSubscription();
+    public void addSubscription(Flowable flowable, final RxSubscriber subscriber) {
+        if (mCompositeDisposable == null) {
+            mCompositeDisposable = new CompositeDisposable();
         }
-        mCompositeSubscription.add(observable
-                .subscribeOn(Schedulers.io())
+        if (subscriber == null) {
+            Log.e(TAG, "Callback.Subscriber is null object");
+            return;
+        }
+
+        Disposable disposable = flowable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(subscriber));
+                .subscribe(new Consumer() {
+                    @Override
+                    public void accept(Object o) throws Exception {
+                        subscriber.onNext(o);
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                        subscriber.onNext(throwable);
+                    }
+                }, new Action() {
+                    @Override
+                    public void run() throws Exception {
+                        subscriber.onComplete();
+                    }
+                });
+        mCompositeDisposable.add(disposable);
     }
 }

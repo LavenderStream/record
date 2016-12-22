@@ -11,7 +11,6 @@ import org.record.tiny.base.SimpleFragment;
 import org.record.tiny.component.adapter.DisplayRecyclerAdapter;
 import org.record.tiny.ui.model.Article;
 import org.record.tiny.utils.EventIntent;
-import org.record.tiny.utils.RxBus;
 
 import java.util.List;
 
@@ -60,10 +59,10 @@ public class DisplayFragment extends SimpleFragment<DisplayPresenter> implements
     }
 
     private void initView() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setLoadingMoreEnabled(false);
         mRecyclerView.setPullRefreshEnabled(false);
-        mRecyclerView.setAdapter(mDisplayRecyclerAdapter = new DisplayRecyclerAdapter(getContext(), mArticles));
+        mRecyclerView.setAdapter(mDisplayRecyclerAdapter = new DisplayRecyclerAdapter(getActivity(), mArticles));
         mDisplayRecyclerAdapter.setOnItemListening(this);
     }
 
@@ -77,7 +76,6 @@ public class DisplayFragment extends SimpleFragment<DisplayPresenter> implements
     public void onItemClick(int postion) {
         mActivity.addFragment(R.id.activity_main_layout, EditFragment.newInstance(), true);
         EventIntent.getInstance().put("intent_article", mArticles.get(postion)).send();
-        RxBus.getInstance().post(mArticles.get(postion));
     }
 
     @Override

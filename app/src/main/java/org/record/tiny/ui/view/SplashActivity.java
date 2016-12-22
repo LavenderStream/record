@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.apkfuns.logutils.LogUtils;
+
 import org.record.tiny.R;
 import org.record.tiny.base.MvpActivity;
 
@@ -17,7 +19,6 @@ public class SplashActivity extends MvpActivity<SplashPresenter> implements Spla
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        // FIXME: 12/15/2016 splash使用图片最好
         setContentView(R.layout.activity_splash);
 
         mvpPresenter.start(this);
@@ -25,6 +26,7 @@ public class SplashActivity extends MvpActivity<SplashPresenter> implements Spla
 
     @Override
     public void startMainActivity() {
+        LogUtils.d("SplashActivity -> startMainActivity: ");
         startActivity(new Intent(this, MainActivity.class));
         SplashActivity.this.finish();
     }

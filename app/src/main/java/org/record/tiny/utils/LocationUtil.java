@@ -6,6 +6,7 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 
 import org.record.tiny.ui.RecordApplication;
+import org.record.tiny.utils.callback.Callback;
 
 @SuppressWarnings("All")
 public class LocationUtil {

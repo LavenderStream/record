@@ -1,17 +1,16 @@
 package org.record.tiny.ui.fragment;
 
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.google.common.collect.Lists;
-import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import org.record.tiny.R;
 import org.record.tiny.base.SimpleFragment;
+import org.record.tiny.component.ArticleDisplayList;
 import org.record.tiny.component.adapter.DisplayRecyclerAdapter;
+import org.record.tiny.component.theme.ChangeTheme;
+import org.record.tiny.component.theme.ThemeRelativeLayout;
 import org.record.tiny.ui.model.Article;
-import org.record.tiny.utils.EventIntent;
-import org.record.tiny.utils.RxBus;
 
 import java.util.List;
 
@@ -19,16 +18,21 @@ import butterknife.Bind;
 import butterknife.OnClick;
 
 @SuppressWarnings("All")
-public class DisplayFragment extends SimpleFragment<DisplayPresenter> implements DisplayView, DisplayRecyclerAdapter.OnItemListener {
+public class DisplayFragment extends SimpleFragment<DisplayPresenter> implements DisplayView {
 
     @Bind(R.id.xrv_display_layout)
-    XRecyclerView mRecyclerView;
+    ArticleDisplayList mRecyclerView;
     @Bind(R.id.bt_edit)
     View mEditButton;
+    @Bind(R.id.bt_theme)
+    View mThemeButton;
+    @Bind(R.id.trl_display_layout)
+    ThemeRelativeLayout mDisplayLayout;
     private View rootView;
 
     private List<Article> mArticles = Lists.newArrayList();
     private DisplayRecyclerAdapter mDisplayRecyclerAdapter;
+    private boolean isDayTheme = true;
 
     public DisplayFragment() {
     }
@@ -49,35 +53,42 @@ public class DisplayFragment extends SimpleFragment<DisplayPresenter> implements
     }
 
     @Override
-    protected void onCreate() {
-        initView();
+    public void onCreateView() {
+        super.onCreateView();
+        mRecyclerView.setAdapter(mDisplayRecyclerAdapter = new DisplayRecyclerAdapter(getActivity(), mArticles));
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
         mvpPresenter.start();
     }
 
-    @OnClick(R.id.bt_edit)
-    void goEdit() {
-        mActivity.addFragment(R.id.activity_main_layout, EditFragment.newInstance(), true);
-    }
-
-    private void initView() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRecyclerView.setLoadingMoreEnabled(false);
-        mRecyclerView.setPullRefreshEnabled(false);
-        mRecyclerView.setAdapter(mDisplayRecyclerAdapter = new DisplayRecyclerAdapter(getContext(), mArticles));
-        mDisplayRecyclerAdapter.setOnItemListening(this);
+    @OnClick({R.id.bt_edit, R.id.bt_theme})
+    void goEdit(View v) {
+        switch (v.getId()) {
+            case R.id.bt_edit:
+                mActivity.addFragment(R.id.activity_main_layout, EditFragment.newInstance(), true);
+                break;
+            case R.id.bt_theme:
+                ChangeTheme.Model themeModel = isDayTheme ? ChangeTheme.Model.NIGHT : ChangeTheme.Model.DAY;
+                isDayTheme = !isDayTheme;
+                for (int i = 1; i < mArticles.size() + 1; i++) {
+                    View view = mRecyclerView.getLayoutManager().findViewByPosition(i);
+                    if (view instanceof ChangeTheme) {
+                        ((ChangeTheme) view).themeChanged(themeModel);
+                    }
+                }
+                mDisplayLayout.themeChanged(themeModel);
+                break;
+        }
     }
 
     @Override
     public void getDatas(List<Article> articles) {
+        mArticles.clear();
         mArticles.addAll(articles);
         mDisplayRecyclerAdapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public void onItemClick(int postion) {
-        mActivity.addFragment(R.id.activity_main_layout, EditFragment.newInstance(), true);
-        EventIntent.getInstance().put("intent_article", mArticles.get(postion)).send();
-        RxBus.getInstance().post(mArticles.get(postion));
     }
 
     @Override

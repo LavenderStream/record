@@ -1,0 +1,424 @@
+<resources>
+    /***************************************************/
+    /*** 应用参数 ***/
+    /***************************************************/
+    <string name="app_name">花生故事</string>
+
+    /***************************************************/
+    /*** widget参数 ***/
+    /***************************************************/
+
+
+    /***************************************************/
+    /*** Activity参数 ***/
+    /***************************************************/
+    <!-- MainActivity -->
+    <string name="main_force_update">抱歉,您需要安装最新版才能试用</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">手机号/昵称</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">登入</string>
+    <string name="action_sign_up">注册</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="request_http_disable">网络异常, 请检查手机设置</string>
+    <string name="request_http_error">网络异常, 请稍后重试</string>
+    <string name="request_data_error">数据异常, 请稍后重试</string>
+    <string name="request_data_empty">暂无内容</string>
+    <string name="request_follow_empty">您还没有任何关注</string>
+
+    <string name="request_no_network">您还未连接网络</string>
+    <string name="request_login_success">登录成功</string>
+    <string name="request_login_erro">登录失败</string>
+    <string name="request_login_token_disable">登录已失效,请重新登录</string>
+    <string name="request_login_cancel">取消登录</string>
+    <string name="request_invalid_param">无效的数据</string>
+
+    <string name="request_loading">加载中...</string>
+
+    <string name="button_ok">确 定</string>
+    <string name="button_cancel">取 消</string>
+
+
+    <string name="act_login_title">登入花生编辑器</string>
+    <string name="act_login_other_title">使用第三方账号登录</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="loadinfo_loadmore">加载更多</string>
+    <string name="loadinfo_loadmoreing">加载中</string>
+    <string name="loadinfo_loadmore_failed">加载失败，点此重试</string>
+
+    <string name="find_item_1x">剥花生</string>
+    <string name="find_item_2x">花生人</string>
+    <string name="find_item_3x">花生擂台</string>
+    <string name="find_item_4x">故事接龙</string>
+    <string name="find_item_5x">品花生</string>
+    <string name="find_base_tip">更多关注，敬请期待</string>
+
+
+    <string name="search_illegal_character">含有非法字符!</string>
+    <string name="search_edit_hint">搜索感兴趣的故事、人物、标签等</string>
+    <string name="search_hot_tip">热搜故事</string>
+    <string name="search_tag_tip">热搜标签</string>
+
+    <string name="search_empty_tip">请输入要搜索的关键字</string>
+    <string name="search_empty_toast">什么都没搜到哦\n请换个关键字试试吧!</string>
+    <string name="author_empty_toast">作者还未发布文章！</string>
+    <string name="author_empty_dynamic">作者还没有动态！</string>
+
+    <!--讲个故事-->
+    <string name="editor_frag_title">讲个故事</string>
+    <string name="fragment_tab_creative_poststory">我来讲一个</string>
+    <string name="fragment_tab_creative_visitothers">看看别人讲的</string>
+    <string name="tagdetail_write_story">也讲个故事</string>
+    <string name="fragment_tab_creative_tougao">投稿</string>
+    <string name="dialog_delete_story">是否要删除自己讲的故事？</string>
+    <string name="text_content_count">%1$s/%2$s</string>
+    <string name="text_no_data_1">花生故事网页版，让写作更轻而易举</string>
+    <string name="text_no_data_2">输入http://hs.vread.com</string>
+
+
+    <!-- 也讲个故事 -->
+    <string name="editor_btn_next_step">下一步</string>
+    <string name="editor_btn_send">发表</string>
+    <string name="editor_btn_save">存草稿</string>
+    <string name="editor_dialog_save">保  存  草  稿</string>
+    <string name="editor_dialog_cancel">放  弃  故  事</string>
+    <string name="editor_dialog_photo_tip">添加图片:</string>
+    <string name="editor_dialog_photo_camera">照相机</string>
+    <string name="editor_dialog_photo_local">本地图库</string>
+    <string name="editor_dialog_link_tip">添加链接:</string>
+    <string name="editor_dialog_link_name">链接名称</string>
+    <string name="editor_dialog_link_url">链接地址</string>
+    <string name="editor_dialog_send_cate">已选择的故事标签:</string>
+    <string name="editor_dialog_send_tag">请选择至少1个故事标签:</string>
+    <!--<string name="editor_dialog_send_tag">继续选择的故事标签:</string>-->
+    <string name="editor_dialog_send2_tag">请选择至少1个故事标签:</string>
+    <!--<string name="editor_dialog_send2_tag">为了让更多人看到,请选择3个故事标签:</string>-->
+    <string name="editor_dialog_send_hint">请输入自定义标签</string>
+    <string name="editor_dialog_send_custom">添加</string>
+    <string name="editor_dialog_write_tip">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;您上次有未写完的故事存在草稿箱, 是否继续写? 放弃续写后系统将会清空草稿箱以便于本次保存!</string>
+    <string name="editor_dialog_write_ingore">不要了</string>
+    <string name="editor_dialog_write_continue">继续写</string>
+    <string name="editor_send_success">发表成功</string>
+    <string name="editor_save_draft_success">保存草稿成功</string>
+    <string name="editor_send_fail">发表失败</string>
+
+    <!-- 我 -->
+    <string name="myTelledStory">我讲过的故事</string>
+    <string name="myStory">我的故事</string>
+    <string name="mySeries">我的连载</string>
+    <string name="story_sort_time">时间正序</string>
+    <string name="story_sort_time_reverse">时间倒序</string>
+    <string name="story_sort_single">单篇故事</string>
+    <string name="story_sort_series">连载故事</string>
+    <string name="story_readed">阅读</string>
+    <string name="story_favorite">收藏</string>
+
+    <!-- 启动进入微博页 -->
+    <string name="launch_weibo">启动微博</string>
+    <string name="launch_weibo_tip">如需修改头像及昵称，请前往微博进行修改。</string>
+    <string name="launch_weibo_enter">点击进入微博</string>
+    <string name="launch_weibo_failure">启动微博失败:</string>
+
+    <!-- 投稿管理页 -->
+    <string name="contribution_manager">投稿管理</string>
+    <string name="contribution_manager_unselected">未入选</string>
+    <string name="contribution_manager_selected">已入选</string>
+
+    <!-- 用户连载详情页 -->
+    <string name="user_album_detail_add_cover">添加封面</string>
+    <string name="user_album_detail_loading">正在上传,请稍候...</string>
+    <string name="user_album_detail_load_error">封面上传失败,请稍候再试吧.</string>
+    <string name="user_album_detail_refreshing">正在更新,请稍候...</string>
+    <string name="user_album_detail_refresh_error">更新失败,请稍候再试吧.</string>
+    <string name="user_album_detail_edit">编辑</string>
+    <string name="user_album_detail_save">保存</string>
+    <string name="user_album_detail_close">关闭</string>
+    <string name="user_album_detail_ensure_quit">确定是否退出编辑?</string>
+    <string name="user_album_detail_ensure_all_album">确定删除整个连载?</string>
+    <string name="user_album_detail_ensure_delete_story">确定删除这个故事?</string>
+    <string name="user_album_detail_delete_story_error">移除连载故事失败,请稍后再试</string>
+    <string name="user_album_detail_delete_story_success">移除连载故事成功</string>
+    <string name="user_album_detail_delete_all_error">移除连载失败,请稍后再试</string>
+    <string name="user_album_detail_item_sort_success">移动故事成功</string>
+    <string name="user_album_detail_item_sort_error">移动故事失败,请稍后再试</string>
+
+    <!--AuthorDetail Fragment-->
+    <string name="fragment_author_detail_header_story_count">%1$s 篇故事</string>
+    <string name="fragment_author_detail_header_follow_count">%1$s 人关注</string>
+    <string name="author_detail_header_intro_tip">点击这里介绍一下自己吧</string>
+    <string name="author_dynamic_normal">%1$s《%2$s》</string>
+    <string name="author_dynamic_create_lianzai">%1$s%2$s</string>
+    <string name="author_dynamic_tag">%1$s%2$s</string>
+    <string name="author_dynamic_user">%1$s@%2$s</string>
+    <string name="author_dynamic_create_story">新发布了故事</string>
+    <string name="author_dynamic_follow_tag">关注了标签</string>
+    <string name="author_dynamic_follow_user">关注了</string>
+    <string name="author_dynamic_fav_story">收藏了故事</string>
+    <string name="author_dynamic_like_story">赞了故事</string>
+    <string name="author_dynamic_comment_story">评论了故事</string>
+    <string name="author_dynamic_create_story_lianzai">所属连载</string>
+
+    <!-- 选择标签页 -->
+    <string name="pick_tag_most_five_tag">最多只能添加5个标签</string>
+    <string name="pick_tag_tag_have_put">标签已经添加</string>
+    <string name="pick_tag_step1">Step1: 请至少选择一个故事标签:</string>
+    <string name="pick_tag_step2">Step2: 请选择作品类型</string>
+    <string name="pick_tag_publish_before_pick_a_tag_more">发布之前至少选择一个标签</string>
+    <string name="pick_tag_single_story_selected">单篇故事</string>
+    <string name="pick_tag_single_story_unselected">单篇</string>
+    <string name="pick_tag_self_define">+ 自定义</string>
+    <string name="pick_tag_add_album">加入连载</string>
+    <string name="pick_tag_sync_sina">同步到新浪微博</string>
+
+    <!-- 弹出框标题 -->
+    <string name="dialog_cacel_tag_title">请告诉我们您不感兴趣的问题:</string>
+
+    <string name="add_follow">加关注</string>
+    <string name="state_followed">已关注</string>
+    <string name="followed_success">关注成功</string>
+    <string name="followed_cancel_success">取消关注成功</string>
+    <string name="followed_fail">关注失败</string>
+    <string name="followed_cancel_fail">取消关注失败</string>
+    <string name="share_to_friend">给朋友看看</string>
+
+    <string name="view_tag">tag</string>
+    <string name="title_my_collection">我收藏的故事</string>
+    <string name="title_my_like">我赞的故事</string>
+    <string name="title_my_story">我讲过的故事</string>
+    <string name="hs_prefreence">hs_prefreence</string>
+
+    <!-- 登录Dialog -->
+    <string name="dialog_login_button">用微博帐号登录</string>
+    <string name="dialog_has_account">还没有微博帐号？</string>
+    <string name="dialog_regist_button">注册微博帐号</string>
+    <string name="login_button">登 录</string>
+    <!-- 我的故事Dialog -->
+    <string name="creative_dialog_delete_story">确定删除《%1$s》? 该操作将无法逆转</string>
+    <string name="dialog_delete_album">是否要删除自己的连载？</string>
+
+    <!-- 空数据提示语 -->
+    <string name="empty_my_album">您还没有连载.</string>
+    <string name="empty_my_story">您还没有故事哦，点击这里快去讲一个吧！</string>
+    <string name="empty_my_album_story">还没有故事哦，点击这里快去讲一个吧！</string>
+    <string name="empty_my_like">您还没有赞过故事！</string>
+    <string name="empty_my_collection">您还没有收藏过故事！</string>
+    <string name="act_feedback_text_hint">写下您的建议或反馈！</string>
+
+    <string name="empty_normal_data">暂无内容</string>
+    <!--<string name="empty_author_data">作者还未发表文章</string>-->
+
+    <!-- 更多分享弹出框标题 -->
+    <string name="share_title">分享</string>
+    <string name="share_success">分享成功</string>
+    <string name="share_error">分享失败</string>
+    <string name="share_error_webchat_client">分享失败，请确认安装了微信客户端</string>
+    <string name="share_empty_tip">请输入要分享的内容</string>
+    <string name="share_range_out">内容超过字数限制</string>
+    <string name="request_sharing">分享中...</string>
+    <string name="share_weibo_title">分享到新浪微博</string>
+
+    <string name="logout_title">退出登录</string>
+    <string name="logout_content">确认退出登录吗？</string>
+
+    <string name="logout_confirm_text">确定要退出登录吗？</string>
+
+    <string name="favorite_user_story_count">故事数：%1$s 篇</string>
+    <string name="story_violation">违规</string>
+    <string name="item_story_type_jielong">接龙</string>
+
+    <!-- 关于 -->
+    <string name="about_activity_title">关于我们</string>
+    <string name="about_title_official_website">花生故事官网</string>
+    <string name="about_title_weibo">新浪微博</string>
+    <string name="about_title_qq">QQ体验群</string>
+    <string name="about_content_official_website">http://hs.vread.com</string>
+    <string name="about_content_weibo">&#160;&#064;花生故事&#160;</string>
+    <string name="about_content_qq">12226112</string>
+    <string name="about_copyright">版权所属&#160;&#160;花生故事</string>
+
+    <!-- 设置 -->
+    <string name="setting_activity_title">设置</string>
+    <string name="setting_night_mode">夜间模式</string>
+    <string name="setting_eidt_intro">我的简介</string>
+    <string name="setting_mobile_network_download">仅WIFI下载图片</string>
+    <string name="setting_comment">评论</string>
+    <string name="setting_push_notifycation">通知</string>
+    <string name="setting_about_us">关于我们</string>
+
+    <!-- 通知中心 -->
+    <string name="notify_center_activity_title">消息</string>
+    <string name="notify_center_new_reader">新的读者</string>
+    <string name="notify_center_new_like">点赞</string>
+    <string name="notify_center_new_comment">评论</string>
+    <string name="notify_center_official_message">官方消息</string>
+    <string name="notify_follow_empty_data">暂无新的读者</string>
+    <string name="notify_like_empty_data">暂无赞</string>
+    <string name="notify_comment_empty_data">暂无评论</string>
+    <string name="notify_official_empty_data">暂无消息</string>
+
+    <!-- 推送通知设置 -->
+    <string name="push_notify_setting_day_story">每日故事</string>
+    <string name="push_notify_setting_new_reader">新的读者</string>
+    <string name="push_notify_setting_new_like">点赞</string>
+    <string name="push_notify_setting_new_comment">评论</string>
+    <string name="push_notify_setting_failed">设置失败</string>
+
+
+    <!-- 老花生 -->
+    <string name="previous_activity_title">品花生</string>
+
+    <!--投稿-->
+    <string name="contribute_title">投稿</string>
+    <!-- 编辑简介 -->
+    <string name="user_intro_edit_activity_title">我的简介</string>
+    <!-- 举报 -->
+    <string name="report_activity_title">内容举报</string>
+    <string name="report_activity_title2">我要举报</string>
+    <string name="report_activity_book_name"><![CDATA[<<%s>>这本书：]]></string>
+    <string name="user_intro_edit_hint">请写下您的简介(四十字以内)</string>
+    <string name="user_intro_edit_submit">提交</string>
+    <string name="content_add_comment">写评论</string>
+    <string name="content_no_reply_yourself">您不能回复自己的评论</string>
+    <string name="content_comment_dialog_reply">回&#160;&#160;&#160;&#160;&#160;&#160;复</string>
+    <string name="content_comment_dialog_cancel">取&#160;&#160;&#160;&#160;&#160;&#160;消</string>
+    <!-- 内容页 -->
+    <string name="mode_night">夜间</string>
+    <string name="mode_day">白天</string>
+    <!--编辑简介-->
+    <string name="input_nothing">您还没有输入任何内容!</string>
+    <string name="check_network_connect">请检查您的网络连接!</string>
+    <string name="update_success">更新简介成功!</string>
+    <string name="hold_on">正在提交数据,请稍候...</string>
+    <!-- 连载 -->
+    <string name="series_empty_data">没有连载!</string>
+    <string name="series_add">加入连载</string>
+    <string name="series_edit">编辑连载</string>
+    <string name="author_dynamic">《%s》</string>
+    <string name="editor_btn_immediately_send">立即发布</string>
+
+    <!--反馈-->
+    <string name="feedback">问题反馈</string>
+    <string name="feedback_me">我的反馈</string>
+    <string name="feedback_title">反馈</string>
+    <string name="feedback_send">发送</string>
+    <string name="feedback_contact_tip">联系方式: </string>
+    <string name="feedback_contact_hint">(QQ/微博/微信/手机号/邮箱)</string>
+    <string name="feedback_text_send">提交</string>
+    <string name="feedback_FAQ">常见问题</string>
+    <string name="feedback_send_content_empty">您未填写反馈内容,不能反馈!</string>
+    <string name="feedback_send_contact_empty">您未填写联系方式,不能反馈!</string>
+    <string name="feedback_send_network_error">网络出问题啦,请检查下您的网络连接!</string>
+    <string name="feedback_send_success">反馈已提交,感谢您的支持!</string>
+    <string name="feedback_FQA_change_avatar">如何修改头像,昵称?</string>
+    <string name="contact_delete_story">如何删除已发布作品?</string>
+    <string name="contact_show_delete_story">从我---我的故事列表中，选中需要操作的作品，往左滑动即可显示操作按钮。如下图?</string>
+    <string name="feedback_welcome_hint">欢迎反馈任何问题和内容~</string>
+
+    <!-- RefreshRecycler 中的header 和 footer -->
+    <string name="refresh_header_text">The Header</string>
+    <string name="refresh_footer_text">The Footer</string>
+    <string name="refresh_footer_loading">正在加载中…</string>
+    <string name="refresh_footer_network_error">点击重新加载</string>
+    <string name="refresh_footer_end">已经到底了</string>
+
+    <!-- 草稿预览 -->
+    <string name="story_preview">预览</string>
+    <string name="story_preview_failure">预览失败</string>
+
+    <!--加载连载-->
+    <string name="album_remove">移出</string>
+    <string name="album_add">加入</string>
+
+    <!-- 精选-->
+    <string name="click_refresh1">上次阅读到这里，</string>
+    <string name="click_refresh2">点击刷新</string>
+    <string name="sign_works">签</string>
+
+    <!--登录-->
+    <string name="login_other">使用其他方式登录</string>
+    <string name="login_register_text">注册新帐号</string>
+    <string name="login_forget_pwd">忘记密码?</string>
+    <string name="login_pwd">密码</string>
+    <string name="phone_num">手机号</string>
+
+    <!-- 个人简介 -->
+    <string name="profile_makeup">完善个人资料</string>
+    <string name="profile_nickname_hint">最多支持10个字,超过将被截取~</string>
+    <string name="profile_sex_boy">男</string>
+    <string name="profile_sex_girl">女</string>
+    <string name="profile_next">下一步</string>
+    <string name="profile_show">显示在主页</string>
+    <string name="profile_NickName">昵称</string>
+    <string name="profile_Sex">性别</string>
+    <string name="profile_Intro">简介</string>
+    <string name="profile_Photo">手机</string>
+    <string name="profile_Weibo">微博</string>
+    <string name="profile_QQ">QQ</string>
+    <string name="profile_Mi">小米</string>
+    <string name="profile_ResetPwd">重置密码</string>
+    <string name="profile_Level">花生等级</string>
+    <string name="profile_Medal">勋章</string>
+    <string name="profile_get_failure">个人信息为空</string>
+    <string name="profile_update_success">个人信息更新成功</string>
+    <string name="profile_update_failure">个人信息更新失败</string>
+
+    <!-- 注册页 -->
+    <string name="register_title">注册新账号</string>
+    <string name="register_bonding_title">绑定手机号</string>
+    <string name="register_next">下一步</string>
+    <string name="register_phone">手机号</string>
+    <string name="register_password">设置密码,6-20位数字或字母</string>
+    <string name="register_verification_code">验证码</string>
+    <string name="register_get_verification_code">获取验证码</string>
+    <string name="register_error_phone">手机号未填写</string>
+    <string name="register_error_phone_no_exist">手机号不存在</string>
+    <string name="register_error_password">密码未填写</string>
+    <string name="register_error_password_not_require">密码填写不满足要求</string>
+    <string name="register_error_verification">请输入验证码</string>
+    <string name="register_error_verification_not_require">验证码填写不满足要求</string>
+    <string name="register_error_send">验证码请求失败</string>
+    <string name="register_error_verify">验证码检验失败</string>
+    <string name="register_doing">正在注册...</string>
+    <string name="register_success">注册成功</string>
+    <string name="register_bonding">绑定成功</string>
+
+    <!-- 完善个人资料页 -->
+    <string name="makeup_title">完善个人资料</string>
+    <string name="makeup_error_nickname">昵称不能为空</string>
+    <string name="makeup_error_nickname_exit">昵称已经存在,再取一个吧</string>
+    <string name="makeup_finish">完成</string>
+    <string name="makeup_pick_sex">选择性别</string>
+
+    <!-- 编辑个人资料 -->
+    <string name="profile_edit_nickname_hint">最多支持15个字,超过将被截取~</string>
+    <string name="profile_edit_intro_hint">最多支持32个字,超过将被截取~</string>
+    <string name="profile_update_pwd_hint">密码修改成功</string>
+    <string name="profile_unbind_hine">未绑定</string>
+
+    <!-- 重置手机号 -->
+    <string name="reset_pwd_old_pwd">原密码</string>
+    <string name="reset_pwd_input_new_pwd">输入新密码,6-20位数字或字母</string>
+    <string name="reset_pwd_input_repeat">请再输入一遍</string>
+    <string name="reset_pwd_empty_verification">验证码为空</string>
+    <string name="reset_pwd_error_verification">验证码填写错误</string>
+    <string name="reset_pwd_empty_old_pwd">旧密码为空</string>
+    <string name="reset_pwd_error_old_pwd">旧密码填写不满足要求</string>
+    <string name="reset_pwd_empty_new_pwd">新密码为空</string>
+    <string name="reset_pwd_error_pwd_diff">两次密码输入不一致</string>
+    <string name="profile_pick_verification_type">为保障您的账户安全,请选择一种身份验证方式</string>
+    <string name="profile_verification_by_phone_num">绑定手机号验证</string>
+    <string name="profile_verification_by_pwd">当前密码验证</string>
+    <string name="reset_pwd_success">重置密码成功</string>
+    <string name="reset_pwd_failure">重置密码失败</string>
+</resources>

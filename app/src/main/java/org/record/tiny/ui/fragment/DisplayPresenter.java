@@ -9,12 +9,14 @@ import io.realm.RealmResults;
 @SuppressWarnings("All")
 public class DisplayPresenter extends BasePresenter<DisplayView> {
 
+    private RealmResults mArticles;
+
     public DisplayPresenter(DisplayView context) {
         attachView(context);
     }
 
     public void start() {
-        RealmResults articles = RealmUtils.getInstance().queryObjects(Article.class);
-        mvpView.getDatas(articles);
+        mArticles = RealmUtils.getInstance().queryObjects(Article.class);
+        mvpView.getDatas(mArticles);
     }
 }

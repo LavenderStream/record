@@ -7,13 +7,13 @@ import com.tbruyelle.rxpermissions.RxPermissions;
 
 import org.record.tiny.base.BasePresenter;
 import org.record.tiny.ui.model.ViewModel;
-import org.record.tiny.utils.Callback;
 import org.record.tiny.utils.ChinaNumTrans;
 import org.record.tiny.utils.Config;
 import org.record.tiny.utils.Error;
 import org.record.tiny.utils.LocationUtil;
 import org.record.tiny.utils.RealmUtils;
 import org.record.tiny.utils.RxCountDown;
+import org.record.tiny.utils.callback.Callback;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -45,6 +45,7 @@ public class SplashPresenter extends BasePresenter<SplashView> {
                         @UiThread
                         public void Done() {
                             onUnsubscribe();
+                            LocationUtil.getInstance().stop();
                             RealmUtils.getInstance().insertObject(mViewModel);
                             mvpView.startMainActivity();
                         }

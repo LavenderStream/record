@@ -1,10 +1,12 @@
-<RelativeLayout
+<org.record.tiny.component.theme.ThemeRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/trl_display_layout"
+    android:background="@color/black"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.jcodecraeer.xrecyclerview.XRecyclerView
+    <org.record.tiny.component.ArticleDisplayList
         android:id="@+id/xrv_display_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
@@ -21,4 +23,16 @@
         app:cb_color="#cc0000"
         app:cb_pressedRingWidth="1dp"/>
 
-</RelativeLayout>
+    <org.record.tiny.component.CircleButton
+        android:id="@+id/bt_theme"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/bt_edit"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="夜"
+        android:textColor="@color/white"
+        app:cb_color="#cc0000"
+        app:cb_pressedRingWidth="1dp" />
+
+</org.record.tiny.component.theme.ThemeRelativeLayout>

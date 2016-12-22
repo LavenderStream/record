@@ -9,4 +9,6 @@ public class Error {
     public static final int PERMISSION_ERROR = 0x000;
 
     public static final int SAVE_BITMAP_ERROR = 0x100;
+
+    public static final int UNKNOWN_NET_ERROR = 0x500;
 }

@@ -1,0 +1,188 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--标题栏高度-->
+    <dimen name="title_height">48dp</dimen>
+    <!--标题栏左icon图片宽度-->
+    <dimen name="title_left_width">48dp</dimen>
+    <!--标题栏左icon图片边距-->
+    <dimen name="title_left_padding">18dp</dimen>
+    <dimen name="title_top_padding">14dp</dimen>
+    <dimen name="title_action_top_padding">16dp</dimen>
+    <!--标题栏文字大小-->
+    <dimen name="title_textsize">16dp</dimen>
+
+    <!--导航栏高度-->
+    <dimen name="tab_height">48dp</dimen>
+
+    <dimen name="act_title_action_size">24dp</dimen>
+    <dimen name="act_title_icon_size">48dp</dimen>
+    <dimen name="act_title_icon_padding">13dp</dimen>
+
+    <!--首页顶部tab栏最大宽度-->
+    <dimen name="tab_max_width">48dp</dimen>
+
+    <!--首页底部tab栏文字大小-->
+    <dimen name="tab_textsize">11dp</dimen>
+
+    <!--首页顶部文字大小-->
+    <dimen name="tab_top_textsize">16dp</dimen>
+
+    <!--精选-->
+    <dimen name="essence_indicator_textsize">17dp</dimen>
+
+    <!--发现页的item高度-->
+    <dimen name="find_item_height">52dp</dimen>
+    <dimen name="find_item_left_width">28dp</dimen>
+
+    <!--搜索结果人的头像-->
+    <dimen name="search_user_head_width">42dp</dimen>
+
+    <!--也讲个故事 编辑器-->
+    <dimen name="editor_btn_width">70dp</dimen>
+    <dimen name="editor_btn_height">35dp</dimen>
+    <dimen name="editor_btn_textsize">16dp</dimen>
+    <dimen name="editor_buttom_padding">10dp</dimen>
+
+    <dimen name="editor_dialog_editor_height">40dp</dimen>
+    <!--<dimen name="editor_dialog_editor_height">46dp</dimen>-->
+    <dimen name="editor_dialog_img_width">72dp</dimen>
+
+    <dimen name="editor_dialog_padding">16dp</dimen>
+
+    <dimen name="dialog_button_height">48dp</dimen>
+    <dimen name="dialog_button_height_30">30dp</dimen>
+    <dimen name="dialog_button_width_150">150dp</dimen>
+    <dimen name="dialog_button_width">196dp</dimen>
+    <dimen name="dialog_edittext_height">42dp</dimen>
+    <dimen name="dialog_button_text_size">16dp</dimen>
+    <dimen name="dialog_title_text_size">17dp</dimen>
+
+    <!--对话框宽度-->
+    <dimen name="dialog_width">280dp</dimen>
+
+
+    <!--Item外边距-->
+    <dimen name="dimen_item_border_left">10dp</dimen>
+    <dimen name="dimen_item_border_right">10dp</dimen>
+    <dimen name="dimen_item_border_top">12dp</dimen>
+    <dimen name="dimen_item_border_bottom">15dp</dimen>
+    <dimen name="dimen_item_border_8dp">8dp</dimen>
+    <dimen name="dimen_item_border_12dp">12dp</dimen>
+    <!--Item内边距-->
+    <dimen name="dimen_item_inner_padding_top">11dp</dimen>
+    <dimen name="dimen_item_inner_padding_left">5dp</dimen>
+    <dimen name="dimen_item_inner_10dp">10dp</dimen>
+    <dimen name="dimen_item_inner_15dp">15dp</dimen>
+    <dimen name="dimen_item_font_leading">5dp</dimen>
+
+    // 点赞图标宽度
+    <dimen name="dimen_item_praise_width">15dp</dimen>
+
+    <!--首页头像宽高-大头像-->
+    <dimen name="dimen_item_headimg_big_width">36dp</dimen>
+    <!--首页头像宽高-小头像-->
+    <dimen name="dimen_item_headimg_width">25dp</dimen>
+
+    <dimen name="dimen_item_img_width">105dp</dimen>
+
+    <!-- 评论 和 点赞 间隔-->
+    <dimen name="dimen_item_imog2img_gap">20dp</dimen>
+
+    <!--Item字体-->
+    <dimen name="dimen_item_title_textsize">18dp</dimen>
+    <dimen name="dimen_item_title_textsize_type">13dp</dimen>
+    <dimen name="dimen_item_title_textsize_type_small">10dp</dimen>
+    <dimen name="dimen_item_content_textsize">13dp</dimen>
+    <dimen name="dimen_item_author_textsize">13dp</dimen>
+    <dimen name="dimen_item_time_textsize">12dp</dimen>
+    <dimen name="dimen_item_normal_textsize">16dp</dimen>
+    <dimen name="dimen_item_tag_textsize">14dp</dimen>
+    <dimen name="dimen_item_tag_title_textsize">20dp</dimen>
+    <dimen name="dimen_item_tag_sort_textsize">15dp</dimen>
+    <dimen name="dimen_item_title_tag_textsize">12dp</dimen>
+    <dimen name="dimen_item_creative_content_textsize">16dp</dimen>
+
+
+    <!--card 大小-->
+    <dimen name="creative_fragment_card_width">270dp</dimen>
+    <dimen name="creative_fragment_card_height">360dp</dimen>
+    <!--indicator-->
+    <dimen name="act_splash_indicator_size">8dp</dimen>
+    <dimen name="act_splash_indicator_margin">13dp</dimen>
+    <dimen name="cardview_margin_horizontal">30dp</dimen>
+    <dimen name="cardview_margin_vertical">40dp</dimen>
+
+    <!-- 错误页面图片宽度 -->
+    <dimen name="erro_img_width">160dp</dimen>
+    <dimen name="erro_img2_width">140dp</dimen>
+
+    <dimen name="empty_story_line_height">50dp</dimen>
+    <dimen name="empty_story_button_width">48dp</dimen>
+
+    <dimen name="listview_divider_height">0.5dp</dimen>
+    <dimen name="listview_divider_height1">1dp</dimen>
+
+    <!--编辑器版本-->
+    <dimen name="edit_version_code">12px</dimen>
+
+    <dimen name="story_item_weibo_v_size_small">10dp</dimen>
+    <dimen name="story_item_weibo_v_size_middle">15dp</dimen>
+    <dimen name="story_item_weibo_v_size_large">18dp</dimen>
+
+    <!-- 关注 -->
+    <!-- 头像大小 -->
+    <dimen name="dimen_item_favorite_avatar_size">45dp</dimen>
+
+    <!--用户主页 草稿或者接龙图标的大小-->
+    <dimen name="dimen_item_user_story_style_icon_size">35dp</dimen>
+    <!-- 故事图片大小 -->
+    <dimen name="dimen_item_favorite_story_img_size">50dp</dimen>
+    <!-- 故事Item高度 -->
+    <dimen name="dimen_item_favorite_story_height">58dp</dimen>
+    <dimen name="favorite_banner_vertical_divider">4dp</dimen>
+    <dimen name="favorite_banner_horizontal_divider">6dp</dimen>
+    <dimen name="favorite_listview_padding">8dp</dimen>
+    <dimen name="favorite_listview_divider_height">8dp</dimen>
+    <dimen name="favorite_listview_divider_half_height">4dp</dimen>
+    <dimen name="favorite_inner_padding_left">15dp</dimen>
+    <dimen name="favorite_inner_story_padding_left">18dp</dimen>
+    <dimen name="favorite_inner_padding_right">8dp</dimen>
+    <dimen name="favorite_update_tip_size">13dp</dimen>
+    <dimen name="favorite_item_title_text_size">16dp</dimen>
+    <dimen name="favorite_item_subtitle_text_size">13dp</dimen>
+    <dimen name="favorite_item_story_text_size">14dp</dimen>
+
+    <dimen name="bigavatar_v_margin_right">8dp</dimen>
+
+    <!-- 主页底部栏打点大小 -->
+    <dimen name="dimen_main_bottom_tab_point_size">6dp</dimen>
+    <!-- 我页面打点大小 -->
+    <dimen name="dimen_user_fragment_point_size">8dp</dimen>
+    <!-- 我的关注打点 -->
+    <dimen name="dimen_my_favorite_point_size">12dp</dimen>
+
+    <!-- 设置开关 -->
+    <dimen name="item_setting_padding_left">22dp</dimen>
+    <dimen name="item_setting_padding_right">20dp</dimen>
+    <dimen name="item_setting_padding_right_small">13dp</dimen>
+    <dimen name="setting_switch_thumb_size">36dp</dimen>
+    <dimen name="report_radio_margin_ver">10dp</dimen>
+    <dimen name="report_radio_margin_hor">20dp</dimen>
+
+    <!-- 通知中心，评论底部弹窗圆角大小 -->
+    <dimen name="bottom_sheets_radius">16dp</dimen>
+
+    <dimen name="favorite_delete_final_size">16dp</dimen>
+
+    <dimen name="dimen_10dp">10dp</dimen>
+
+    <!--写作列表页,右滑项目的大小-->
+    <dimen name="creative_fragment_swipemenu_item_height">50dp</dimen>
+
+    <dimen name="btn_font_size">13sp</dimen>
+    <dimen name="tip_font_size">10sp</dimen>
+
+</resources>

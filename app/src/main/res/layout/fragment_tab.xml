@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.record.tiny.demo.fragment.TabFragment">
+
+    <org.record.tiny.component.SwipeRefreshLayout
+        android:id="@+id/srfl_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/adl_recyclerview_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </org.record.tiny.component.SwipeRefreshLayout>
+
+</FrameLayout>

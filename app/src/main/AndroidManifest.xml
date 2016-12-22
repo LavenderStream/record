@@ -23,20 +23,25 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="r6RkxMaxjfoLkhuALPGNzHDGTR4bcSEe"/>
 
-        <activity android:name=".ui.view.SplashActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".ui.view.SplashActivity"
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".ui.view.MainActivity"/>
 
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote">
-        </service>
+            android:process=":remote"/>
+
+        <activity android:name=".demo.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".demo.follow.FollowActivity">
+        </activity>
     </application>
 
 </manifest>

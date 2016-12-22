@@ -1,9 +1,8 @@
 package org.record.tiny.base;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.support.annotation.LayoutRes;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,8 +86,8 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public void addFragment(int containerViewId, Fragment fragment, boolean addBackStack) {
-        FragmentTransaction fragmentTransaction = this.getFragmentManager().beginTransaction();
-        fragmentTransaction.add(containerViewId, fragment, fragment.getClass().getSimpleName());
+        android.support.v4.app.FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(containerViewId, fragment, fragment.getClass().getSimpleName());
         if (addBackStack)
             fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();

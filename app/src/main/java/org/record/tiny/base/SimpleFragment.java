@@ -26,14 +26,19 @@ public abstract class SimpleFragment<P extends BasePresenter> extends BaseFragme
             mRootView = inflater.inflate(createViewLayoutId(), null);
             ButterKnife.bind(this, mRootView);
             mvpPresenter = createPresenter();
-            onCreate();
+            onCreateView();
         }
+        onCreate();
         return mRootView;
     }
 
     protected abstract int createViewLayoutId();
 
-    protected abstract void onCreate();
+    public void onCreateView() {
+    }
+
+    public void onCreate() {
+    }
 
 
     @Override
@@ -49,6 +54,9 @@ public abstract class SimpleFragment<P extends BasePresenter> extends BaseFragme
         super.onDestroyView();
         if (mvpPresenter != null) {
             mvpPresenter.detachView();
+            mRootView = null;
+            mvpPresenter = null;
         }
     }
 }
+

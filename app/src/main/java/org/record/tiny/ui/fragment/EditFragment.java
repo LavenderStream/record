@@ -1,5 +1,7 @@
 package org.record.tiny.ui.fragment;
 
+import android.content.Context;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -7,6 +9,7 @@ import android.widget.TextView;
 import org.record.tiny.R;
 import org.record.tiny.base.SimpleFragment;
 import org.record.tiny.component.CircleButton;
+import org.record.tiny.utils.callback.KeyboardChangeListener;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -24,6 +27,8 @@ public class EditFragment extends SimpleFragment<EditPresenter> implements EditV
     EditText mContentLayout;
     @Bind(R.id.activity_edit)
     RelativeLayout mlayout;
+
+    private KeyboardChangeListener mKeyboardChangeListener = null;
 
     public EditFragment() {
     }
@@ -44,13 +49,35 @@ public class EditFragment extends SimpleFragment<EditPresenter> implements EditV
     }
 
     @Override
-    protected void onCreate() {
+    public void onCreateView() {
+        super.onCreateView();
+        mKeyboardChangeListener = new KeyboardChangeListener(getActivity());
+        mKeyboardChangeListener.setKeyBoardListener(new KeyboardChangeListener.KeyBoardListener() {
+            @Override
+            public void onKeyboardChange(boolean isShow, int keyboardHeight) {
+                if (isShow && isAdded())
+                    mSaveButton.setText(getString(R.string.s_ok));
+                else
+                    mSaveButton.setText(getString(R.string.s_save));
+            }
+        });
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
         mvpPresenter.start();
     }
 
     @OnClick(R.id.bt_edit)
     void goSave() {
-        mvpPresenter.saveArticle(mLocalEditText.getText().toString(), mContentLayout.getText().toString());
+        if (mSaveButton.getText().equals(getString(R.string.s_save))) {
+            mvpPresenter.saveArticle(mLocalEditText.getText().toString(), mContentLayout.getText().toString());
+            mActivity.addFragment(R.id.activity_main_layout, DisplayFragment.newInstance());
+        } else {
+            InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getActivity().getWindow().getDecorView().getWindowToken(), 0);
+        }
     }
 
     @Override
@@ -76,7 +103,13 @@ public class EditFragment extends SimpleFragment<EditPresenter> implements EditV
     }
 
     @Override
-    public void error(int error) {
+    public void onDestroy() {
+        super.onDestroy();
+        mKeyboardChangeListener.destroy();
+        mKeyboardChangeListener = null;
+    }
 
+    @Override
+    public void error(int error) {
     }
 }

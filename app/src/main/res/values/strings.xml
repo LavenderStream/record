@@ -2,6 +2,12 @@
     <string name="app_name">record</string>
     <string name="splash_flag">小记</string>
 
+    <string name="s_year">年</string>
+    <string name="s_month">月</string>
+    <string name="s_day">日</string>
+    <string name="s_save">存</string>
+    <string name="s_ok">完</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

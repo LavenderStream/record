@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#202020</color>
+    <color name="colorPrimaryDark">#202020</color>
+    <color name="colorAccent">#000000</color>
+
+    <!--标题栏文字颜色-->
+    <color name="color_title_text">#FFFFFFFF</color>
+
+    <!--<color name="color_tab_bg">#FF000000</color>-->
+    <color name="color_tab_text">#FFFFFFFF</color>
+    <color name="color_tab_text_select">#FFFFC300</color>
+    <color name="story_item_type_jielong">#3cbe82</color>
+
+    <color name="color_item_tag_bg">#FFF5F5F5</color>
+
+    <!--整体视图 大背景颜色-->
+    <color name="color_bg">#FFFFFFFF</color>
+    <!--通用型文字颜色-->
+    <color name="color_normal_text">#FF000000</color>
+
+    <!--标题背景颜色-->
+    <color name="color_title_bar">#FF292929</color>
+
+    <!--列表项文字颜色-->
+    <color name="color_item_text">#FF666666</color>
+    <!--列表项背景颜色及高亮-->
+    <color name="color_item_parent_bg">#FFF0F0F0</color>
+    <color name="color_item_bg">#FFFFFFFF</color>
+    <color name="color_item_bg_select">#FFF8F8F8</color>
+    <color name="color_item_divider">#FFDFDFDD</color>
+
+    <!--搜索输入框hint文字颜色-->
+    <!--<color name="color_search_hint_text">#ff999999</color>-->
+    <!--<color name="color_search_time_text">#ff7e7e7e</color>-->
+    <!--<color name="color_search_story_text">#ff6a6a6a</color>-->
+    <!--<color name="color_search_story_text">#ff494949</color>-->
+    <color name="color_search_tip_divider">#ffdddddd</color>
+
+    <!--热门搜索故事文字颜色-->
+    <!--<color name="color_search_hot_store">#ffff5a32</color>-->
+    <!--热门搜索标签文字颜色-->
+    <!--<color name="color_search_hot_tag">#ff333333</color>-->
+
+    <!--也讲个故事 编辑器内颜色-->
+    <color name="color_editor_client_bg">#fff0f0f0</color>
+    <color name="color_editor_btn_text">#ff694b37</color>
+    <color name="color_editor_dialog_cancel_text">#ffe15500</color>
+    <color name="color_editor_dialog_save_text">#ff30ba78</color>
+    <color name="color_editor_dialog_photo_text">#ffffc300</color>
+    <color name="color_editor_dialog_send_disable_text">#ff8a8a8a</color>
+
+    <!-- 底部栏，角标背景 -->
+    <color name="color_badge_bg">#FFFF5A32</color>
+
+    <!-- 打点颜色 -->
+    <color name="color_main_bottom_point">#e61717</color>
+
+    <!-- 关注顶部字体颜色 -->
+    <!--<color name="color_tab_favorit_text">#FFD8D8D8</color>-->
+    <!--<color name="color_tab_favorit_text_select">#FFFFFFFF</color>-->
+
+    <color name="fragment_listview_divider_color">#FFEEEEEE</color>
+    <color name="fragment_creative_choiceitem_text_color">#666666</color>
+    <color name="fragment_creative_choiceitem_tvstroke_color">#ffc505</color>
+
+    <!-- 关注列表页相关颜色 -->
+
+    <!--Item的配色-->
+    <color name="color_item_title">#ff333333</color>
+    <color name="color_item_content">#ff737373</color>
+    <!--<color name="color_item_content">#ff999999</color>-->
+    <color name="color_item_author">#ff333333</color>
+    <color name="color_item_time">#ff999999</color>
+    <color name="color_item_normal">#ff6a6a6a</color>
+
+    <!-- 黄色 -->
+    <!--<color name="color_yellow">#FFFFC300</color>-->
+
+    <!--cardview-->
+    <color name="cardview_background">#f7f7f7</color>
+
+    <!-- 关注 -->
+    <!--<color name="favorite_card_title">#FF000000</color>-->
+    <color name="favorite_card_title">#ff333333</color>
+    <color name="favorite_card_subtitle">#b4b4b4</color>
+    <!--<color name="favorite_card_story_color">#FF000000</color>-->
+    <color name="favorite_card_story_color">#ff333333</color>
+
+    <!-- 我的故事，下架（违规）故事标签颜色 -->
+    <color name="tag_story_violation_color">#FFC8CDD2</color>
+
+    <!-- 通知中心列表提醒数字背景 -->
+    <color name="color_notify_num_bg">#ffff5539</color>
+    <!-- 日间模式 和 夜间模式 -->
+    <color name="color_4dffffff">#4dffffff</color>
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_ffc300">#ffc300</color>
+    <color name="color_fefefe">#fefefe</color>
+    <color name="color_fcfcfc">#fcfcfc</color>
+    <color name="color_fafafa">#fafafa</color>
+    <color name="color_f9f9f8">#f9f9f9</color>
+    <color name="color_f7f7f7">#f7f7f7</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+    <color name="color_f2f2f2">#f2f2f2</color>
+    <color name="color_f0f0f0">#f0f0f0</color>
+    <color name="color_e8e8e8">#e8e8e8</color>
+    <color name="color_eeeeee">#eeeeee</color>
+    <color name="color_eeeeec">#eeeeec</color>
+    <color name="color_ededed">#ededed</color>
+    <color name="color_ececec">#ececec</color>
+    <color name="color_eaeaea">#eaeaea</color>
+    <color name="color_e6e6e6">#e6e6e6</color>
+    <color name="color_e0e0e0">#e0e0e0</color>
+    <color name="color_dddddd">#dddddd</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_b8b8b8">#b8b8b8</color>
+    <color name="color_b2b2b2">#b2b2b2</color>
+    <color name="color_a2a1a1">#a2a1a1</color>
+    <color name="color_aaaaaa">#aaaaaa</color>
+    <color name="color_a7a7a7">#a7a7a7</color>
+    <color name="color_9b9b9b">#9b9b9b</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_0d999999">#0d999999</color>
+    <color name="color_929292">#929292</color>
+    <color name="color_8c8c8c">#8c8c8c</color>
+    <color name="color_919191">#919191</color>
+    <color name="color_8c6b00">#8c6b00</color>
+    <color name="color_898989">#898989</color>
+    <color name="color_868686">#868686</color>
+    <color name="color_828282">#828282</color>
+    <color name="color_808080">#808080</color>
+    <color name="color_7a5931">#7a5931</color>
+    <color name="color_787878">#787878</color>
+    <color name="color_747474">#747474</color>
+    <color name="color_745433">#745433</color>
+    <color name="color_737373">#737373</color>
+    <color name="color_715134">#715134</color>
+    <color name="color_6f5035">#6f5035</color>
+    <color name="color_6d6d6d">#6d6d6d</color>
+    <color name="color_6c4d36">#6c4d36</color>
+    <color name="color_6a6a6a">#6a6a6a</color>
+    <color name="color_696969">#696969</color>
+    <color name="color_694b37">#694b37</color>
+    <color name="color_676767">#676767</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_5f5f5f">#5f5f5f</color>
+    <color name="color_5e5e5e">#5e5e5e</color>
+    <color name="color_5d5d5d">#5d5d5d</color>
+    <color name="color_5c5c5c">#5c5c5c</color>
+    <color name="color_585858">#585858</color>
+    <color name="color_555555">#555555</color>
+    <color name="color_535353">#535353</color>
+    <color name="color_4b4b4b">#4b4b4b</color>
+    <color name="color_474121">#474121</color>
+    <color name="color_455a64">#455a64</color>
+    <color name="color_454545">#454545</color>
+    <color name="color_444444">#444444</color>
+    <color name="color_424242">#424242</color>
+    <color name="color_414141">#414141</color>
+    <color name="color_383838">#383838</color>
+    <color name="color_373737">#373737</color>
+    <color name="color_343434">#343434</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_302f2f">#302f2f</color>
+    <color name="color_2d2d2d">#2d2d2d</color>
+    <color name="color_2a2a2a">#2a2a2a</color>
+    <color name="color_292929">#292929</color>
+    <color name="color_282828">#282828</color>
+    <color name="color_262626">#262626</color>
+    <color name="color_252525">#252525</color>
+    <color name="color_222222">#222222</color>
+    <color name="color_1e1e1e">#1e1e1e</color>
+    <color name="color_1d241d">#1d241d</color>
+    <color name="color_1d1d1d">#1d1d1d</color>
+    <color name="color_191919">#191919</color>
+    <color name="color_181818">#181818</color>
+    <color name="color_161616">#161616</color>
+    <color name="color_151515">#151515</color>
+    <color name="color_141414">#141414</color>
+    <color name="color_131313">#131313</color>
+    <color name="color_111111">#111111</color>
+    <color name="color_0b0b0b">#0b0b0b</color>
+    <color name="color_010101">#010101</color>
+    <color name="color_1a000000">#1a000000</color>
+    <color name="color_000000">#000000</color>
+    <color name="color_b2000000">#b2000000</color>
+    <color name="color_7f000000">#7f000000</color>
+    <color name="color_00000000">#00000000</color>
+    <color name="color_99999999">#99999999</color>
+    <color name="color_aeaeae">#aeaeae</color>
+    <color name="color_606060">#606060</color>
+    <color name="color_ebebeb">#ebebeb</color>
+    <color name="color_f76120">#f76120</color>
+    <color name="color_212121">#212121</color>
+    <color name="color_323232">#323232</color>
+    <color name="color_fdc22e">#fdc22e</color>
+    <color name="color_e14123">#e14123</color>
+    <color name="color_ff6000">#ff6000</color>
+    <color name="color_f04644">#f04644</color>
+    <color name="color_ababab">#ababab</color>
+    <!-- 通知中心评论底部弹窗字体颜色 -->
+    <color name="comment_dialog_item_text_color">#ff007aff</color>
+
+    <!-- 95%透明度 -->
+    <color name="color_share_dialog_bg">#F2ffffff</color>
+    <color name="color_share_dialog_bg_night">#F2161616</color>
+
+    <color name="color_login_agreement">#ffa600</color>
+
+</resources>

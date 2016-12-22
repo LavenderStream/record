@@ -1,0 +1,926 @@
+[
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_for_follow_faild.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_for_follow_faild.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_focused_holo.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tag_favorite.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_tag_favorite.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_banner_no_wifi_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_banner_no_wifi_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_square_no_wifi_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_square_no_wifi_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_bg.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_bg.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_chosen_cover_failed.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_chosen_cover_failed.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\story_item_type_jielong.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\story_item_type_jielong.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_user_comment.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_user_comment.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\editor_cursor_right_icon_n.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\editor_cursor_right_icon_n.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\bg_tag_info.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\bg_tag_info.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tag_hot.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_tag_hot.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_photo_local.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_photo_local.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\search_edit_bg.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\search_edit_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\search_edit_bg_night.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\search_edit_bg_night.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_dark.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\favorite_tag.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\favorite_tag.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\previous_load_ing.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\previous_load_ing.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragmen_tab_story_supportcount_pressed.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragmen_tab_story_supportcount_pressed.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\empty_story_line_img.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\empty_story_line_img.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\user_login_bg.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\user_login_bg.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\item_tag_bg_press.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\item_tag_bg_press.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_rectangle_no_wifi.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_rectangle_no_wifi.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_chosen_cover.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_chosen_cover.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\find_item4.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\find_item4.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_tab_list_banner_item.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_tab_list_banner_item.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragmen_tab_story_commentcount_pressed.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragmen_tab_story_commentcount_pressed.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\previous_load_failed.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\previous_load_failed.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_chosen_cover_no_wifi_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_chosen_cover_no_wifi_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_for_follow_faild_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_for_follow_faild_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_button_editor_custom_yellow_bg.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_button_editor_custom_yellow_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_creative_choice_back.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_creative_choice_back.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_user_praise.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_user_praise.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tag_write.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_tag_write.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\splash_slogan.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\splash_slogan.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_author_detail_follow_normal.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_author_detail_follow_normal.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_square_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_square_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\card_loading_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\card_loading_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_huasheng_press.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_huasheng_press.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\back_btn_pressed.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\back_btn_pressed.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragmen_tab_story_commentcount_normal.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragmen_tab_story_commentcount_normal.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_author_detail_follow_normal_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_author_detail_follow_normal_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\find_item2.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\find_item2.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_creative_choice_card_bg.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_creative_choice_card_bg.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_rectangle.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_rectangle.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_creative_btn_normal.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_creative_btn_normal.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\umeng_update_btn_check_off.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\umeng_update_btn_check_off.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_share_bg.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_share_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\umeng_update_btn_check_off_focused_holo_light.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\umeng_update_btn_check_off_focused_holo_light.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\weibo_v_yellow_new.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\weibo_v_yellow_new.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\mybrother.jpg",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\mybrother.jpg"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\editor_btn_bg.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\editor_btn_bg.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\umeng_update_btn_check_on_holo_light.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\umeng_update_btn_check_on_holo_light.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\find_item1.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\find_item1.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\editor_refer_icon_n.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\editor_refer_icon_n.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_square_failed_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_square_failed_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\card_bg.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\card_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\search_tag_press_bg.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\search_tag_press_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_html_refresh.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_html_refresh.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_tag_bg_night.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_tag_bg_night.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\umeng_update_close_bg_tap.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\umeng_update_close_bg_tap.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_avatar_small.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_avatar_small.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tag_share_press.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_tag_share_press.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\umeng_update_btn_check_on_pressed_holo_light.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\umeng_update_btn_check_on_pressed_holo_light.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_banner_failed_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_banner_failed_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_rectangle_failed_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_rectangle_failed_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\umeng_update_btn_check_off_holo_light.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\umeng_update_btn_check_off_holo_light.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_light.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_edittext_bg.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_edittext_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_author_detail_follow.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_author_detail_follow.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\umeng_update_btn_check_off_pressed_holo_light.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\umeng_update_btn_check_off_pressed_holo_light.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_user_collect.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_user_collect.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\find_item3.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\find_item3.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_tag_bg.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_tag_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dilalog_button_editor_cancel.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dilalog_button_editor_cancel.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\user_info_bg.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\user_info_bg.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\tag_gray_bg.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\tag_gray_bg.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_user_setting.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_user_setting.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_creative_btn_selected.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_creative_btn_selected.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\favorite_has_followed.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\favorite_has_followed.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\update_tip.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\update_tip.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_button_hollow.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_button_hollow.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\favorite.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\favorite.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tag_share.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_tag_share.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\user_tip_bg.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\user_tip_bg.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_back_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_back_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\umeng_update_btn_check_on_focused_holo_light.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\umeng_update_btn_check_on_focused_holo_light.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_banner_failed.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_banner_failed.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\weibo_v_blue.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\weibo_v_blue.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\weibo_v_blue_new.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\weibo_v_blue_new.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_chosen_cover_no_wifi.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_chosen_cover_no_wifi.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_close.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_close.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\editor_cursor_left_icon_n.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\editor_cursor_left_icon_n.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_arrow_enter.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_arrow_enter.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_banner_no_wifi.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_banner_no_wifi.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\update_ignore.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\update_ignore.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_button_editor_ingore.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_button_editor_ingore.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\editor_font_icon_n.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\editor_font_icon_n.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_for_follow_no_wifi_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_for_follow_no_wifi_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_custom_bg.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_custom_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_back.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_back.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\card_loading_no_wifi_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\card_loading_no_wifi_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\card_loading_erro.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\card_loading_erro.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_square.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_square.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_button.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_button.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_square_no_wifi.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_square_no_wifi.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\guide_indicator_selected.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\guide_indicator_selected.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\splash_logo.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\splash_logo.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_arrow_right.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_arrow_right.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_banner.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_banner.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_user_notify_center.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_user_notify_center.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tag_favorite_press.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_tag_favorite_press.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_author_detail_follow_pressed.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_author_detail_follow_pressed.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\weibo_v_yellow_new2.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\weibo_v_yellow_new2.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\weibo_v_blue_new2.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\weibo_v_blue_new2.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_chosen_cover_failed_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_chosen_cover_failed_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_item_tag.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_item_tag.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_search.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_search.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\editor_photo_icon_n.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\editor_photo_icon_n.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\empty_story_buton_img.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\empty_story_buton_img.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_rectangle_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_rectangle_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_arrow_detail.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_arrow_detail.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_action_search.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_action_search.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\card_loading.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\card_loading.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_self_add_tag.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_self_add_tag.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\update_install_yellow.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\update_install_yellow.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ios_thumb.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\ios_thumb.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\bg_actionbar_icon.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\bg_actionbar_icon.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_creative_btn_normal_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_creative_btn_normal_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_user_story.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_user_story.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_huasheng_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_huasheng_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_tab_list_banner_indicator.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_tab_list_banner_indicator.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_for_follow.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_for_follow.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_new.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_new.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_tab_list_item_badage.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_tab_list_item_badage.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\guide_indicator_normal.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\guide_indicator_normal.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_rectangle_failed.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_rectangle_failed.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dilalog_button_editor_save.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dilalog_button_editor_save.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_custom_bg_night.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_custom_bg_night.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_tag_bg_n.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_tag_bg_n.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_user_about.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_user_about.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_user_newversion.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_user_newversion.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_delete_story_button2.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_delete_story_button2.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_user_feedback.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_user_feedback.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\editor_link_icon_n.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\editor_link_icon_n.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\editor_line_icon_n.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\editor_line_icon_n.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_tag_write_press.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_tag_write_press.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_chosen_cover_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_chosen_cover_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\search_tag_bg_night.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\search_tag_bg_night.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_collection_delete.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_collection_delete.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_creative_btn_selected_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_creative_btn_selected_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragmen_tab_story_supportcount_normal.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragmen_tab_story_supportcount_normal.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_like_delete.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_like_delete.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_avatar_middle.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_avatar_middle.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\card_loading_no_wifi.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\card_loading_no_wifi.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\item_tag_bg.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\item_tag_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_dark.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_banner_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_banner_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_delete_story_button1.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_delete_story_button1.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_button_editor_custom_bg.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_button_editor_custom_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\favorite_add_follow.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\favorite_add_follow.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_rectangle_no_wifi_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_rectangle_no_wifi_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_square_failed.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_square_failed.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_author_info_head_bg.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_author_info_head_bg.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_for_follow_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_for_follow_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\tag_yellow_bg.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\tag_yellow_bg.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\find_item5.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\find_item5.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\umeng_update_btn_check_on.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\umeng_update_btn_check_on.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_huasheng.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_huasheng.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_action_search_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_action_search_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\umeng_update_close_bg_normal.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\umeng_update_close_bg_normal.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_photo_camera.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_photo_camera.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_search_edit.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_search_edit.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_button_editor_cotinue.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_button_editor_cotinue.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ios_thumb_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\ios_thumb_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\weibo_v_yellow.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\weibo_v_yellow.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\search_tag_press_bg_night.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\search_tag_press_bg_night.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\search_tag_bg.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\search_tag_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\user_avatar_default.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\user_avatar_default.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\card_loading_erro_night.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\card_loading_erro_night.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_close_item.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_close_item.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\loading_for_follow_no_wifi.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\loading_for_follow_no_wifi.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon_user_logout.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\icon_user_logout.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_share_bg_night.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_share_bg_night.9.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_creative_choice_close_tips.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_creative_choice_close_tips.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\fragment_creative_choice_item_img.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\fragment_creative_choice_item_img.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\find_more.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\find_more.png"
+    },
+    {
+        "merged": "D:\\AndroidCode\\Demo\\record\\library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\dialog_tag_bg_s.9.png",
+        "source": "D:\\AndroidCode\\Demo\\record\\library\\src\\main\\res\\drawable-hdpi\\dialog_tag_bg_s.9.png"
+    }
+]

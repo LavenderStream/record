@@ -3,9 +3,11 @@ package org.record.tiny.ui.view;
 import android.app.Activity;
 import android.support.annotation.UiThread;
 
+import com.apkfuns.logutils.LogUtils;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import org.record.tiny.base.BasePresenter;
+import org.record.tiny.net.ApiCallback;
 import org.record.tiny.net.RxSubscriber;
 import org.record.tiny.ui.model.ViewModel;
 import org.record.tiny.utils.Callback;
@@ -23,6 +25,7 @@ import java.util.Date;
 
 import io.reactivex.Flowable;
 import io.reactivex.functions.Consumer;
+import okhttp3.ResponseBody;
 
 @SuppressWarnings("All")
 public class SplashPresenter extends BasePresenter<SplashView> {
@@ -36,6 +39,18 @@ public class SplashPresenter extends BasePresenter<SplashView> {
     }
 
     public void start(Activity activity) {
+        addSubscription(apiStores.getText(), new ApiCallback<ResponseBody>() {
+            @Override
+            public void onSuccess(ResponseBody model) {
+               model.source();
+                LogUtils.d("SplashPresenter -> onSuccess: ");
+            }
+
+            @Override
+            public void onFailure(int errorCode) {
+                LogUtils.d("SplashPresenter -> errorCode: " + errorCode);
+            }
+        });
         new RxPermissions(activity).request(Config.getAllPermissions()).subscribe(new Consumer<Boolean>() {
             @Override
             public void accept(Boolean granted) throws Exception {

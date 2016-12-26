@@ -3,10 +3,8 @@ package org.record.tiny.net;
 import com.apkfuns.logutils.LogUtils;
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
 
-import org.record.tiny.utils.Callback;
-
 @SuppressWarnings("All")
-public abstract class ApiCallback<M> implements Callback.Subscriber<M> {
+public abstract class ApiCallback<M> implements RxSubscriber<M> {
     public static final int UNKNOWN_NET_ERROR = 0x500;
 
     public abstract void onSuccess(M model);
@@ -30,5 +28,10 @@ public abstract class ApiCallback<M> implements Callback.Subscriber<M> {
         } else {
             onFailure(UNKNOWN_NET_ERROR);
         }
+    }
+
+    @Override
+    public void onComplete() {
+
     }
 }

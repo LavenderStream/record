@@ -5,6 +5,9 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Flowable;
 import io.reactivex.functions.Function;
 
+/**
+ * 计数器
+ */
 @SuppressWarnings("All")
 public class RxCountDown {
     public static Flowable<Integer> countdown(int time) {

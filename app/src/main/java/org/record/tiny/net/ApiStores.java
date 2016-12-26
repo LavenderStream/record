@@ -1,5 +1,6 @@
 package org.record.tiny.net;
 
+import org.record.tiny.demo.model.FavoriteNet;
 import org.record.tiny.demo.model.StoryNet;
 import org.record.tiny.demo.model.Tab;
 import org.record.tiny.demo.model.UserNet;
@@ -26,14 +27,19 @@ public interface ApiStores {
     @GET("huasheng/client/operation/show.json")
     Observable<StoryNet> getStorys(@QueryMap Map<String, String> params);
 
-
+    @FormUrlEncoded
     @POST("huasheng/client/fav/add.json")
     Observable<ResponseBody> addCollection(@Field("story_id") String stotyId, @Field("access_token") String token);
 
+    @FormUrlEncoded
     @POST("huasheng/client/fav/remove.json")
     Observable<ResponseBody> removeCollection(@Field("story_id") String stotyId, @Field("access_token") String token);
 
     @FormUrlEncoded
     @POST("huasheng/client/user/login.json")
     Observable<UserNet> login(@FieldMap Map<String, String> params);
+
+
+    @GET("huasheng/client/user/fav_list.json")
+    Observable<FavoriteNet> getFavorite(@QueryMap Map<String, String> params);
 }

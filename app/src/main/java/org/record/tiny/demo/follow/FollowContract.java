@@ -9,9 +9,9 @@ public class FollowContract {
 
         void removeCollection();
 
-        void getWeb(String webUrl);
+        void initCollection(boolean isColl, String str);
 
-        void getCollectionState(boolean isCollection);
+        void getWeb(String webUrl);
 
         void showLoading();
 
@@ -19,9 +19,9 @@ public class FollowContract {
     }
 
     interface Presenter {
-        void add(String storyId);
+        void add();
 
-        void remove(String storyId);
+        void remove();
     }
 
 }

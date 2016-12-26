@@ -1,8 +1,11 @@
 package org.record.tiny.demo.follow;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.apkfuns.logutils.LogUtils;
 
 import org.record.tiny.R;
 import org.record.tiny.base.MvpActivity;
@@ -21,15 +24,18 @@ public class FollowActivity extends MvpActivity<FollowPresenter> implements Foll
     TextView mFollowTextView;
     @Bind(R.id.adv_web_view)
     AdvertView mWebView;
+    @Bind(R.id.ll_fragment_layout)
+    View mFragmentLayout;
 
     private FollowViewWrapper mFollowViewWrapper;
+    private boolean isCollection = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_follow);
 
-        mFollowViewWrapper = new FollowViewWrapper(this, mFollowButton);
+        mFollowViewWrapper = new FollowViewWrapper(this, mFollowButton, mFollowTextView);
         mvpPresenter.start();
     }
 
@@ -40,29 +46,35 @@ public class FollowActivity extends MvpActivity<FollowPresenter> implements Foll
 
     @Override
     public void addCollection() {
-        mFollowTextView.setText(getString(R.string.story_favorite));
+        mFollowViewWrapper.addFollow();
     }
 
     @Override
     public void removeCollection() {
-        mFollowTextView.setText("未关注");
+        mFollowViewWrapper.cancelFollow();
+    }
+
+    @Override
+    public void initCollection(boolean isColl, String str) {
+        mFollowViewWrapper.setCollection(!isColl);
+        mFollowTextView.setText(str);
     }
 
     @Override
     public void getWeb(String web) {
-        mWebView.load(web);
-    }
-
-    @Override
-    public void getCollectionState(boolean isCollection) {
-        mFollowTextView.setText(isCollection ? getString(R.string.story_favorite) : "未关注");
+        //mWebView.load(web);
     }
 
     @OnClick(R.id.rl_follow_layout)
     void goFollow() {
-        mFollowViewWrapper.showMenuBar();
-    }
+        LogUtils.d("FollowActivity -> goFollow: " + mFollowViewWrapper.isCollection());
+        if (!mFollowViewWrapper.isCollection()) {
+            mvpPresenter.remove();
+        } else {
+            mvpPresenter.add();
+        }
 
+    }
     @Override
     public void showLoading() {
     }

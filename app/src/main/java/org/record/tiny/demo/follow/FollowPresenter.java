@@ -1,28 +1,32 @@
 package org.record.tiny.demo.follow;
 
+import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import com.apkfuns.logutils.LogUtils;
+import com.google.common.collect.Sets;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.record.tiny.base.BasePresenter;
-import org.record.tiny.demo.model.CollectionRealm;
 import org.record.tiny.demo.model.User;
 import org.record.tiny.demo.ui.adapter.StoryRecyclerViewAdapter;
 import org.record.tiny.net.ApiCallback;
 import org.record.tiny.ui.RecordApplication;
 import org.record.tiny.utils.Error;
 import org.record.tiny.utils.EventIntent;
-import org.record.tiny.utils.RealmUtils;
 
-import io.realm.Realm;
+import java.util.Set;
+
 import okhttp3.ResponseBody;
+
+import static android.content.Context.MODE_PRIVATE;
 
 @SuppressWarnings("All")
 public class FollowPresenter extends BasePresenter<FollowContract.View> implements FollowContract.Presenter {
-    // 保存在分别的收藏数据
-    private CollectionRealm mCollectionRealm;
     // 点击查看的文章id
     private String mArticleId;
+    private Set<String> mArticleIdSet = Sets.newHashSet();
 
     public FollowPresenter(FollowContract.View mvpView) {
         super(mvpView);
@@ -30,36 +34,35 @@ public class FollowPresenter extends BasePresenter<FollowContract.View> implemen
 
     @Override
     public void start() {
+        getArtcleId();
         mArticleId = (String) EventIntent.get("article_id");
+
         LogUtils.d("FollowPresenter -> start articleId: " + mArticleId);
         User user = RecordApplication.getInstance().getUser();
         if (user == null) {
-            mvpView.getCollectionState(false);
+            mvpView.initCollection(false, "收藏");
         } else {
-            mCollectionRealm = RealmUtils.getInstance().queryObjectAlls(CollectionRealm.class).contains("id", mArticleId).findFirst();
-            if (mCollectionRealm == null) {
-                mvpView.getCollectionState(false);
+            if (mArticleIdSet.contains(mArticleId)) {
+                mvpView.initCollection(true, "取消收藏");
             } else {
-                mvpView.getCollectionState(mCollectionRealm.isCollection());
+                mvpView.initCollection(false, "收藏");
             }
         }
         getWebUrl();
     }
 
     @Override
-    public void add(String storyId) {
+    public void add() {
         mvpView.showLoading();
         String token = RecordApplication.getInstance().getUser().getToken();
         if (!TextUtils.isEmpty(token)) {
-            addSubscription(apiStores.addCollection(storyId, token), new ApiCallback<ResponseBody>() {
+            addSubscription(apiStores.addCollection(mArticleId, token), new ApiCallback<ResponseBody>() {
                 @Override
                 public void onSuccess(ResponseBody model) {
-                    Realm.getDefaultInstance().beginTransaction();
-                    if (mCollectionRealm == null) {
-                        mCollectionRealm.setId(Integer.valueOf(mArticleId));
-                    }
-                    mCollectionRealm.setCollection(true);
-                    Realm.getDefaultInstance().commitTransaction();
+                    LogUtils.d("FollowPresenter -> onSuccess: " + model);
+
+                    mArticleIdSet.add(mArticleId);
+                    saveArtcleId();
 
                     mvpView.addCollection();
                     mvpView.hideLoading();
@@ -67,6 +70,7 @@ public class FollowPresenter extends BasePresenter<FollowContract.View> implemen
 
                 @Override
                 public void onFailure(int errorCode) {
+                    LogUtils.d("FollowPresenter -> onFailure: ");
                     mvpView.hideLoading();
                     mvpView.error(Error.UNKNOWN_NET_ERROR);
                 }
@@ -79,20 +83,16 @@ public class FollowPresenter extends BasePresenter<FollowContract.View> implemen
     }
 
     @Override
-    public void remove(String storyId) {
+    public void remove() {
         mvpView.showLoading();
         String token = RecordApplication.getInstance().getUser().getToken();
         if (!TextUtils.isEmpty(token)) {
-            addSubscription(apiStores.removeCollection(storyId, token), new ApiCallback<ResponseBody>() {
+            addSubscription(apiStores.removeCollection(mArticleId, token), new ApiCallback<ResponseBody>() {
                 @Override
                 public void onSuccess(ResponseBody model) {
-
-                    Realm.getDefaultInstance().beginTransaction();
-                    if (mCollectionRealm == null) {
-                        mCollectionRealm.setId(Integer.valueOf(mArticleId));
-                    }
-                    mCollectionRealm.setCollection(false);
-                    Realm.getDefaultInstance().commitTransaction();
+                    LogUtils.d("FollowPresenter -> onSuccess: ");
+                    mArticleIdSet.remove(mArticleId);
+                    saveArtcleId();
 
                     mvpView.removeCollection();
                     mvpView.hideLoading();
@@ -118,4 +118,35 @@ public class FollowPresenter extends BasePresenter<FollowContract.View> implemen
             mvpView.getWeb(webUrl);
     }
 
+    private void getArtcleId() {
+        SharedPreferences sp = RecordApplication.getContext().getSharedPreferences("fav", MODE_PRIVATE);
+        Gson gson = new Gson();
+        mArticleIdSet.clear();
+
+        Set<String> artcleIdSet = gson.fromJson(sp.getString("fav_set_string", ""), new TypeToken<Set<String>>() {
+        }.getType());
+        if (artcleIdSet == null)
+            return;
+        mArticleIdSet.clear();
+        mArticleIdSet.addAll(artcleIdSet);
+
+        for (String s : mArticleIdSet) {
+            LogUtils.d("FollowPresenter -> getArtcleId: " + s);
+        }
+    }
+
+    private void saveArtcleId() {
+        SharedPreferences sp = RecordApplication.getContext().getSharedPreferences("fav", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        Gson gson = new Gson();
+        LogUtils.d("FollowPresenter -> saveArtcleId: " + gson.toJson(mArticleIdSet));
+        editor.putString("fav_set_string", gson.toJson(mArticleIdSet));
+        editor.apply();
+    }
+
+    @Override
+    public void detachView() {
+        super.detachView();
+        saveArtcleId();
+    }
 }

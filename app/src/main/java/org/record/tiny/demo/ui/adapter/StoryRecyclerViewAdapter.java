@@ -53,7 +53,7 @@ public class StoryRecyclerViewAdapter extends SimpleRecyclerAdapter<StoryItem> {
             @Override
             public void onClick(View v) {
                 EventIntent.getInstance()
-                        .put("web_url", item.getLink())
+                        .put("web_url", item.getImage())
                         .put("article_id", item.getArticleId() + "")
                         .send();
                 mContext.startActivity(new Intent(mContext, FollowActivity.class));

@@ -1,15 +1,15 @@
 package org.record.tiny.utils;
 
 import android.Manifest;
+import android.content.pm.ApplicationInfo;
 
 import org.record.tiny.R;
+import org.record.tiny.ui.RecordApplication;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 @SuppressWarnings("All")
 public class Config {
-    public static final boolean DEBUG = true;
-
     public static final int DELAYED_TIME = 1800;
     public static final String DEFAULT_FONT_FILE = "font.ttf";
     public static final String DATABASE_NAME = "record.realm";
@@ -35,5 +35,14 @@ public class Config {
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.READ_PHONE_STATE};
+    }
+
+    public static boolean isApkInDebug() {
+        try {
+            ApplicationInfo info = RecordApplication.getContext().getApplicationInfo();
+            return (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

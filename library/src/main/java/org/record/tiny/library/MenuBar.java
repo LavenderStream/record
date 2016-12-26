@@ -7,9 +7,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 
 public class MenuBar extends PopupWindow {
+
+
+    public interface OnClickListener {
+        void add();
+
+        void jump();
+    }
+
+    OnClickListener mOnClickListener = null;
+
+    public void setOnClickListering(OnClickListener l) {
+        mOnClickListener = l;
+    }
     private View conentView;
 
     public MenuBar(final Activity context) {
@@ -42,7 +56,16 @@ public class MenuBar extends PopupWindow {
             @Override
             public void onClick(View arg0) {
                 // do something you need here
+                mOnClickListener.add();
+                MenuBar.this.dismiss();
+            }
+        });
 
+        conentView.findViewById(R.id.bt_jump).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // do something you need here
+                mOnClickListener.jump();
                 MenuBar.this.dismiss();
             }
         });
@@ -56,9 +79,13 @@ public class MenuBar extends PopupWindow {
     public void showPopupWindow(View parent) {
         if (!this.isShowing()) {
             // 以下拉方式显示popupwindow
-            this.showAsDropDown(parent, parent.getLayoutParams().width / 2, 5);
+            this.showAsDropDown(parent, parent.getLayoutParams().width, 0);
         } else {
             this.dismiss();
         }
+    }
+
+    public void setLeftButtonText(String text) {
+        ((TextView) conentView.findViewById(R.id.settings)).setText(text);
     }
 }

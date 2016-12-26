@@ -21,4 +21,18 @@
         android:layout_height="1dp"
         android:background="#BDBDBD"/>
 
+    <Button
+        android:id="@+id/bt_jump"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="跳转"
+        android:textSize="16sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD"/>
+
 </LinearLayout>

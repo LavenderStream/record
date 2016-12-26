@@ -73,9 +73,13 @@ public class TabFragment extends SimpleFragment<TabPresenter> implements TabView
     public void onCreateView() {
         super.onCreateView();
 
+        mPaging = StoryRecyclerViewWrapper.FIRST_PAGE;
+
         mRecyclerViewWrapper = new StoryRecyclerViewWrapper(getContext(), mSwipeRefreshLayout, mRecyclerViewLayout, mStoryItems, mStoryHeaderItems);
         mRecyclerViewWrapper.setOnScrollListening(this);
         mRecyclerViewWrapper.setRefresh(true);
+        mStoryItems.clear();
+        mRecyclerViewWrapper.notifyDataSetChanged();
         mvpPresenter.getTabDatas(StoryRecyclerViewWrapper.FIRST_PAGE, this.id);
     }
 
@@ -102,6 +106,7 @@ public class TabFragment extends SimpleFragment<TabPresenter> implements TabView
     public void error(int error) {
         mRecyclerViewWrapper.setRefresh(false);
         // TODO: 12/21/2016 判断错误原因
+        isLoadingMore = true;
         mPaging--;
     }
 
@@ -128,5 +133,6 @@ public class TabFragment extends SimpleFragment<TabPresenter> implements TabView
         if (mRecyclerViewWrapper != null) {
             mRecyclerViewWrapper.release();
         }
+        mStoryHeaderItems.clear();
     }
 }

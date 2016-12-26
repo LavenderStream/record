@@ -6,6 +6,8 @@ import org.record.tiny.demo.model.UserNet;
 
 import java.util.Map;
 
+import okhttp3.ResponseBody;
+import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -24,7 +26,14 @@ public interface ApiStores {
     @GET("huasheng/client/operation/show.json")
     Observable<StoryNet> getStorys(@QueryMap Map<String, String> params);
 
+
+    @POST("huasheng/client/fav/add.json")
+    Observable<ResponseBody> addCollection(@Field("story_id") String stotyId, @Field("access_token") String token);
+
+    @POST("huasheng/client/fav/remove.json")
+    Observable<ResponseBody> removeCollection(@Field("story_id") String stotyId, @Field("access_token") String token);
+
     @FormUrlEncoded
-    @POST("huasheng/user/login.json")
+    @POST("huasheng/client/user/login.json")
     Observable<UserNet> login(@FieldMap Map<String, String> params);
 }

@@ -29,11 +29,12 @@ public class EditPresenter extends BasePresenter<EditView> {
     private ViewModel mViewModel;
     private Article mArticle;
 
-    public EditPresenter(EditView context) {
-        attachView(context);
+    private boolean flag = false;
+
+    public EditPresenter(EditView mvpView) {
+        super(mvpView);
     }
 
-    private boolean flag = false;
     public void start() {
         mArticle = (Article) EventIntent.getInstance().get("intent_article");
         setView(mArticle);

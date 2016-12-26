@@ -20,6 +20,7 @@ import java.util.List;
 @SuppressWarnings("ALl")
 public class StoryRecyclerViewAdapter extends SimpleRecyclerAdapter<StoryItem> {
 
+    public static final String S_DEFAULT_IMAGE = "http://4493bz.1985t.com/uploads/allimg/150127/4-15012G52133.jpg";
     private Context mContext;
 
     public StoryRecyclerViewAdapter(Context ctx, List<StoryItem> list) {
@@ -43,16 +44,18 @@ public class StoryRecyclerViewAdapter extends SimpleRecyclerAdapter<StoryItem> {
         holder.getTextView(R.id.essence_booktitle).setText(item.getTitle());
 
         if (TextUtils.isEmpty(item.getImage())) {
-            holder.getImageView(R.id.essence_booktcontent_img).setVisibility(View.GONE);
+            Glide.with(mContext).load(S_DEFAULT_IMAGE).centerCrop().into(holder.getImageView(R.id.essence_booktcontent_img));
         } else {
-            holder.getImageView(R.id.essence_booktcontent_img).setVisibility(View.VISIBLE);
             Glide.with(mContext).load(item.getImage()).centerCrop().into(holder.getImageView(R.id.essence_booktcontent_img));
         }
 
         holder.getView(R.id.essence_item_root).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventIntent.getInstance().put("web_url", item.getLink()).send();
+                EventIntent.getInstance()
+                        .put("web_url", item.getLink())
+                        .put("article_id", item.getArticleId() + "")
+                        .send();
                 mContext.startActivity(new Intent(mContext, FollowActivity.class));
             }
         });

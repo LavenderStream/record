@@ -6,7 +6,9 @@ import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import io.realm.RealmModel;
 import io.realm.RealmObject;
+import io.realm.RealmQuery;
 import io.realm.RealmResults;
 
 import static org.record.tiny.utils.Config.DATABASE_NAME;
@@ -35,9 +37,14 @@ public class RealmUtils {
         Realm.getInstance(new RealmConfiguration.Builder().name(DATABASE_NAME).build());
     }
 
-    public RealmResults<? extends RealmObject> queryObjects(Class<? extends RealmObject> clazz) {
+    public <E extends RealmModel> RealmResults<E> queryObjects(Class<E> clazz) {
         Realm realm = Realm.getDefaultInstance();
         return realm.where(clazz).findAll();
+    }
+
+    public <E extends RealmModel> RealmQuery<E> queryObjectAlls(Class<E> clazz) {
+        Realm realm = Realm.getDefaultInstance();
+        return realm.where(clazz);
     }
 
     public void updateObject(final RealmObject object) {

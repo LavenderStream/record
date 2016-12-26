@@ -11,8 +11,8 @@ public class DisplayPresenter extends BasePresenter<DisplayView> {
 
     private RealmResults mArticles;
 
-    public DisplayPresenter(DisplayView context) {
-        attachView(context);
+    public DisplayPresenter(DisplayView mvpView) {
+        super(mvpView);
     }
 
     public void start() {

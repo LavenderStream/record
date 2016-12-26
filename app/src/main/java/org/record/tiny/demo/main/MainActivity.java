@@ -17,7 +17,7 @@ import java.util.List;
 import butterknife.Bind;
 
 @SuppressWarnings("All")
-public class MainActivity extends MvpActivity<MainPresenter> implements MainView {
+public class MainActivity extends MvpActivity<MainPresenter> implements MainContract.View {
     @Bind(R.id.tl_tabs)
     TabLayout mTabLayout;
     @Bind(R.id.vp_fragment_layout)
@@ -31,7 +31,7 @@ public class MainActivity extends MvpActivity<MainPresenter> implements MainView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
 
-        mvpPresenter.checkPermissionsAndRun(this);
+        mvpPresenter.start(this);
     }
 
     @Override

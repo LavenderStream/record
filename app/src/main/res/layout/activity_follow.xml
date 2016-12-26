@@ -17,7 +17,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:text="@string/add_follow"/>
+            android:text="@string/story_favorite"/>
     </RelativeLayout>
 
     <org.record.tiny.library.AdvertView

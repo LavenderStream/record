@@ -18,10 +18,9 @@ import java.util.Map;
 public class TabPresenter extends BasePresenter<TabView> {
     private static final int MAX_PAGE_SIZE = 10;
 
-    public TabPresenter(TabView tabView) {
-        attachView(tabView);
+    public TabPresenter(TabView mvpView) {
+        super(mvpView);
     }
-
     /**
      * 获取每页展示的数据
      */
@@ -51,6 +50,7 @@ public class TabPresenter extends BasePresenter<TabView> {
                     storyItem.setLike(dataBeanX.getLike_count());
                     storyItem.setComment(dataBeanX.getComment_count());
                     storyItem.setLink(dataBeanX.getContent_url());
+                    storyItem.setArticleId(dataBeanX.getStory_id());
                     storyItems.add(storyItem);
                 }
                 mvpView.getHeaders(storyHeaders);

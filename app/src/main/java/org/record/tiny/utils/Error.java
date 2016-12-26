@@ -11,4 +11,6 @@ public class Error {
     public static final int SAVE_BITMAP_ERROR = 0x100;
 
     public static final int UNKNOWN_NET_ERROR = 0x500;
+    // 登入失败
+    public static final int LOGIN_FAIL_ERROR = 0x501;
 }

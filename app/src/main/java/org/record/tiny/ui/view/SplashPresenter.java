@@ -31,8 +31,8 @@ public class SplashPresenter extends BasePresenter<SplashView> {
     private String mLocalInfo = "";
     private ViewModel mViewModel = new ViewModel();
 
-    public SplashPresenter(SplashView context) {
-        attachView(context);
+    public SplashPresenter(SplashView mvpView) {
+        super(mvpView);
     }
 
     public void start(Activity activity) {

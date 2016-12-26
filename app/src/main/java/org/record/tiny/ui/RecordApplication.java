@@ -9,8 +9,17 @@ import org.record.tiny.utils.Config;
 @SuppressWarnings("All")
 public class RecordApplication extends Application {
 
-    public static User sUser = new User();
+    private static User sUser;
     protected static Context sContext;
+
+    private static RecordApplication single = null;
+
+    public static RecordApplication getInstance() {
+        if (single == null) {
+            single = new RecordApplication();
+        }
+        return single;
+    }
 
     public static Context getContext() {
         return sContext;
@@ -24,11 +33,14 @@ public class RecordApplication extends Application {
         Config.configDefaultFont();
     }
 
-    public User getsUser() {
+    public User getUser() {
+        if (sUser == null) {
+            sUser = new User();
+        }
         return sUser;
     }
 
-    public void setsUser(User sUser) {
+    public void setUser(User sUser) {
         this.sUser = sUser;
     }
 }

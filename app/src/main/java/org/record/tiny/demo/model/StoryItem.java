@@ -10,6 +10,7 @@ public class StoryItem {
     private int comment;
     private String image;
     private String link;
+    private int articleId;
 
     public String getUserImage() {
         return userImage;
@@ -73,6 +74,14 @@ public class StoryItem {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public int getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(int articleId) {
+        this.articleId = articleId;
     }
 
     @Override

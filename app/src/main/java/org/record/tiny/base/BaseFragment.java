@@ -49,26 +49,26 @@ public class BaseFragment extends Fragment {
         mCompositeDisposable.add(disposable);
     }
 
-    public void addSubscription(Flowable flowable, final RxSubscriber subscriber) {
+    public <T> void addSubscription(Flowable flowable, final RxSubscriber<T> subscriber) {
         if (mCompositeDisposable == null) {
             mCompositeDisposable = new CompositeDisposable();
         }
         if (subscriber == null) {
-            Log.e(TAG, "Callback.Subscriber is null object");
+            Log.e(TAG, "rx callback is null");
             return;
         }
 
         Disposable disposable = flowable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer() {
+                .subscribe(new Consumer<T>() {
                     @Override
-                    public void accept(Object o) throws Exception {
+                    public void accept(T o) throws Exception {
                         subscriber.onNext(o);
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        subscriber.onNext(throwable);
+                        subscriber.onError(throwable);
                     }
                 }, new Action() {
                     @Override

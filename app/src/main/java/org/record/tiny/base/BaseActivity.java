@@ -59,7 +59,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public void addSubscription(Flowable flowable, final RxSubscriber subscriber) {
+    public <T> void addSubscription(Flowable flowable, final RxSubscriber<T> subscriber) {
         if (mCompositeDisposable == null) {
             mCompositeDisposable = new CompositeDisposable();
         }
@@ -70,15 +70,15 @@ public class BaseActivity extends AppCompatActivity {
 
         Disposable disposable = flowable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer() {
+                .subscribe(new Consumer<T>() {
                     @Override
-                    public void accept(Object o) throws Exception {
+                    public void accept(T o) throws Exception {
                         subscriber.onNext(o);
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        subscriber.onNext(throwable);
+                        subscriber.onError(throwable);
                     }
                 }, new Action() {
                     @Override
@@ -89,7 +89,7 @@ public class BaseActivity extends AppCompatActivity {
         mCompositeDisposable.add(disposable);
     }
 
-    public void addSubscription(CompositeDisposable disposable) {
+    public void addSubscription(Disposable disposable) {
         if (mCompositeDisposable == null) {
             mCompositeDisposable = new CompositeDisposable();
         }

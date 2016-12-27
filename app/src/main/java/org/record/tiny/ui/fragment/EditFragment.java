@@ -8,21 +8,21 @@ import org.record.tiny.R;
 import org.record.tiny.base.SimpleFragment;
 import org.record.tiny.component.CircleButton;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 @SuppressWarnings("All")
 public class EditFragment extends SimpleFragment<EditPresenter> implements EditView {
 
-    @Bind(R.id.tv_local_edit)
+    @BindView(R.id.tv_local_edit)
     EditText mLocalEditText;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTitleTextView;
-    @Bind(R.id.bt_edit)
+    @BindView(R.id.bt_edit)
     CircleButton mSaveButton;
-    @Bind(R.id.et_content_layout)
+    @BindView(R.id.et_content_layout)
     EditText mContentLayout;
-    @Bind(R.id.activity_edit)
+    @BindView(R.id.activity_edit)
     RelativeLayout mlayout;
 
     public EditFragment() {

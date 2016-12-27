@@ -14,15 +14,15 @@ import org.record.tiny.utils.EventIntent;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 @SuppressWarnings("All")
 public class DisplayFragment extends SimpleFragment<DisplayPresenter> implements DisplayView, DisplayRecyclerAdapter.OnItemListener {
 
-    @Bind(R.id.xrv_display_layout)
+    @BindView(R.id.xrv_display_layout)
     XRecyclerView mRecyclerView;
-    @Bind(R.id.bt_edit)
+    @BindView(R.id.bt_edit)
     View mEditButton;
     private View rootView;
 

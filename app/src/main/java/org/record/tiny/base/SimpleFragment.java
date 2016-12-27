@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public abstract class SimpleFragment<P extends BasePresenter> extends BaseFragment {
 
     protected View mRootView;
     protected P mvpPresenter;
+    protected Unbinder unbinder;
 
     @Nullable
     @Override
@@ -24,7 +26,7 @@ public abstract class SimpleFragment<P extends BasePresenter> extends BaseFragme
             }
         } else {
             mRootView = inflater.inflate(createViewLayoutId(), null);
-            ButterKnife.bind(this, mRootView);
+            unbinder = ButterKnife.bind(this, mRootView);
             mvpPresenter = createPresenter();
             onCreate();
         }
@@ -49,6 +51,9 @@ public abstract class SimpleFragment<P extends BasePresenter> extends BaseFragme
         super.onDestroyView();
         if (mvpPresenter != null) {
             mvpPresenter.detachView();
+        }
+        if (unbinder != null) {
+            unbinder.unbind();
         }
     }
 }

@@ -6,17 +6,17 @@ import android.widget.TextView;
 
 import org.record.tiny.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 @SuppressWarnings("All")
 public class PicturePreviewWrapper {
 
-    @Bind(R.id.tv_location)
+    @BindView(R.id.tv_location)
     TextView mLocationTextView;
-    @Bind(R.id.tv_context)
+    @BindView(R.id.tv_context)
     VerticalTextView mContextTextView;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTitleTextView;
     private String mTitle;
     private String mLocation;

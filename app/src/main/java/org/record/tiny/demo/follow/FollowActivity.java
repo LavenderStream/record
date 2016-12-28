@@ -5,8 +5,6 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.apkfuns.logutils.LogUtils;
-
 import org.record.tiny.R;
 import org.record.tiny.base.MvpActivity;
 import org.record.tiny.demo.ui.view.FollowViewWrapper;
@@ -67,7 +65,6 @@ public class FollowActivity extends MvpActivity<FollowPresenter> implements Foll
 
     @OnClick(R.id.rl_follow_layout)
     void goFollow() {
-        LogUtils.d("FollowActivity -> goFollow: " + mFollowViewWrapper.isCollection());
         if (!mFollowViewWrapper.isCollection()) {
             mvpPresenter.remove();
         } else {

@@ -80,11 +80,16 @@ public class TabFragment extends SimpleFragment<TabPresenter> implements TabView
         mRecyclerViewWrapper.setRefresh(true);
         mStoryItems.clear();
         mRecyclerViewWrapper.notifyDataSetChanged();
+
         mvpPresenter.getTabDatas(StoryRecyclerViewWrapper.FIRST_PAGE, this.id);
     }
 
     @Override
     public void getDatas(List<StoryItem> storys) {
+        // 当刷新或者首次加载时清除数据
+        if (mPaging == StoryRecyclerViewWrapper.FIRST_PAGE)
+            mStoryItems.clear();
+
         mStoryItems.addAll(storys);
 
         mRecyclerViewWrapper.notifyDataSetChanged();
@@ -105,6 +110,8 @@ public class TabFragment extends SimpleFragment<TabPresenter> implements TabView
     @Override
     public void error(int error) {
         mRecyclerViewWrapper.setRefresh(false);
+        mRecyclerViewWrapper.notifyDataSetChanged();
+
         // TODO: 12/21/2016 判断错误原因
         isLoadingMore = true;
         mPaging--;
@@ -122,8 +129,9 @@ public class TabFragment extends SimpleFragment<TabPresenter> implements TabView
 
     @Override
     public void onRefresh() {
-        mStoryItems.clear();
+
         mStoryHeaderItems.clear();
+        mPaging = StoryRecyclerViewWrapper.FIRST_PAGE;
         mvpPresenter.getTabDatas(StoryRecyclerViewWrapper.FIRST_PAGE, this.id);
     }
 

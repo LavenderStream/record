@@ -37,7 +37,6 @@ public class FollowPresenter extends BasePresenter<FollowContract.View> implemen
         getArtcleId();
         mArticleId = (String) EventIntent.get("article_id");
 
-        LogUtils.d("FollowPresenter -> start articleId: " + mArticleId);
         User user = RecordApplication.getInstance().getUser();
         if (user == null) {
             mvpView.initCollection(false, "收藏");

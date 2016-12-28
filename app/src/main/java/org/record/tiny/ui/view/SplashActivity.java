@@ -26,7 +26,6 @@ public class SplashActivity extends MvpActivity<SplashPresenter> implements Spla
 
     @Override
     public void startMainActivity() {
-        LogUtils.d("SplashActivity -> startMainActivity: ");
         startActivity(new Intent(this, MainActivity.class));
         SplashActivity.this.finish();
     }

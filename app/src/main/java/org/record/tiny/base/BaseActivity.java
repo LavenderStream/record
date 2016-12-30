@@ -64,7 +64,7 @@ public class BaseActivity extends AppCompatActivity {
             mCompositeDisposable = new CompositeDisposable();
         }
         if (subscriber == null) {
-            Log.e(TAG, "Callback.Subscriber is null object");
+            Log.e(TAG, "rx callback is null");
             return;
         }
 
@@ -101,12 +101,13 @@ public class BaseActivity extends AppCompatActivity {
             mCompositeDisposable.clear();
     }
 
+    /**
+     * 配置全局字体
+     */
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
-
-
     public void addFragment(int containerViewId, Fragment fragment) {
         addFragment(containerViewId, fragment, false);
     }

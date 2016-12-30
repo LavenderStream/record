@@ -23,7 +23,7 @@ public abstract class ApiCallback<M> implements RxSubscriber<M> {
             HttpException httpException = (HttpException) e;
             int code = httpException.code();
             String msg = httpException.getMessage();
-            LogUtils.i("ApiCallback -> onError: " + code);
+            LogUtils.i("network -> onError: " + code);
             onFailure(code);
         } else {
             onFailure(UNKNOWN_NET_ERROR);

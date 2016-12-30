@@ -35,13 +35,6 @@ public class BaseFragment extends Fragment {
         onUnsubscribe();
     }
 
-    public void onUnsubscribe() {
-        //取消注册，以避免内存泄露
-        if (mCompositeDisposable != null) {
-            mCompositeDisposable.clear();
-        }
-    }
-
     public void addSubscription(CompositeDisposable disposable) {
         if (mCompositeDisposable == null) {
             mCompositeDisposable = new CompositeDisposable();
@@ -77,5 +70,12 @@ public class BaseFragment extends Fragment {
                     }
                 });
         mCompositeDisposable.add(disposable);
+    }
+
+    public void onUnsubscribe() {
+        //取消注册，以避免内存泄露
+        if (mCompositeDisposable != null) {
+            mCompositeDisposable.clear();
+        }
     }
 }

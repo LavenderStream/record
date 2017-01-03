@@ -37,7 +37,6 @@ public abstract class SimpleFragment<P extends BasePresenter> extends BaseFragme
 
     protected abstract void onCreate();
 
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

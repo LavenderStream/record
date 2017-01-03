@@ -109,7 +109,6 @@ public class SplashPresenter extends BasePresenter<SplashView> {
         });
     }
 
-
     private void getTimeInfo() {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date curDate = new Date(System.currentTimeMillis());

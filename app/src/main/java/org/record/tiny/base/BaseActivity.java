@@ -6,12 +6,11 @@ import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
 
 import org.record.tiny.net.ApiStores;
 import org.record.tiny.net.AppClient;
 import org.record.tiny.net.RxSubscriber;
+import org.record.tiny.utils.DisplayUtil;
 
 import butterknife.ButterKnife;
 import io.reactivex.Flowable;
@@ -33,25 +32,11 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
+        DisplayUtil.myStatusBar(this);
         super.setContentView(layoutResID);
         ButterKnife.bind(this);
         mActivity = this;
     }
-
-    @Override
-    public void setContentView(View view) {
-        super.setContentView(view);
-        ButterKnife.bind(this);
-        mActivity = this;
-    }
-
-    @Override
-    public void setContentView(View view, ViewGroup.LayoutParams params) {
-        super.setContentView(view, params);
-        ButterKnife.bind(this);
-        mActivity = this;
-    }
-
 
     @Override
     protected void onDestroy() {

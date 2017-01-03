@@ -128,10 +128,6 @@ public class FollowPresenter extends BasePresenter<FollowContract.View> implemen
             return;
         mArticleIdSet.clear();
         mArticleIdSet.addAll(artcleIdSet);
-
-        for (String s : mArticleIdSet) {
-            LogUtils.d("FollowPresenter -> getArtcleId: " + s);
-        }
     }
 
     private void saveArtcleId() {

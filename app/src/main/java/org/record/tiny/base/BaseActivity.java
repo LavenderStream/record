@@ -4,8 +4,6 @@ import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.ViewGroup;
 
 import org.record.tiny.net.ApiStores;
 import org.record.tiny.net.AppClient;
@@ -31,21 +29,6 @@ public class BaseActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mActivity = this;
     }
-
-    @Override
-    public void setContentView(View view) {
-        super.setContentView(view);
-        ButterKnife.bind(this);
-        mActivity = this;
-    }
-
-    @Override
-    public void setContentView(View view, ViewGroup.LayoutParams params) {
-        super.setContentView(view, params);
-        ButterKnife.bind(this);
-        mActivity = this;
-    }
-
 
     @Override
     protected void onDestroy() {

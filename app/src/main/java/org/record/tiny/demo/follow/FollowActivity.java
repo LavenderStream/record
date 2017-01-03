@@ -5,6 +5,8 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.apkfuns.logutils.LogUtils;
+
 import org.record.tiny.R;
 import org.record.tiny.base.MvpActivity;
 import org.record.tiny.demo.ui.view.FollowViewWrapper;
@@ -32,7 +34,6 @@ public class FollowActivity extends MvpActivity<FollowPresenter> implements Foll
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_follow);
-
         mFollowViewWrapper = new FollowViewWrapper(this, mFollowButton, mFollowTextView);
         mvpPresenter.start();
     }
@@ -60,7 +61,8 @@ public class FollowActivity extends MvpActivity<FollowPresenter> implements Foll
 
     @Override
     public void getWeb(String web) {
-        //mWebView.load(web);
+        LogUtils.d("FollowActivity -> getWeb: " + web);
+        mWebView.load(web);
     }
 
     @OnClick(R.id.rl_follow_layout)
@@ -70,8 +72,13 @@ public class FollowActivity extends MvpActivity<FollowPresenter> implements Foll
         } else {
             mvpPresenter.add();
         }
-
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     @Override
     public void showLoading() {
     }

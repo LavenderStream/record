@@ -2,36 +2,29 @@ package org.record.tiny.demo.main;
 
 import android.os.Bundle;
 import android.support.annotation.UiThread;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 
-import com.google.common.collect.Lists;
+import com.google.gson.Gson;
 
 import org.record.tiny.R;
-import org.record.tiny.base.MvpActivity;
+import org.record.tiny.demo.favorite.FavoriteFragment;
+import org.record.tiny.demo.fragment.ChoiceFragment;
 import org.record.tiny.demo.model.Tab;
-import org.record.tiny.demo.ui.view.StoryViewPagerWrapper;
 
 import java.util.List;
 
-import butterknife.Bind;
-
 @SuppressWarnings("All")
-public class MainActivity extends MvpActivity<MainPresenter> implements MainContract.View {
-    @Bind(R.id.tl_tabs)
-    TabLayout mTabLayout;
-    @Bind(R.id.vp_fragment_layout)
-    ViewPager mViewPageLayout;
-
-    private List<Tab.DataBean> mTabList = Lists.newArrayList();
-    private StoryViewPagerWrapper mViewPagerWrapper;
+public class MainActivity extends TabStyleActivity<MainPresenter> implements MainContract.View {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo);
 
         mvpPresenter.start(this);
+    }
+
+    @Override
+    protected int createViewLayoutId() {
+        return R.layout.activity_demo;
     }
 
     @Override
@@ -42,11 +35,10 @@ public class MainActivity extends MvpActivity<MainPresenter> implements MainCont
     @UiThread
     @Override
     public void getTabs(List<Tab.DataBean> tabs) {
-        mTabList.clear();
-        mTabList.addAll(tabs);
-
-        mViewPagerWrapper = new StoryViewPagerWrapper(this, getSupportFragmentManager(), mTabList,
-                mTabLayout, mViewPageLayout);
+        Bundle bundle = new Bundle();
+        Gson gone = new Gson();
+        bundle.putString("tab_list", gone.toJson(tabs));
+        mViewWrapper.setTab(0, bundle);
     }
 
     @Override
@@ -59,5 +51,11 @@ public class MainActivity extends MvpActivity<MainPresenter> implements MainCont
 
     @Override
     public void error(int error) {
+
+    }
+
+    @Override
+    public Class[] getFragments() {
+        return new Class[]{ChoiceFragment.class, FavoriteFragment.class};
     }
 }

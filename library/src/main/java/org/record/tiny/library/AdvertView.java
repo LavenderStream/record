@@ -43,6 +43,7 @@ public class AdvertView extends RelativeLayout {
         addView(webView);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
         webSettings.setAllowFileAccess(true);
         HSClientJavaScript javaScript = new HSClientJavaScript();
         javaScript.setListener(new Callback() {

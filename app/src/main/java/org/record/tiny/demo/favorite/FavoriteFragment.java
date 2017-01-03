@@ -86,11 +86,14 @@ public class FavoriteFragment extends SimpleFragment<FavoritePresenter> implemen
                 }
             }
         });
-
         mFavorites.clear();
         mAdapter.notifyDataSetChanged();
-
         mvpPresenter.start(mPaging);
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
     }
 
     @Override
@@ -100,6 +103,18 @@ public class FavoriteFragment extends SimpleFragment<FavoritePresenter> implemen
         mPaging--;
     }
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden) {
+            mFavorites.clear();
+            mAdapter.notifyDataSetChanged();
+            mvpPresenter.start(mPaging);
+        } else {
+            // disconn net request
+            onUnsubscribe();
+        }
+    }
 
     @Override
     public void loading() {

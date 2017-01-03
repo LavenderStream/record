@@ -344,6 +344,7 @@
     <string name="click_refresh1">上次阅读到这里，</string>
     <string name="click_refresh2">点击刷新</string>
     <string name="sign_works">签</string>
+    <string name="featured">精选</string>
 
     <!--登录-->
     <string name="login_other">使用其他方式登录</string>

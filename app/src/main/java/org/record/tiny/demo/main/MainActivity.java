@@ -3,6 +3,7 @@ package org.record.tiny.demo.main;
 import android.os.Bundle;
 import android.support.annotation.UiThread;
 
+import com.apkfuns.logutils.LogUtils;
 import com.google.gson.Gson;
 
 import org.record.tiny.R;
@@ -35,11 +36,12 @@ public class MainActivity extends TabStyleActivity<MainPresenter> implements Mai
     @UiThread
     @Override
     public void getTabs(List<Tab.DataBean> tabs) {
+        LogUtils.d("MainActivity -> getTabs: " + tabs);
         Bundle bundle = new Bundle();
         Gson gone = new Gson();
         bundle.putString("tab_list", gone.toJson(tabs));
-        mViewWrapper.setTab(0, bundle);
-    }
+    mViewWrapper.setTab(0, bundle);
+}
 
     @Override
     public void showLoading() {

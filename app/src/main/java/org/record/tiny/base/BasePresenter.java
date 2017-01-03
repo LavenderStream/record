@@ -17,18 +17,15 @@ import io.reactivex.schedulers.Schedulers;
 
 @SuppressWarnings("All")
 public class BasePresenter<V> {
+
     private static final String TAG = BasePresenter.class.getSimpleName();
 
     public V mvpView;
     protected ApiStores apiStores;
     private CompositeDisposable mCompositeDisposable;
 
-    /**
-     * 使用了butterknife注入框架，在setContentView方法中注册view
-     * 不能再attachView方法中直接开始业务，所以提供一个start方法
-     * 需要的时候进行复写
-     */
-    public void start() {
+    public BasePresenter(V view) {
+        attachView(view);
     }
 
     public void attachView(V mvpView) {
@@ -46,6 +43,13 @@ public class BasePresenter<V> {
         if (mCompositeDisposable != null) {
             mCompositeDisposable.clear();
         }
+    }
+
+    public void addSubscription(Disposable disposable) {
+        if (mCompositeDisposable == null) {
+            mCompositeDisposable = new CompositeDisposable();
+        }
+        mCompositeDisposable.add(disposable);
     }
 
     public void addSubscription(Flowable flowable, final RxSubscriber subscriber) {

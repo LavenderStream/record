@@ -2,6 +2,11 @@
     <string name="app_name">record</string>
     <string name="splash_flag">小记</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add">记</string>
+    <string name="del">删</string>
+    <string name="update">改</string>
+    <string name="preview">看</string>
+    <string name="send">发</string>
+    <string name="save">存</string>
+    <string name="end">完</string>
 </resources>

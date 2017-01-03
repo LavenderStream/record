@@ -1,4 +1,4 @@
-package org.record.tiny.ui.view;
+package org.record.tiny.ui.main;
 
 import android.app.Activity;
 import android.support.annotation.UiThread;
@@ -31,8 +31,8 @@ public class SplashPresenter extends BasePresenter<SplashView> {
     private String mLocalInfo = "";
     private ViewModel mViewModel = new ViewModel();
 
-    public SplashPresenter(SplashView context) {
-        attachView(context);
+    public SplashPresenter(SplashView view) {
+        super(view);
     }
 
     public void start(Activity activity) {
@@ -118,7 +118,7 @@ public class SplashPresenter extends BasePresenter<SplashView> {
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(date);
             int year = calendar.get(Calendar.YEAR);
-            int month = calendar.get(Calendar.MONTH);
+            int month = calendar.get(Calendar.MONTH) + 1;
             int day = calendar.get(Calendar.DAY_OF_MONTH);
 
             mViewModel.setDay(ChinaNumTrans.convertNumber(day));

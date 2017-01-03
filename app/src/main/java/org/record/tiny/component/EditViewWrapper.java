@@ -1,10 +1,10 @@
 package org.record.tiny.component;
 
 import android.app.Service;
+import android.content.Context;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.record.tiny.R;
@@ -15,8 +15,7 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 
 @SuppressWarnings("All")
-public class EditViewWrapper implements SoftKeyboard.SoftKeyboardChanged {
-
+public class EditViewWrapper {
     enum STATE {
         SAVE,
         PREVIEW
@@ -45,17 +44,31 @@ public class EditViewWrapper implements SoftKeyboard.SoftKeyboardChanged {
     @BindView(R.id.et_content_layout)
     EditText mContentLayout;
     @BindView(R.id.activity_edit)
-    RelativeLayout mlayout;
+    IMMListenerRelativeLayout mlayout;
     private Unbinder unbinder;
-    private SoftKeyboard mSoftKeyboard;
+    private Context mContext;
 
     public EditViewWrapper(ViewGroup rootView) {
         unbinder = ButterKnife.bind(this, rootView);
         InputMethodManager im = (InputMethodManager) rootView.getContext().getSystemService(Service.INPUT_METHOD_SERVICE);
 
-        mSoftKeyboard = new SoftKeyboard(rootView, im);
-        mSoftKeyboard.setSoftKeyboardCallback(this);
-        mSoftKeyboard.openSoftKeyboard();
+        mContext = rootView.getContext();
+
+        mContentLayout.requestFocus();
+        InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+
+        mlayout.setListener(new IMMListenerRelativeLayout.InputWindowListener() {
+            @Override
+            public void show() {
+                onSoftKeyboardShow();
+            }
+
+            @Override
+            public void hidden() {
+                onSoftKeyboardHide();
+            }
+        });
     }
 
     public String getLocalInfo() {
@@ -78,26 +91,25 @@ public class EditViewWrapper implements SoftKeyboard.SoftKeyboardChanged {
         mTitleTextView.setText(title);
     }
 
-    public void hideKeyBorard() {
-        mSoftKeyboard.closeSoftKeyboard();
+    public String getTitleInfo() {
+        return mTitleTextView.getText().toString();
     }
 
-    @Override
     public void onSoftKeyboardHide() {
-        mSaveButton.setText("看");
+        mSaveButton.setText(mContext.getString(R.string.preview));
         mSaveButtonState = STATE.PREVIEW;
     }
 
-    @Override
     public void onSoftKeyboardShow() {
-        mSaveButton.setText("存");
+        mSaveButton.setText(mContext.getString(R.string.end));
         mSaveButtonState = STATE.SAVE;
     }
 
     @OnClick(R.id.bt_edit)
     void goSave() {
         if (mSaveButtonState == STATE.SAVE) {
-            mSoftKeyboard.closeSoftKeyboard();
+            InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(mContentLayout.getWindowToken(), 0);
             mSaveButtonState = STATE.PREVIEW;
             if (mOnClickListener != null)
                 mOnClickListener.save();
@@ -113,6 +125,5 @@ public class EditViewWrapper implements SoftKeyboard.SoftKeyboardChanged {
         if (unbinder != null) {
             unbinder.unbind();
         }
-        mSoftKeyboard.unRegisterSoftKeyboardCallback();
     }
 }

@@ -1,4 +1,4 @@
-package org.record.tiny.ui.fragment;
+package org.record.tiny.ui.display;
 
 import org.record.tiny.base.BaseView;
 import org.record.tiny.ui.model.Article;

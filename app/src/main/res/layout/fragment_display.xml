@@ -16,7 +16,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:gravity="center"
-        android:text="改"
+        android:text="@string/add"
         android:textColor="@color/white"
         app:cb_color="#cc0000"
         app:cb_pressedRingWidth="1dp"/>

@@ -1,4 +1,4 @@
-package org.record.tiny.ui.fragment;
+package org.record.tiny.ui.display;
 
 import org.record.tiny.base.BasePresenter;
 import org.record.tiny.ui.model.Article;
@@ -9,8 +9,8 @@ import io.realm.RealmResults;
 @SuppressWarnings("All")
 public class DisplayPresenter extends BasePresenter<DisplayView> {
 
-    public DisplayPresenter(DisplayView context) {
-        attachView(context);
+    public DisplayPresenter(DisplayView view) {
+        super(view);
     }
 
     public void start() {

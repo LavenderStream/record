@@ -1,15 +1,15 @@
-package org.record.tiny.ui.fragment;
+package org.record.tiny.ui.edit;
 
 import android.view.ViewGroup;
 
-import com.apkfuns.logutils.LogUtils;
-
 import org.record.tiny.R;
-import org.record.tiny.base.SimpleFragment;
+import org.record.tiny.base.MvpFragment;
 import org.record.tiny.component.EditViewWrapper;
+import org.record.tiny.ui.preview.PreviewFragment;
+import org.record.tiny.utils.EventIntent;
 
 @SuppressWarnings("All")
-public class EditFragment extends SimpleFragment<EditPresenter> implements EditView, EditViewWrapper.OnClickListener {
+public class EditFragment extends MvpFragment<EditPresenter> implements EditView, EditViewWrapper.OnClickListener {
     private EditViewWrapper mEditViewWrapper;
 
     public EditFragment() {
@@ -31,9 +31,10 @@ public class EditFragment extends SimpleFragment<EditPresenter> implements EditV
     }
 
     @Override
-    protected void onCreate() {
-        // 并不保证父类的rootview 为 ViewGroup 还要看具体布
+    public void onCreateView() {
+        // 并不保证父类的rootview 为 ViewGroup 还要看具体布局
         mEditViewWrapper = new EditViewWrapper((ViewGroup) mRootView);
+        mEditViewWrapper.setOnClickListening(this);
         mvpPresenter.start();
     }
 
@@ -54,23 +55,30 @@ public class EditFragment extends SimpleFragment<EditPresenter> implements EditV
 
     @Override
     public void startShare(String filePath) {
-   /*     ImageView imageView = new ImageView(getActivity());
-        Picasso.with(getActivity()).load(filePath).into(imageView);
-        mlayout.addView(imageView);*/
     }
 
     @Override
     public void preview() {
+        EventIntent.getInstance()
+                .put("preview_title", mEditViewWrapper.getTitleInfo())
+                .put("preview_context", mEditViewWrapper.getContextInfo())
+                .put("preview_local", mEditViewWrapper.getLocalInfo())
+                .send();
+        mvpPresenter.saveArticle(mEditViewWrapper.getLocalInfo(), mEditViewWrapper.getContextInfo());
+        mActivity.addFragment(R.id.activity_main_layout, PreviewFragment.newInstance(), true);
     }
 
     @Override
     public void save() {
-        LogUtils.d("EditFragment -> save: ");
-        //mvpPresenter.saveArticle(mEditViewWrapper.getLocalInfo(), mEditViewWrapper.getContextInfo());
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mEditViewWrapper.detachView();
     }
 
     @Override
     public void error(int error) {
-
     }
 }

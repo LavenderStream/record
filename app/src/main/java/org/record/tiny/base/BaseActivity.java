@@ -99,7 +99,7 @@ public class BaseActivity extends AppCompatActivity {
 
     public void addFragment(int containerViewId, Fragment fragment, boolean addBackStack) {
         FragmentTransaction fragmentTransaction = this.getFragmentManager().beginTransaction();
-        fragmentTransaction.add(containerViewId, fragment, fragment.getClass().getSimpleName());
+        fragmentTransaction.replace(containerViewId, fragment, fragment.getClass().getSimpleName());
         if (addBackStack)
             fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();

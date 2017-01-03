@@ -1,4 +1,4 @@
-package org.record.tiny.ui.fragment;
+package org.record.tiny.ui.display;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
@@ -7,8 +7,9 @@ import com.google.common.collect.Lists;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import org.record.tiny.R;
-import org.record.tiny.base.SimpleFragment;
+import org.record.tiny.base.MvpFragment;
 import org.record.tiny.component.adapter.DisplayRecyclerAdapter;
+import org.record.tiny.ui.edit.EditFragment;
 import org.record.tiny.ui.model.Article;
 import org.record.tiny.utils.EventIntent;
 
@@ -18,7 +19,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 @SuppressWarnings("All")
-public class DisplayFragment extends SimpleFragment<DisplayPresenter> implements DisplayView, DisplayRecyclerAdapter.OnItemListener {
+public class DisplayFragment extends MvpFragment<DisplayPresenter> implements DisplayView, DisplayRecyclerAdapter.OnItemListener {
 
     @BindView(R.id.xrv_display_layout)
     XRecyclerView mRecyclerView;
@@ -48,8 +49,13 @@ public class DisplayFragment extends SimpleFragment<DisplayPresenter> implements
     }
 
     @Override
-    protected void onCreate() {
+    public void onCreateView() {
+        super.onCreateView();
         initView();
+    }
+
+    @Override
+    public void onCreate() {
         mvpPresenter.start();
     }
 
@@ -68,6 +74,7 @@ public class DisplayFragment extends SimpleFragment<DisplayPresenter> implements
 
     @Override
     public void getDatas(List<Article> articles) {
+        mArticles.clear();
         mArticles.addAll(articles);
         mDisplayRecyclerAdapter.notifyDataSetChanged();
     }

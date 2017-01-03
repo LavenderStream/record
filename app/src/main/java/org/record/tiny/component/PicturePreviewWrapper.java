@@ -24,7 +24,7 @@ public class PicturePreviewWrapper {
     private View mViewLayout;
 
     public PicturePreviewWrapper(Context context, String title, String content, String location) {
-        mViewLayout = View.inflate(context, R.layout.activity_preview, null);
+        mViewLayout = View.inflate(context, R.layout.preview_fragment, null);
         ButterKnife.bind(this, mViewLayout);
 
         mContext = content;

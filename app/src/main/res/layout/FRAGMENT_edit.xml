@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/activity_edit"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin">
+<org.record.tiny.component.IMMListenerRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_edit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:textSize="21sp"/>
 
 
@@ -28,9 +29,11 @@
         android:layout_marginTop="21dp"
         android:background="@null"
         android:cursorVisible="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:gravity="top"
         android:inputType="text|textMultiLine"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:textCursorDrawable="@null"
         android:textSize="18sp"/>
 
@@ -45,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="于"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="15sp"/>
 
         <EditText
@@ -57,7 +60,7 @@
             android:cursorVisible="true"
             android:inputType="text|textMultiLine"
             android:minWidth="10dp"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textCursorDrawable="@null"
             android:textSize="15sp"/>
     </LinearLayout>
@@ -70,10 +73,9 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="5dp"
         android:gravity="center"
-        android:text="存"
-        android:textColor="#ffffff"
-        android:textSize="19sp"
+        android:text="@string/end"
+        android:textColor="@color/white"
         app:cb_color="#cc0000"
         app:cb_pressedRingWidth="2dp"/>
 
-</RelativeLayout>
+</org.record.tiny.component.IMMListenerRelativeLayout>

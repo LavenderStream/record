@@ -1,10 +1,8 @@
-package org.record.tiny.ui.fragment;
+package org.record.tiny.ui.edit;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.view.View;
-
-import com.apkfuns.logutils.LogUtils;
 
 import org.record.tiny.base.BasePresenter;
 import org.record.tiny.net.RxSubscriber;
@@ -31,11 +29,12 @@ public class EditPresenter extends BasePresenter<EditView> {
     private ViewModel mViewModel;
     private Article mArticle;
 
-    public EditPresenter(EditView context) {
-        attachView(context);
+    private boolean flag = false;
+
+    public EditPresenter(EditView view) {
+        super(view);
     }
 
-    private boolean flag = false;
     public void start() {
         mArticle = (Article) EventIntent.getInstance().get("intent_article");
         setView(mArticle);
@@ -59,9 +58,6 @@ public class EditPresenter extends BasePresenter<EditView> {
     }
 
     public void saveArticle(String location, String content) {
-        LogUtils.d("EditPresenter -> saveArticle: " + mArticle);
-        LogUtils.d("EditPresenter -> saveArticle: " + content);
-        LogUtils.d("EditPresenter -> saveArticle: " + location);
         if (mArticle == null) {
             mArticle = new Article();
             mArticle.setId(System.currentTimeMillis() / 1000);
@@ -94,8 +90,6 @@ public class EditPresenter extends BasePresenter<EditView> {
         addSubscription(observable, new RxSubscriber<String>() {
             @Override
             public void onNext(String filePath) {
-                mSharedFilePath = filePath;
-                mvpView.startShare(mSharedFilePath);
             }
 
             @Override
@@ -110,11 +104,10 @@ public class EditPresenter extends BasePresenter<EditView> {
         });
     }
 
-
     public Bitmap convertViewToBitmap(View view) {
         view.setDrawingCacheEnabled(true);
         view.buildDrawingCache(true);
-        Bitmap bitmap = Bitmap.createBitmap(DisplayUtil.getScreenWidth(), DisplayUtil.getSceenHeight() - DisplayUtil.getStatusBarHeight(),
+        Bitmap bitmap = Bitmap.createBitmap(DisplayUtil.getScreenWidth(), DisplayUtil.getSceenHeight(),
                 Bitmap.Config.RGB_565);
         Canvas canvas = new Canvas(bitmap);
         view.draw(canvas);

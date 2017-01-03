@@ -1,4 +1,4 @@
-package org.record.tiny.ui.view;
+package org.record.tiny.ui.main;
 
 import org.record.tiny.base.BaseView;
 

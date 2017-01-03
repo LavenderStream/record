@@ -1,4 +1,4 @@
-package org.record.tiny.ui.fragment;
+package org.record.tiny.ui.edit;
 
 import org.record.tiny.base.BaseView;
 

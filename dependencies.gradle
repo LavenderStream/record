@@ -1,8 +1,8 @@
 ext {
     supportLibrary = '25.0.1'
     // version
-    ReCompileSdkVersion = 24
-    ReBuildToolsVersion = "25.0.1"
+    ReCompileSdkVersion = 23
+    ReBuildToolsVersion = "23.0.3"
     ReMinSdkVersion = 15
     ReTargetSdkVersion = 24
     ReVersionCode = 1

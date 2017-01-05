@@ -1,9 +1,7 @@
 package org.record.tiny.library;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.ViewGroup;
@@ -60,13 +58,7 @@ public class AdvertView extends RelativeLayout {
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                return super.shouldOverrideUrlLoading(view, url);
-            }
-
-            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                view.loadUrl(request.getUrl().toString());
+                view.loadUrl(url);
                 return true;
             }
 

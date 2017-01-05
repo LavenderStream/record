@@ -74,6 +74,7 @@ public class FollowActivity extends MvpActivity<FollowPresenter> implements Foll
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        System.exit(0);
     }
 
     @Override

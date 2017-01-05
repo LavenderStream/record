@@ -36,7 +36,10 @@ public class StoryRecyclerViewAdapter extends SimpleRecyclerAdapter<StoryItem> {
     @Override
     public void bindData(SimpleRecyclerViewHolder holder, int position, final StoryItem item) {
 
-        Glide.with(mContext).load(item.getUserImage()).transform(new GlideCircleTransformation(mContext)).into(holder.getImageView(R.id.essence_head_img));
+        Glide.with(mContext).load(item.getUserImage())
+                .transform(new GlideCircleTransformation(mContext))
+                .crossFade()
+                .into(holder.getImageView(R.id.essence_head_img));
 
         holder.getTextView(R.id.essence_author_name).setText(item.getNickName());
         holder.getTextView(R.id.tv_essence_likecount).setText(item.getLike() + "");

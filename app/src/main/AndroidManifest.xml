@@ -41,7 +41,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".demo.follow.FollowActivity">
+            android:name=".demo.follow.FollowActivity"
+            android:process=":remote">
         </activity>
         <activity android:name=".demo.favorite.FavoriteActivity">
         </activity>

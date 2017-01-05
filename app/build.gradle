@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
-apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion ReCompileSdkVersion
@@ -36,7 +35,7 @@ android {
         abortOnError false
     }
     dataBinding {
-        enabled true
+        enabled = true
     }
 }
 
@@ -55,9 +54,6 @@ dependencies {
     compile rxandroid
     compile rxjava
     compile rxpermissions
-
-    compile butterknife
-    annotationProcessor butterknife_compiler
 
     compile guava
     compile eventbus

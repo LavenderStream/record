@@ -26,7 +26,11 @@
         <activity
             android:name=".ui.main.SplashActivity"
             android:theme="@style/Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.main.MainActivity"
@@ -37,14 +41,6 @@
             android:enabled="true"
             android:process=":remote">
         </service>
-
-        <activity android:name=".demo.DemoActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

@@ -4,28 +4,19 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.google.common.collect.Lists;
-import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import org.record.tiny.R;
 import org.record.tiny.base.MvpFragment;
 import org.record.tiny.component.adapter.DisplayRecyclerAdapter;
+import org.record.tiny.databinding.FragmentDisplayBinding;
 import org.record.tiny.ui.edit.EditFragment;
 import org.record.tiny.ui.model.Article;
 import org.record.tiny.utils.EventIntent;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.OnClick;
-
 @SuppressWarnings("All")
-public class DisplayFragment extends MvpFragment<DisplayPresenter> implements DisplayView, DisplayRecyclerAdapter.OnItemListener {
-
-    @BindView(R.id.xrv_display_layout)
-    XRecyclerView mRecyclerView;
-    @BindView(R.id.bt_edit)
-    View mEditButton;
-    private View rootView;
+public class DisplayFragment extends MvpFragment<FragmentDisplayBinding, DisplayPresenter> implements DisplayView, DisplayRecyclerAdapter.OnItemListener {
 
     private List<Article> mArticles = Lists.newArrayList();
     private DisplayRecyclerAdapter mDisplayRecyclerAdapter;
@@ -56,19 +47,19 @@ public class DisplayFragment extends MvpFragment<DisplayPresenter> implements Di
 
     @Override
     public void onCreate() {
+        binding.setControl(this);
         mvpPresenter.start();
     }
 
-    @OnClick(R.id.bt_edit)
-    void goEdit() {
+    public void goEdit(View view) {
         mActivity.addFragment(R.id.activity_main_layout, EditFragment.newInstance(), true);
     }
 
     private void initView() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.setLoadingMoreEnabled(false);
-        mRecyclerView.setPullRefreshEnabled(false);
-        mRecyclerView.setAdapter(mDisplayRecyclerAdapter = new DisplayRecyclerAdapter(getActivity(), mArticles));
+        binding.xrvDisplayLayout.setLayoutManager(new LinearLayoutManager(getActivity()));
+        binding.xrvDisplayLayout.setLoadingMoreEnabled(false);
+        binding.xrvDisplayLayout.setPullRefreshEnabled(false);
+        binding.xrvDisplayLayout.setAdapter(mDisplayRecyclerAdapter = new DisplayRecyclerAdapter(getActivity(), mArticles));
         mDisplayRecyclerAdapter.setOnItemListening(this);
     }
 

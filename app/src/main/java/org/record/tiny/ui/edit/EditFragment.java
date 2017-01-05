@@ -1,15 +1,14 @@
 package org.record.tiny.ui.edit;
 
-import android.view.ViewGroup;
-
 import org.record.tiny.R;
 import org.record.tiny.base.MvpFragment;
 import org.record.tiny.component.EditViewWrapper;
+import org.record.tiny.databinding.FragmentEditBinding;
 import org.record.tiny.ui.preview.PreviewFragment;
 import org.record.tiny.utils.EventIntent;
 
 @SuppressWarnings("All")
-public class EditFragment extends MvpFragment<EditPresenter> implements EditView, EditViewWrapper.OnClickListener {
+public class EditFragment extends MvpFragment<FragmentEditBinding, EditPresenter> implements EditView, EditViewWrapper.OnClickListener {
     private EditViewWrapper mEditViewWrapper;
 
     public EditFragment() {
@@ -32,9 +31,9 @@ public class EditFragment extends MvpFragment<EditPresenter> implements EditView
 
     @Override
     public void onCreateView() {
-        // 并不保证父类的rootview 为 ViewGroup 还要看具体布局
-        mEditViewWrapper = new EditViewWrapper((ViewGroup) mRootView);
+        mEditViewWrapper = new EditViewWrapper(binding);
         mEditViewWrapper.setOnClickListening(this);
+        binding.setControl(mEditViewWrapper);
         mvpPresenter.start();
     }
 
@@ -75,7 +74,6 @@ public class EditFragment extends MvpFragment<EditPresenter> implements EditView
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        mEditViewWrapper.detachView();
     }
 
     @Override

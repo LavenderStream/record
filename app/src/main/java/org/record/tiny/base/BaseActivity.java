@@ -3,16 +3,15 @@ package org.record.tiny.base;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
-import android.support.annotation.LayoutRes;
+import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import org.record.tiny.net.ApiStores;
 import org.record.tiny.net.AppClient;
 import org.record.tiny.net.RxSubscriber;
-import org.record.tiny.utils.DisplayUtil;
 
-import butterknife.ButterKnife;
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -31,10 +30,8 @@ public class BaseActivity extends AppCompatActivity {
     private CompositeDisposable mCompositeDisposable;
 
     @Override
-    public void setContentView(@LayoutRes int layoutResID) {
-        DisplayUtil.myStatusBar(this);
-        super.setContentView(layoutResID);
-        ButterKnife.bind(this);
+    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
         mActivity = this;
     }
 

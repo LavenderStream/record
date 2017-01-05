@@ -1,20 +1,20 @@
 package org.record.tiny.base;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
-public abstract class MvpFragment<P extends BasePresenter> extends BaseFragment {
+public abstract class MvpFragment<B extends ViewDataBinding, P extends BasePresenter> extends BaseFragment {
 
     protected View mRootView;
+    protected B binding;
     protected P mvpPresenter;
-    protected Unbinder unbinder;
 
     @Nullable
     @Override
@@ -25,8 +25,8 @@ public abstract class MvpFragment<P extends BasePresenter> extends BaseFragment 
                 parent.removeView(mRootView);
             }
         } else {
-            mRootView = inflater.inflate(createViewLayoutId(), null);
-            unbinder = ButterKnife.bind(this, mRootView);
+            binding = DataBindingUtil.inflate(inflater, createViewLayoutId(), container, false);
+            mRootView = binding.getRoot();
             mvpPresenter = createPresenter();
             onCreateView();
         }
@@ -44,7 +44,6 @@ public abstract class MvpFragment<P extends BasePresenter> extends BaseFragment 
     public void onCreateView() {
     }
 
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -57,9 +56,6 @@ public abstract class MvpFragment<P extends BasePresenter> extends BaseFragment 
         mRootView = null;
         if (mvpPresenter != null) {
             mvpPresenter.detachView();
-        }
-        if (unbinder != null) {
-            unbinder.unbind();
         }
     }
 }

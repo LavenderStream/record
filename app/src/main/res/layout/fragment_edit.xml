@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/activity_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textColor="#000000"
+        android:textSize="21sp"/>
+
+
+    <EditText
+        android:id="@+id/et_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tv_local"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="21dp"
+        android:background="@null"
+        android:cursorVisible="true"
+        android:gravity="top"
+        android:inputType="text|textMultiLine"
+        android:textColor="#000000"
+        android:textCursorDrawable="@null"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:id="@+id/tv_local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="于"
+            android:textColor="#000000"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/tv_local_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:background="@null"
+            android:cursorVisible="true"
+            android:inputType="text|textMultiLine"
+            android:minWidth="10dp"
+            android:textColor="#000000"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <org.record.tiny.component.CircleButton
+        android:id="@+id/bt_edit"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="存"
+        android:textColor="#ffffff"
+        android:textSize="19sp"
+        app:cb_color="#cc0000"
+        app:cb_pressedRingWidth="2dp"/>
+
+</RelativeLayout>

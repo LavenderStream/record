@@ -3,6 +3,8 @@ package org.record.tiny.ui;
 import android.app.Application;
 import android.content.Context;
 
+import com.apkfuns.logutils.LogUtils;
+
 import org.record.tiny.demo.model.User;
 import org.record.tiny.utils.Config;
 
@@ -28,6 +30,7 @@ public class RecordApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        LogUtils.d("RecordApplication -> onCreate: ");
         sContext = getApplicationContext();
 
         Config.configDefaultFont();

@@ -5,6 +5,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 
+import com.google.common.collect.Lists;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -24,7 +25,7 @@ public class ChoiceFragment extends SimpleFragment {
     @Bind(R.id.vp_fragment_layout)
     ViewPager mViewPageLayout;
 
-    private List<Tab.DataBean> mTabList;
+    private List<Tab.DataBean> mTabList = Lists.newArrayList();
 
     public ChoiceFragment() {
     }
@@ -40,8 +41,9 @@ public class ChoiceFragment extends SimpleFragment {
             String tabLists = getArguments().getString("tab_list");
             if (!TextUtils.isEmpty(tabLists)) {
                 Gson gson = new Gson();
-                mTabList = gson.fromJson(tabLists, new TypeToken<List<Tab.DataBean>>() {
+                List<Tab.DataBean> tabs = gson.fromJson(tabLists, new TypeToken<List<Tab.DataBean>>() {
                 }.getType());
+                mTabList.addAll(tabs);
             }
         }
     }

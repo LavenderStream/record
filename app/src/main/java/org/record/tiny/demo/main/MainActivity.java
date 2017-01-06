@@ -40,8 +40,8 @@ public class MainActivity extends TabStyleActivity<MainPresenter> implements Mai
         Bundle bundle = new Bundle();
         Gson gone = new Gson();
         bundle.putString("tab_list", gone.toJson(tabs));
-    mViewWrapper.setTab(0, bundle);
-}
+        mViewWrapper.setTab(0, bundle);
+    }
 
     @Override
     public void showLoading() {
@@ -53,7 +53,6 @@ public class MainActivity extends TabStyleActivity<MainPresenter> implements Mai
 
     @Override
     public void error(int error) {
-
     }
 
     @Override

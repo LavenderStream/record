@@ -3,19 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\Code\record\app\app.iml" filepath="D:\Code\record\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/component/component.iml" filepath="$PROJECT_DIR$/component/component.iml" />
-      <module fileurl="file://D:\Code\record\component\component.iml" filepath="D:\Code\record\component\component.iml" />
       <module fileurl="file://$PROJECT_DIR$/component-main/component-main.iml" filepath="$PROJECT_DIR$/component-main/component-main.iml" />
-      <module fileurl="file://D:\Code\record\component-main\component-main.iml" filepath="D:\Code\record\component-main\component-main.iml" />
       <module fileurl="file://$PROJECT_DIR$/component-photo/component-photo.iml" filepath="$PROJECT_DIR$/component-photo/component-photo.iml" />
       <module fileurl="file://D:\Code\record\component-photo\componentphoto.iml" filepath="D:\Code\record\component-photo\componentphoto.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
-      <module fileurl="file://D:\Code\record\lib\lib.iml" filepath="D:\Code\record\lib\lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/record.iml" filepath="$PROJECT_DIR$/record.iml" />
       <module fileurl="file://D:\Code\record\record2.iml" filepath="D:\Code\record\record2.iml" />
       <module fileurl="file://$PROJECT_DIR$/work/work.iml" filepath="$PROJECT_DIR$/work/work.iml" />
-      <module fileurl="file://D:\Code\record\work\work.iml" filepath="D:\Code\record\work\work.iml" />
     </modules>
   </component>
 </project>

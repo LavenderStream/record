@@ -3,13 +3,13 @@ package org.tiny.lib.core
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
-import com.trello.rxlifecycle2.components.RxActivity
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 
 
 /**
  * Created by tiny on 2/10/2018
  */
-abstract class BaseActivity<B : ViewDataBinding, P : BasePresenter<*>> : RxActivity(), BaseView {
+abstract class BaseActivity<B : ViewDataBinding, P : BasePresenter<*>> : RxAppCompatActivity(), BaseView {
     protected var mPresenter: P? = null
     protected var mBinding: B? = null
 

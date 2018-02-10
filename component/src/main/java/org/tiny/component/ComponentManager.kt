@@ -17,9 +17,10 @@ class ComponentManager private constructor() {
         provider.put(interfaceClass.name, impl)
     }
 
+    @Suppress("UNCHECKED_CAST")
     @Synchronized
-    fun getProvider(interfaceClass: Class<*>): IProvider {
-        return provider.get(interfaceClass.name)!!
+    fun <T : IProvider> getComponent(interfaceClass: Class<*>): T {
+        return provider.get(interfaceClass.name) as T
     }
 
     @Synchronized

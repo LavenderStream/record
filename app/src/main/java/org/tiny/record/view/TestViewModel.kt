@@ -1,4 +1,4 @@
-package org.tiny.record
+package org.tiny.record.view
 
 /**
  * Created by Tiny on 2/10/2018.

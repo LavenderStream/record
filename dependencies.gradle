@@ -4,7 +4,7 @@ ext {
     CompileSdkVersion = 26
     BuildToolsVersion = "26.0.2"
     MinSdkVersion = 14
-    TargetSdkVersion = 26
+    TargetSdkVersion = 21
 
     // test
     junit = "junit:junit:4.12"
@@ -41,6 +41,7 @@ ext {
     stetho_okhttp3 = 'com.facebook.stetho:stetho-okhttp3:1.5.0'
     chunk_debug = 'com.readystatesoftware.chuck:library:1.0.4'
     chuck_release = 'com.readystatesoftware.chuck:library-no-op:1.0.4'
+    lbs = files('libs/BaiduLBS_Android.jar')
 
     // view
     picasso = "com.squareup.picasso:picasso:2.5.2"
@@ -55,6 +56,7 @@ ext {
     rxbinding = "com.jakewharton.rxbinding2:rxbinding:2.0.0"
     floating_button = "com.github.clans:fab:1.6.4"
     coverflow = "com.github.crosswall:Android-Coverflow:release-v1.0.4"
+    calligraphy =  "uk.co.chrisjenx:calligraphy:2.2.0"
     // push & login
     weibo_oauth = "com.sina.weibo.sdk:core:4.1.0:openDefaultRelease@aar"
     // kotlin

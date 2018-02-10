@@ -1,7 +1,9 @@
 package org.tiny.lib.core
 
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
+
 /**
- * Created by tiny on 2/10/2018.
+ * Created by tiny on 2/10/2018
  */
-class UiActivity {
+abstract class UiActivity : RxAppCompatActivity() {
 }

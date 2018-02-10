@@ -4,7 +4,7 @@ package org.tiny.lib.core
 /**
  * Created by tiny on 2/10/2018
  */
-class BasePresenter<V : BaseView>(view: V) {
+open class BasePresenter<V : BaseView>(view: V) {
     protected var mView: V? = null
 
     fun attachView(view: V) {

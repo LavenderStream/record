@@ -1,27 +1,40 @@
 package org.tiny.lib.core
 
+import android.content.Context
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
+import com.trello.rxlifecycle2.LifecycleTransformer
+import com.trello.rxlifecycle2.android.ActivityEvent
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 
 /**
  * Created by tiny on 2/10/2018
  */
-abstract class BaseActivity<B : ViewDataBinding, P : BasePresenter<*>> : RxAppCompatActivity(), BaseView {
+abstract class BaseActivity<B : ViewDataBinding, P : BasePresenter<*>> : UiActivity(), BaseView {
     protected var mPresenter: P? = null
     protected var mBinding: B? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding = DataBindingUtil.setContentView(this, createLayoutId())
+        val layoutId = createLayoutId()
+        if (layoutId != -1)
+            mBinding = DataBindingUtil.setContentView(this, createLayoutId())
         mPresenter = createPresenter()
     }
 
     override fun onDestroy() {
         super.onDestroy()
         mPresenter!!.detachView()
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
+    }
+
+    override fun <T> bindLifecycle(event: ActivityEvent): LifecycleTransformer<T> {
+        return super.bindUntilEvent<T>(event)
     }
 
     abstract fun createPresenter(): P?

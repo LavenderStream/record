@@ -1,5 +1,6 @@
 package org.tiny.record.view.main
 
+import android.os.Bundle
 import android.support.v4.app.Fragment
 import org.tiny.component.ComponentManager
 import org.tiny.component.IMain
@@ -22,6 +23,11 @@ class MainActivity : BaseActivity<ActivityMainBinding, BasePresenter<BaseView>>(
 
     override fun createLayoutId(): Int {
         return R.layout.activity_main
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        super.onCreate(savedInstanceState)
     }
 
     override fun getFragments(): Array<Class<out Fragment>> {

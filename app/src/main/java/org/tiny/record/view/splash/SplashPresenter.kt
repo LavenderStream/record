@@ -2,6 +2,7 @@ package org.tiny.record.view.splash
 
 import com.apkfuns.logutils.LogUtils
 import com.trello.rxlifecycle2.android.ActivityEvent
+import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import org.tiny.component.ComponentManager
 import org.tiny.component.IMain
@@ -9,6 +10,7 @@ import org.tiny.component.event.LocationEvent
 import org.tiny.lib.core.BasePresenter
 import org.tiny.lib.core.RxBus
 import org.tiny.record.App
+import java.util.concurrent.TimeUnit
 
 
 /**
@@ -29,5 +31,12 @@ class SplashPresenter(view: SplashContract.IView) : BasePresenter<SplashContract
                 })
 
         mComponent.getLocation(App.context!!)
+    }
+
+    fun limit() {
+        Observable.timer(5, TimeUnit.SECONDS)
+                .compose(mView!!.bindLifecycle(ActivityEvent.DESTROY))
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ mView!!.skip() })
     }
 }

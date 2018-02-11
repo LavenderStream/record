@@ -6,6 +6,7 @@ import android.view.WindowManager
 import com.apkfuns.logutils.LogUtils
 import com.baidu.location.Poi
 import org.tiny.lib.core.BaseActivity
+import org.tiny.record.R
 import org.tiny.record.databinding.ActivitySplashBinding
 import org.tiny.record.view.main.MainActivity
 
@@ -27,18 +28,24 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashPresenter>(), S
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN)
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
+        mPresenter!!.limit()
         mPresenter!!.run()
     }
 
     override fun skip() {
+        finishActivity()
     }
 
     override fun start(locations: ArrayList<Poi>) {
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
         locations.forEach({ point ->
             LogUtils.d("location: " + point.name)
         })
+        finishActivity()
+    }
+
+    private fun finishActivity() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 }

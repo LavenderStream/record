@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion CompileSdkVersion
@@ -18,15 +19,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     dataBinding {
         enabled = true
     }
-
     sourceSets{
         main{
             jniLibs.srcDirs = ['libs']
         }
+    }
+    greendao {
+        schemaVersion 1
+        targetGenDir 'src/main/java'
+        daoPackage 'org.tiny.lib.database.generate'
     }
 }
 
@@ -37,6 +41,7 @@ dependencies {
     api rxjava
     api rxlife
     api calligraphy
+    api greendao_helper
     api files('libs/BaiduLBS_Android.jar')
     api "org.greenrobot:greendao:$greendao_version"
     // Google Support Lib

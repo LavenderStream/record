@@ -42,6 +42,7 @@ ext {
     chunk_debug = 'com.readystatesoftware.chuck:library:1.0.4'
     chuck_release = 'com.readystatesoftware.chuck:library-no-op:1.0.4'
     lbs = files('libs/BaiduLBS_Android.jar')
+    greendao_helper = "com.github.yuweiguocn:GreenDaoUpgradeHelper:v2.0.2"
 
     // view
     picasso = "com.squareup.picasso:picasso:2.5.2"

@@ -6,6 +6,7 @@ import android.databinding.ViewDataBinding
 import android.os.Bundle
 import com.trello.rxlifecycle2.LifecycleTransformer
 import com.trello.rxlifecycle2.android.ActivityEvent
+import com.trello.rxlifecycle2.android.FragmentEvent
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 
@@ -33,8 +34,12 @@ abstract class BaseActivity<B : ViewDataBinding, P : BasePresenter<*>> : UiActiv
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
 
-    override fun <T> bindLifecycle(event: ActivityEvent): LifecycleTransformer<T> {
+    override fun <T> bindLifecycle(event: ActivityEvent): LifecycleTransformer<T>? {
         return super.bindUntilEvent<T>(event)
+    }
+
+    override fun <T> bindLifecycle(event: FragmentEvent): LifecycleTransformer<T>? {
+        return null
     }
 
     abstract fun createPresenter(): P?

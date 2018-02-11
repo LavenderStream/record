@@ -1,8 +1,6 @@
 package org.tiny.lib.core
 
 import android.content.Context
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,9 +13,8 @@ import com.trello.rxlifecycle2.components.support.RxFragment
 /**
  * Created by tiny on 2/11/2018
  */
-abstract class BaseFragment<B : ViewDataBinding, P : BasePresenter<*>> : RxFragment(), BaseView {
+abstract class BaseFragment<P : BasePresenter<*>> : RxFragment(), BaseView {
     protected var mPresenter: P? = null
-    protected var mBinding: B? = null
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
@@ -25,8 +22,7 @@ abstract class BaseFragment<B : ViewDataBinding, P : BasePresenter<*>> : RxFragm
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        mBinding = DataBindingUtil.inflate(inflater, createLayoutId(), container, false)
-        return mBinding!!.getRoot()
+        return inflater!!.inflate(createLayoutId(), container, false)
     }
 
     override fun <T> bindLifecycle(event: ActivityEvent): LifecycleTransformer<T>? {

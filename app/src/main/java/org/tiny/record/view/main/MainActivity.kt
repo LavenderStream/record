@@ -9,12 +9,11 @@ import org.tiny.lib.core.BasePresenter
 import org.tiny.lib.core.BaseTabStyleWrapper
 import org.tiny.lib.core.BaseView
 import org.tiny.record.R
-import org.tiny.record.databinding.ActivityMainBinding
 
 /**
  * Created by tiny on 2/11/2018
  */
-class MainActivity : BaseActivity<ActivityMainBinding, BasePresenter<BaseView>>(), BaseView, BaseTabStyleWrapper.Fragments {
+class MainActivity : BaseActivity<BasePresenter<BaseView>>(), BaseView, BaseTabStyleWrapper.Fragments {
     val mComponent: IMain = ComponentManager.getInstance().getComponent(IMain::class.java)
 
     override fun createPresenter(): BasePresenter<BaseView>? {

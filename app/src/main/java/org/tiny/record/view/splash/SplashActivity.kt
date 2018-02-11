@@ -7,13 +7,12 @@ import com.apkfuns.logutils.LogUtils
 import com.baidu.location.Poi
 import org.tiny.lib.core.BaseActivity
 import org.tiny.record.R
-import org.tiny.record.databinding.ActivitySplashBinding
 import org.tiny.record.view.main.MainActivity
 
 /**
  * Created by tiny on 2/10/2018
  */
-class SplashActivity : BaseActivity<ActivitySplashBinding, SplashPresenter>(), SplashContract.IView {
+class SplashActivity : BaseActivity<SplashPresenter>(), SplashContract.IView {
 
     override fun createPresenter(): SplashPresenter? {
         return SplashPresenter(this)

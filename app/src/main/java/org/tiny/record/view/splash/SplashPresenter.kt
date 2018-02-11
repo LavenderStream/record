@@ -34,7 +34,7 @@ class SplashPresenter(view: SplashContract.IView) : BasePresenter<SplashContract
     }
 
     fun limit() {
-        Observable.timer(5, TimeUnit.SECONDS)
+        Observable.timer(1, TimeUnit.SECONDS)
                 .compose(mView!!.bindLifecycle(ActivityEvent.DESTROY))
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ mView!!.skip() })

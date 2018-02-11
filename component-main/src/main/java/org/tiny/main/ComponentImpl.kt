@@ -2,9 +2,9 @@ package org.tiny.main
 
 import android.content.Context
 import android.support.v4.app.Fragment
-import android.support.v4.app.ListFragment
 import org.tiny.component.IMain
 import org.tiny.main.edit.EditFragment
+import org.tiny.main.list.ListFragment
 import org.tiny.main.preview.PreviewFragment
 
 /**

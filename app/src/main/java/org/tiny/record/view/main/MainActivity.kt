@@ -15,6 +15,7 @@ import org.tiny.record.R
  */
 class MainActivity : BaseActivity<BasePresenter<BaseView>>(), BaseView, BaseTabStyleWrapper.Fragments {
     val mComponent: IMain = ComponentManager.getInstance().getComponent(IMain::class.java)
+    val mTabStyleWrapper: BaseTabStyleWrapper = BaseTabStyleWrapper()
 
     override fun createPresenter(): BasePresenter<BaseView>? {
         return BasePresenter(this)
@@ -27,6 +28,8 @@ class MainActivity : BaseActivity<BasePresenter<BaseView>>(), BaseView, BaseTabS
     override fun onCreate(savedInstanceState: Bundle?) {
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         super.onCreate(savedInstanceState)
+        mTabStyleWrapper.addParams(this, supportFragmentManager, R.id.root_view)
+        mTabStyleWrapper.setTab(0)
     }
 
     override fun getFragments(): Array<Class<out Fragment>> {

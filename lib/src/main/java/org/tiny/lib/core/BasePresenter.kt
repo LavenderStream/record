@@ -1,5 +1,9 @@
 package org.tiny.lib.core
 
+import io.reactivex.FlowableTransformer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+
 
 /**
  * Created by tiny on 2/10/2018
@@ -17,5 +21,12 @@ open class BasePresenter<V : BaseView>(view: V) {
 
     init {
         attachView(view)
+    }
+
+    protected fun <T> applySchedulers(): FlowableTransformer<T, T> {
+        return FlowableTransformer { upstream ->
+            upstream.subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+        }
     }
 }

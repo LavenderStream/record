@@ -3,10 +3,12 @@ package org.tiny.main.list
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import com.apkfuns.logutils.LogUtils
 import kotlinx.android.synthetic.main.main_fragment_list.*
+import org.tiny.component.IMain
+import org.tiny.component.event.ClickEvent
 import org.tiny.componentmain.R
 import org.tiny.lib.core.BaseFragment
+import org.tiny.lib.core.RxBus
 import org.tiny.lib.view.SimpleRecyclerAdapter
 import org.tiny.lib.view.SimpleRecyclerViewHolder
 
@@ -29,7 +31,6 @@ class ListFragment : BaseFragment<ListPresenter>(), ListContract.IView {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
-        LogUtils.d("ListFragment -> onViewCreated : ")
         mPresenter!!.test()
     }
 
@@ -39,6 +40,9 @@ class ListFragment : BaseFragment<ListPresenter>(), ListContract.IView {
                 holder!!.setText(R.id.tv_title, item!!.title)
                 holder.setText(R.id.tv_subtitle, item.subTitle)
                 holder.setText(R.id.tv_desc, item.description)
+                holder.getView(R.id.root_view).setOnClickListener {
+                    RxBus.getInstance().post(ClickEvent(IMain.CLICK_ITEM, position))
+                }
             }
 
             override fun getItemLayoutId(viewType: Int): Int {
@@ -47,11 +51,17 @@ class ListFragment : BaseFragment<ListPresenter>(), ListContract.IView {
         }
         rv_list.adapter = mAdapter
         rv_list.layoutManager = LinearLayoutManager(activity)
+        btn_write.setOnClickListener {
+            RxBus.getInstance().post(ClickEvent(IMain.CLICK_EDIT, IMain.CLICK_EDIT))
+        }
     }
 
     override fun handleDatas(vm: ArrayList<ViewModel>) {
-        LogUtils.d("ListFragment -> handleDatas : " + vm.size)
         mData.addAll(vm)
         mAdapter!!.notifyDataSetChanged()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }

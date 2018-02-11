@@ -16,9 +16,11 @@ import android.util.SparseArray;
  * 当fragment可以成功添加到actcivity中时
  */
 @SuppressWarnings("All")
-public class BaseTabStyleWrapper {
+public class BaseTabStyleWrapper
+{
 
-    public interface OnTabSelectListener {
+    public interface OnTabSelectListener
+    {
         void onTabSelect(int position);
     }
 
@@ -35,7 +37,8 @@ public class BaseTabStyleWrapper {
     /**
      * @param tabStyle Fragments interface
      */
-    public void addParams(Fragments tabStyle, FragmentManager fragmentManager, int layoutId) {
+    public void addParams(Fragments tabStyle, FragmentManager fragmentManager, int layoutId)
+    {
         mTabFragmentInterface = tabStyle;
         mFragmentManager = fragmentManager;
         mFragmentLayoutId = layoutId;
@@ -48,31 +51,35 @@ public class BaseTabStyleWrapper {
      * @param position 显示位置
      * @param msg      创建fragment时传值
      */
-    public void setTab(int position, Bundle msg, boolean addBackStack) {
-        // 重复点击同一个按钮时，不对fragment进行切换操作
-        if (mCurrentFragmentPostion == position) {
-            return;
-        }
-        try {
+    public void setTab(int position, Bundle msg, boolean addBackStack)
+    {
+        try
+        {
             Fragment fragment = mFragmentMap.get(position);
             FragmentTransaction transaction = mFragmentManager.beginTransaction();
             // hide the old Fragment
-            if (mCurrentFragmentPostion != -1) {
-                transaction.remove(mFragmentMap.get(mCurrentFragmentPostion));
+            if (mCurrentFragmentPostion != -1)
+            {
+               // transaction.remove(mFragmentMap.get(mCurrentFragmentPostion));
             }
 
-            if (fragment == null) {
+            if (fragment == null)
+            {
                 // 看这个framgent是否已经被保存过
                 Fragment saveFragment = mFragmentManager.findFragmentByTag(mTabFragmentInterface
                         .getFragments()[position].getSimpleName());
-                if (saveFragment != null) {
+                if (saveFragment != null)
+                {
                     fragment = saveFragment;
-                } else {
+                }
+                else
+                {
                     fragment = mTabFragmentInterface.getFragments()[position].newInstance();
                     fragment.setArguments(msg);
                     transaction.add(mFragmentLayoutId, fragment,
                             fragment.getClass().getSimpleName());
-                    if (addBackStack) {
+                    if (addBackStack)
+                    {
                         transaction.addToBackStack(fragment.getClass().getSimpleName());
                     }
                 }
@@ -80,11 +87,12 @@ public class BaseTabStyleWrapper {
                 mFragmentMap.put(position, fragment);
             }
 
-            transaction.replace(mFragmentLayoutId, fragment);
+            transaction.show(fragment);
             transaction.commitAllowingStateLoss();
             mCurrentFragmentPostion = position;
 
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
     }
@@ -94,79 +102,96 @@ public class BaseTabStyleWrapper {
      *
      * @param position 显示位置
      */
-    public void setTab(int position) {
+    public void setTab(int position)
+    {
         setTab(position, null, false);
     }
 
-    public void setTab(int position, Bundle msg) {
+    public void setTab(int position, Bundle msg)
+    {
         setTab(position, msg, false);
     }
 
-    public void setTab(int position, boolean addBackStack) {
+    public void setTab(int position, boolean addBackStack)
+    {
         setTab(position, null, addBackStack);
     }
 
     /**
      * 创建一个fragment但不显示，可用于加速显示
      */
-    public void addTab(int position, Bundle msg, boolean addBackStack) {
-        try {
+    public void addTab(int position, Bundle msg, boolean addBackStack)
+    {
+        try
+        {
             // 先在系统中查找framgnet
             FragmentTransaction transaction = mFragmentManager.beginTransaction();
             Fragment fragment = mFragmentManager.findFragmentByTag(mTabFragmentInterface
                     .getFragments()[position].getSimpleName());
             // 如果为空再创建
-            if (fragment == null) {
+            if (fragment == null)
+            {
                 fragment = mTabFragmentInterface.getFragments()[position].newInstance();
-                if (msg != null) {
+                if (msg != null)
+                {
                     fragment.setArguments(msg);
                 }
                 mFragmentMap.put(position, fragment);
                 transaction.add(mFragmentLayoutId, fragment, fragment.getClass().getSimpleName());
-                if (addBackStack) {
+                if (addBackStack)
+                {
                     transaction.addToBackStack(fragment.getClass().getSimpleName());
                 }
             }
 
             transaction.hide(fragment);
             transaction.commitAllowingStateLoss();
-        } catch (InstantiationException e) {
+        } catch (InstantiationException e)
+        {
             e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (IllegalAccessException e)
+        {
             e.printStackTrace();
         }
     }
 
-    public void addTab(int postion) {
+    public void addTab(int postion)
+    {
         addTab(postion, null, false);
     }
 
-    public void addTab(int postion, boolean addBackStack) {
+    public void addTab(int postion, boolean addBackStack)
+    {
         addTab(postion, null, addBackStack);
     }
 
-    public void addTab(int postion, Bundle msg) {
+    public void addTab(int postion, Bundle msg)
+    {
         addTab(postion, msg, false);
     }
 
-    public Fragment getCurrentFragment() {
+    public Fragment getCurrentFragment()
+    {
         return mFragmentMap.get(mCurrentFragmentPostion);
     }
 
     /**
      * 释放资源，退出后view逻辑
      */
-    public void release() {
+    public void release()
+    {
         // 清除存储fragment的map
         mFragmentMap.clear();
         mFragmentMap = null;
     }
 
-    protected SparseArray<Fragment> getFragment() {
+    protected SparseArray<Fragment> getFragment()
+    {
         return this.mFragmentMap;
     }
 
-    public interface Fragments {
+    public interface Fragments
+    {
         Class<? extends Fragment>[] getFragments();
     }
 }

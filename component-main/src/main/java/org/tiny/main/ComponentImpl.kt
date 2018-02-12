@@ -10,11 +10,17 @@ import org.tiny.lib.core.RxBus
 import org.tiny.main.edit.EditActivity
 import org.tiny.main.list.ListFragment
 import org.tiny.main.location.LocationManager
+import org.tiny.main.preview.PreviewActivity
 
 /**
  * Created by tiny on 2/10/2018
  */
 class ComponentImpl : IMain {
+    override fun startPreviewActivity(context: Context, id: Int) {
+        val intent = Intent(context, PreviewActivity::class.java)
+        intent.putExtra("PREVIEW_DATABASE_ID", id)
+        context.startActivity(intent)
+    }
 
     override fun startEditActivity(context: Context) {
         context.startActivity(Intent(context, EditActivity::class.java))

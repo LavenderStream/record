@@ -46,6 +46,7 @@ class MainActivity : BaseActivity<MainPresenter>(), MainContract.IView, BaseTabS
     }
 
     override fun jumpPreviewPage(id: Int) {
+        mComponent.startPreviewActivity(this, id)
         LogUtils.d("MainActivity -> jumpPreviewPage " + id)
     }
 }

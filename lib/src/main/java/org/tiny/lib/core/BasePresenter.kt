@@ -1,6 +1,7 @@
 package org.tiny.lib.core
 
 import io.reactivex.FlowableTransformer
+import io.reactivex.ObservableTransformer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -29,4 +30,13 @@ open class BasePresenter<V : BaseView>(view: V) {
                     .observeOn(AndroidSchedulers.mainThread())
         }
     }
+
+    protected fun <T> applyScheduler(): ObservableTransformer<T, T> {
+        return ObservableTransformer { upstream ->
+            upstream.subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+        }
+    }
+
+
 }

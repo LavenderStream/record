@@ -26,8 +26,10 @@ class EditPresenter(view: EditContract.IView) : BasePresenter<EditContract.IView
     val mLastIndex = DbHelper.getSession().articleDao.loadAll().size
 
     fun run(editView: EditText, spinner: Spinner) {
+        LogUtils.d("EditPresenter -> run lastIndex: " + mLastIndex)
         mDisposable = Observable.combineLatest(RxTextView.textChanges(editView), RxAdapterView.itemSelections(spinner),
                 BiFunction<CharSequence, Int, Article> { content, index ->
+                    LogUtils.d("EditPresenter -> run index: " + index)
                     mLocationIndex = index
                     Article(mLastIndex.toLong(), "", System.currentTimeMillis(), content.toString(), ComponentImpl.locations.get(index).name)
                 })
@@ -37,8 +39,6 @@ class EditPresenter(view: EditContract.IView) : BasePresenter<EditContract.IView
                 .subscribe({ t: Article ->
                     LogUtils.d("EditPresenter -> run: " + t)
                     DbHelper.getSession().articleDao.insertOrReplace(t)
-                }, { t: Throwable? ->
-                    LogUtils.e("EditPresenter -> Throwable " + t)
                 })
     }
 

@@ -7,6 +7,6 @@ import org.tiny.lib.core.BaseView
  */
 class ListContract {
     interface IView : BaseView {
-        fun handleDatas(vm: ArrayList<ViewModel>)
+        fun handleDatas(vm: ArrayList<ListViewModel>)
     }
 }

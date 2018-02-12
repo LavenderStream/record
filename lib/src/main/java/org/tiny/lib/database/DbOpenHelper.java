@@ -8,6 +8,7 @@ import com.github.yuweiguocn.library.greendao.MigrationHelper;
 import org.greenrobot.greendao.database.Database;
 import org.tiny.lib.database.generate.ArticleDao;
 import org.tiny.lib.database.generate.DaoMaster;
+import org.tiny.lib.database.generate.LocationDao;
 
 /**
  * Created by tiny on 1/30/2018
@@ -31,6 +32,6 @@ public class DbOpenHelper extends DaoMaster.OpenHelper {
             public void onDropAllTables(Database db, boolean ifExists) {
                 DaoMaster.dropAllTables(db, ifExists);
             }
-        }, ArticleDao.class);
+        }, ArticleDao.class, LocationDao.class);
     }
 }

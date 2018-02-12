@@ -42,8 +42,7 @@ class MainActivity : BaseActivity<MainPresenter>(), MainContract.IView, BaseTabS
     }
 
     override fun jumpEditPage() {
-        LogUtils.d("MainActivity -> jumpEditPage ")
-        mTabStyleWrapper.setTab(IMain.PAGE_EDIT, true)
+        mComponent.startEditActivity(this)
     }
 
     override fun jumpPreviewPage(id: Int) {

@@ -5,6 +5,7 @@ import android.content.Context
 import org.tiny.component.ComponentManager
 import org.tiny.component.IApp
 import org.tiny.lib.core.BaseApplication
+import org.tiny.lib.database.DbHelper
 
 /**
  * Created by tiny on 2/10/2018
@@ -14,9 +15,10 @@ class App : BaseApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        App.context = this;
+        App.context = this
+        DbHelper.init(this)
         mComponentManager.addProvider(IApp::class.java, ComponentImpl())
-        mComponentManager.addComponent(Contracts.COMPONENT_MAIN);
+        mComponentManager.addComponent(Contracts.COMPONENT_MAIN)
     }
 
     override fun onTerminate() {

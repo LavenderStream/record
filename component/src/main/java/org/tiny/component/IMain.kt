@@ -16,4 +16,5 @@ interface IMain : IProvider {
 
     fun getLocation(context: Context)
     fun getFragments(): Array<Class<out Fragment>>
+    fun startEditActivity(context: Context)
 }

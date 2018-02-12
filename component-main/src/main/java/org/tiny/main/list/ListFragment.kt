@@ -17,8 +17,8 @@ import org.tiny.lib.view.SimpleRecyclerViewHolder
  */
 class ListFragment : BaseFragment<ListPresenter>(), ListContract.IView {
 
-    private var mAdapter: SimpleRecyclerAdapter<ViewModel>? = null
-    private val mData: ArrayList<ViewModel> = arrayListOf()
+    private var mAdapter: SimpleRecyclerAdapter<ListViewModel>? = null
+    private val mData: ArrayList<ListViewModel> = arrayListOf()
 
     override fun createPresenter(): ListPresenter? {
         return ListPresenter(this)
@@ -31,12 +31,16 @@ class ListFragment : BaseFragment<ListPresenter>(), ListContract.IView {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
-        mPresenter!!.test()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mPresenter!!.run()
     }
 
     private fun initView() {
-        mAdapter = object : SimpleRecyclerAdapter<ViewModel>(activity, mData) {
-            override fun bindData(holder: SimpleRecyclerViewHolder?, position: Int, item: ViewModel?) {
+        mAdapter = object : SimpleRecyclerAdapter<ListViewModel>(activity, mData) {
+            override fun bindData(holder: SimpleRecyclerViewHolder?, position: Int, item: ListViewModel?) {
                 holder!!.setText(R.id.tv_title, item!!.title)
                 holder.setText(R.id.tv_subtitle, item.subTitle)
                 holder.setText(R.id.tv_desc, item.description)
@@ -56,12 +60,9 @@ class ListFragment : BaseFragment<ListPresenter>(), ListContract.IView {
         }
     }
 
-    override fun handleDatas(vm: ArrayList<ViewModel>) {
+    override fun handleDatas(vm: ArrayList<ListViewModel>) {
+        mData.clear()
         mData.addAll(vm)
         mAdapter!!.notifyDataSetChanged()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 }

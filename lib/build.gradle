@@ -37,6 +37,7 @@ dependencies {
     api rxandroid
     api rxjava
     api rxlife
+    api rxbinding
     api calligraphy
     api greendao_helper
     api files('libs/BaiduLBS_Android.jar')
@@ -56,6 +57,7 @@ dependencies {
     debugApi leakcanary_debug
     releaseApi leakcanary_release
     testApi leakcanary_test
+    debugApi 'com.amitshekhar.android:debug-db:1.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 repositories {

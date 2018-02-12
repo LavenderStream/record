@@ -14,19 +14,11 @@ class ListPresenter(view: ListContract.IView) : BasePresenter<ListContract.IView
                 .compose(mView!!.bindLifecycle(FragmentEvent.DESTROY))
                 .compose(applySchedulers())
                 .subscribe({ db ->
-                    val vm: ArrayList<ViewModel> = arrayListOf()
+                    val vm: ArrayList<ListViewModel> = arrayListOf()
                     for (article in db) {
-                        vm.add(ViewModel(article.title, article.title, article.title))
+                        vm.add(ListViewModel(article.title, article.time.toString(), article.content))
                     }
                     mView!!.handleDatas(vm)
                 })
-    }
-
-    fun test() {
-        val vm: ArrayList<ViewModel> = arrayListOf()
-        for (item in 0 until 10) {
-            vm.add(ViewModel("11", "22", "33"))
-        }
-        mView!!.handleDatas(vm)
     }
 }

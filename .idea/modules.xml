@@ -5,11 +5,11 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/component/component.iml" filepath="$PROJECT_DIR$/component/component.iml" />
       <module fileurl="file://$PROJECT_DIR$/component-main/component-main.iml" filepath="$PROJECT_DIR$/component-main/component-main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/component-photo/component-photo.iml" filepath="$PROJECT_DIR$/component-photo/component-photo.iml" />
-      <module fileurl="file://D:\Code\record\component-photo\componentphoto.iml" filepath="D:\Code\record\component-photo\componentphoto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fork/fork.iml" filepath="$PROJECT_DIR$/fork/fork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fork-annotations/fork-annotations.iml" filepath="$PROJECT_DIR$/fork-annotations/fork-annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fork-plugin/fork-plugin.iml" filepath="$PROJECT_DIR$/fork-plugin/fork-plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/record.iml" filepath="$PROJECT_DIR$/record.iml" />
-      <module fileurl="file://D:\Code\record\record2.iml" filepath="D:\Code\record\record2.iml" />
       <module fileurl="file://$PROJECT_DIR$/work/work.iml" filepath="$PROJECT_DIR$/work/work.iml" />
     </modules>
   </component>

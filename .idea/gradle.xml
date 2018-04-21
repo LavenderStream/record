@@ -12,7 +12,9 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/component" />
             <option value="$PROJECT_DIR$/component-main" />
-            <option value="$PROJECT_DIR$/component-photo" />
+            <option value="$PROJECT_DIR$/fork" />
+            <option value="$PROJECT_DIR$/fork-annotations" />
+            <option value="$PROJECT_DIR$/fork-plugin" />
             <option value="$PROJECT_DIR$/lib" />
             <option value="$PROJECT_DIR$/work" />
           </set>

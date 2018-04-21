@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion CompileSdkVersion
@@ -24,10 +23,8 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
-    greendao {
-        schemaVersion 1
-        targetGenDir 'src/main/java'
-        daoPackage 'org.tiny.lib.database.generate'
+    dataBinding{
+        enabled = true
     }
 }
 
@@ -38,10 +35,7 @@ dependencies {
     api rxjava
     api rxlife
     api rxbinding
-    api calligraphy
-    api greendao_helper
-    api files('libs/BaiduLBS_Android.jar')
-    api "org.greenrobot:greendao:$greendao_version"
+    api project(':fork-annotations')
     // Google Support Lib
     api rootProject.ext.support_dependencies["v7"]
     api rootProject.ext.support_dependencies["v4"]
@@ -57,7 +51,6 @@ dependencies {
     debugApi leakcanary_debug
     releaseApi leakcanary_release
     testApi leakcanary_test
-    debugApi 'com.amitshekhar.android:debug-db:1.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 repositories {

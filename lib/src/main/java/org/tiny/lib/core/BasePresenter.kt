@@ -37,6 +37,4 @@ open class BasePresenter<V : BaseView>(view: V) {
                     .observeOn(AndroidSchedulers.mainThread())
         }
     }
-
-
 }

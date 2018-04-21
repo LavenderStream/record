@@ -2,12 +2,5 @@
           package="org.tiny.componentmain">
 
     <application>
-        <activity
-            android:name="org.tiny.main.edit.EditActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity
-            android:name="org.tiny.main.preview.PreviewActivity"
-            android:screenOrientation="portrait"/>
     </application>
 </manifest>

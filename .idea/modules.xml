@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/component/component.iml" filepath="$PROJECT_DIR$/component/component.iml" />
       <module fileurl="file://$PROJECT_DIR$/component-main/component-main.iml" filepath="$PROJECT_DIR$/component-main/component-main.iml" />
       <module fileurl="file://$PROJECT_DIR$/fork/fork.iml" filepath="$PROJECT_DIR$/fork/fork.iml" />
       <module fileurl="file://$PROJECT_DIR$/fork-annotations/fork-annotations.iml" filepath="$PROJECT_DIR$/fork-annotations/fork-annotations.iml" />

@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+
 import org.fork.annotations.ForkPresenter;
 import org.tiny.componentmain.R;
 import org.tiny.componentmain.databinding.MainActivityMainBinding;
@@ -14,6 +16,7 @@ import org.tiny.lib.core.Fork;
  * Created by tiny on 4/21/2018
  */
 @ForkPresenter(MainPresenter.class)
+@Route(path = "/test/activity")
 public class MainActivity extends BaseActivity<MainPresenter, MainActivityMainBinding> implements
         MainContract.IView {
 

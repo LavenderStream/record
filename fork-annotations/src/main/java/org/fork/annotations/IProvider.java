@@ -6,5 +6,4 @@ package org.fork.annotations;
 
 public interface IProvider {
     Object getPresenter(Object v);
-    int getLayoutId();
 }

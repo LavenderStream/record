@@ -14,9 +14,7 @@
             <option value="$PROJECT_DIR$/component-main" />
             <option value="$PROJECT_DIR$/fork" />
             <option value="$PROJECT_DIR$/fork-annotations" />
-            <option value="$PROJECT_DIR$/fork-plugin" />
             <option value="$PROJECT_DIR$/lib" />
-            <option value="$PROJECT_DIR$/work" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

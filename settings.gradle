@@ -1,1 +1,1 @@
-include ':app', ':lib', ':work', ':component', ':component-main', ':fork', ':fork-annotations', ':fork-plugin'
+include ':app', ':lib', ':component-main', ':fork', ':fork-annotations', ':component'

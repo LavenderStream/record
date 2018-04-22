@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion CompileSdkVersion
@@ -51,7 +50,6 @@ dependencies {
     debugApi leakcanary_debug
     releaseApi leakcanary_release
     testApi leakcanary_test
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 repositories {
     mavenCentral()

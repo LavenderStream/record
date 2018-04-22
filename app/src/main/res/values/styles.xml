@@ -24,5 +24,7 @@
     <style name="SplashTheme" parent="FullTheme">
         <item name="android:background">@drawable/splash</item>
     </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
 </resources>

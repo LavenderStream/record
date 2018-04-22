@@ -2,5 +2,8 @@
           package="org.tiny.componentmain">
 
     <application>
+        <activity android:name="org.tiny.main.view.MainActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 </manifest>

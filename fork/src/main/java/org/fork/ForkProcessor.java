@@ -5,7 +5,6 @@ import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeName;
 import com.squareup.javapoet.TypeSpec;
 
-import org.fork.annotations.ForkLayoutId;
 import org.fork.annotations.ForkPresenter;
 import org.fork.annotations.IProvider;
 
@@ -25,15 +24,13 @@ import javax.lang.model.type.MirroredTypeException;
 import javax.lang.model.type.TypeMirror;
 
 
-@SupportedAnnotationTypes({"org.fork.annotations.ForkLayoutId", "org.fork.annotations.ForkPresenter"})
+@SupportedAnnotationTypes({"org.fork.annotations.ForkPresenter"})
 @SupportedSourceVersion(SourceVersion.RELEASE_7)
 @SuppressWarnings("All")
 public class ForkProcessor extends AbstractProcessor {
     private String packageName;
     private String activityName;
     private TypeMirror activityClass;
-
-    private int layoutId;
     private String presenterName;
 
     @Override
@@ -53,17 +50,10 @@ public class ForkProcessor extends AbstractProcessor {
                 .addStatement("return new " + presenterName + "((" + activityName + ")activity)")
                 .build();
 
-        MethodSpec getLayoutId = MethodSpec.methodBuilder("getLayoutId")
-                .addModifiers(Modifier.PUBLIC, Modifier.FINAL)
-                .returns(int.class)
-                .addStatement("return " + layoutId)
-                .build();
-
         TypeSpec clazz = TypeSpec.classBuilder(activityName + "$$Fork_IProvider")
                 .addModifiers(Modifier.PUBLIC, Modifier.FINAL)
                 .addSuperinterface(IProvider.class)
                 .addMethod(getPresenter)
-                .addMethod(getLayoutId)
                 .build();
 
         JavaFile.Builder builder = JavaFile
@@ -79,18 +69,12 @@ public class ForkProcessor extends AbstractProcessor {
     }
 
     private void parseBindViews(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        for (Element element : roundEnv.getElementsAnnotatedWith(ForkLayoutId.class)) {
-            if (element.getKind() == ElementKind.CLASS) {
-                layoutId = element.getAnnotation(ForkLayoutId.class).value();
-                activityName = element.getSimpleName().toString();
-                activityClass = element.asType();
-                packageName = element.toString().replace("." + activityName, "");
-            }
-        }
-
         for (Element element : roundEnv.getElementsAnnotatedWith(ForkPresenter.class)) {
             if (element.getKind() == ElementKind.CLASS) {
                 try {
+                    activityClass = element.asType();
+                    activityName = element.getSimpleName().toString();
+                    packageName = element.toString().replace("." + activityName, "");
                     presenterName = element.getAnnotation(ForkPresenter.class).value()
                             .getSimpleName().toString();
                 } catch (MirroredTypeException mte) {
@@ -98,7 +82,6 @@ public class ForkProcessor extends AbstractProcessor {
                 }
             }
         }
-        System.err.println(" layout id annotation: " + layoutId);
         System.err.println(" presenter name annotation: " + presenterName);
 
         System.err.println(" package name annotation: " + packageName);

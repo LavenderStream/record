@@ -1,5 +1,8 @@
 package org.tiny.lib.core;
 
+import android.databinding.DataBindingUtil;
+import android.support.annotation.LayoutRes;
+
 import org.fork.annotations.IProvider;
 
 /**
@@ -9,7 +12,7 @@ import org.fork.annotations.IProvider;
 public class Fork {
     private static final String TAG = "Fork";
 
-    public static void bind(BaseActivity activity) {
+    public static void bind(BaseActivity activity, @LayoutRes int layoutId, boolean vm) {
         IProvider provider = null;
         try {
             try {
@@ -24,10 +27,12 @@ public class Fork {
             e.printStackTrace();
         }
         if (provider != null) {
-            //activity.binding = DataBindingUtil.setContentView(activity, provider.getLayoutId());
-            activity.setContentView(provider.getLayoutId());
+            activity.mBinding = DataBindingUtil.setContentView(activity, layoutId);
             activity.mPresenter = (BasePresenter) provider.getPresenter(activity);
         }
+    }
 
+    public static void bind(BaseActivity activity, @LayoutRes int layoutId) {
+        bind(activity, layoutId, true);
     }
 }

@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">componentmain</string>
-    <string name="main_write">写</string>
-    <string name="main_edit_hint">...</string>
-</resources>

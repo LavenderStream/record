@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:record/bean/ArticleModel.dart';
+import 'package:record/component/PreviewPage.dart';
 import 'package:record/component/ScaffoldWidget.dart';
 import 'package:record/utils/Utils.dart';
 
@@ -20,6 +21,7 @@ class _EditPageState extends State<EditPage> {
   String _title = '';
   String _location = '';
   String _content = '';
+  _EditComponent _processResult;
 
   @override
   void initState() {
@@ -45,13 +47,44 @@ class _EditPageState extends State<EditPage> {
     });
   }
 
+  void _saveArticle() async {
+    /*   ArticleModelProvider provider = ArticleModelProvider();
+    String path = await Utils.getDataBasePath();
+    await provider.open(path);
+    if (id == -1) {
+      ArticleModel article = ArticleModel();
+      article.title = 'x';
+      article.content = 'xxxxx';
+      article.location = 'xx';
+      await provider.insert(article);
+    } else {
+      ArticleModel article = await provider.getArticle(id);
+      await provider.update(article);
+    }
+    await provider.close();*/
+
+    if (_processResult != null) {
+      debugPrint(_processResult.assembleArticleModel().content);
+    }
+
+    Navigator.of(context).pop();
+  }
+
+  void _handleSaveBtnClick() {
+    _saveArticle();
+  }
+
+  void _handleCatBtnClick() {
+    Navigator.push(context, MaterialPageRoute(builder: (ctx) => PreviewPage()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return ScaffoldWidget(
       child: Stack(
         children: <Widget>[
-          _EditComponent(_title, _location, _content),
-          _BtnComponent(),
+          _processResult = _EditComponent(_title, _location, _content),
+          _BtnComponent(_handleCatBtnClick, _handleSaveBtnClick),
         ],
       ),
     );
@@ -60,14 +93,28 @@ class _EditPageState extends State<EditPage> {
 
 // 编辑框
 class _EditComponent extends StatelessWidget {
+  TextEditingController _contentTextEditingController;
+  TextEditingController _locationTextEditingController;
+
   String _title = '';
   String _location = '';
   String _content = '';
 
   _EditComponent(this._title, this._location, this._content);
 
+  ArticleModel assembleArticleModel() {
+    ArticleModel model = ArticleModel();
+    model.title = _title;
+    model.content = _contentTextEditingController.text.toString();
+    model.location = _locationTextEditingController.text.toString();
+    return model;
+  }
+
   @override
   Widget build(BuildContext context) {
+    _generateLocationViewController();
+    _generateContentViewController();
+
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -117,17 +164,7 @@ class _EditComponent extends StatelessWidget {
             width: double.infinity,
             height: 60,
             child: TextField(
-              controller: TextEditingController.fromValue(
-                TextEditingValue(
-                  text: _location == null ? '' : _location,
-                  selection: TextSelection.fromPosition(
-                    TextPosition(
-                      affinity: TextAffinity.downstream,
-                      offset: _content.length,
-                    ),
-                  ),
-                ),
-              ),
+              controller: _locationTextEditingController,
               decoration: InputDecoration(border: InputBorder.none),
               cursorColor: Colors.black,
               style: Theme.of(context).textTheme.title.copyWith(
@@ -146,17 +183,7 @@ class _EditComponent extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
         child: TextField(
-          controller: TextEditingController.fromValue(
-            TextEditingValue(
-              text: _content == null ? '' : _content,
-              selection: TextSelection.fromPosition(
-                TextPosition(
-                  affinity: TextAffinity.downstream,
-                  offset: _content.length,
-                ),
-              ),
-            ),
-          ),
+          controller: _contentTextEditingController,
           maxLines: 100,
           decoration: InputDecoration(border: InputBorder.none),
           cursorColor: Colors.black,
@@ -167,10 +194,43 @@ class _EditComponent extends StatelessWidget {
       ),
     );
   }
+
+  void _generateLocationViewController() {
+    _locationTextEditingController = TextEditingController.fromValue(
+      TextEditingValue(
+        text: _location == null ? '' : _location,
+        selection: TextSelection.fromPosition(
+          TextPosition(
+            affinity: TextAffinity.downstream,
+            offset: _content.length,
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _generateContentViewController() {
+    _contentTextEditingController = TextEditingController.fromValue(
+      TextEditingValue(
+        text: _content == null ? '' : _content,
+        selection: TextSelection.fromPosition(
+          TextPosition(
+            affinity: TextAffinity.downstream,
+            offset: _content.length,
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 // 侧边按钮
 class _BtnComponent extends StatelessWidget {
+  final VoidCallback _catCallback;
+  final VoidCallback _saveCallback;
+
+  _BtnComponent(this._catCallback, this._saveCallback);
+
   final TextStyle _textStyle = TextStyle(
     color: Colors.white,
   );
@@ -178,7 +238,7 @@ class _BtnComponent extends StatelessWidget {
   Widget _generateCatBtn() {
     return RaisedButton(
       color: Colors.red,
-      onPressed: () => null,
+      onPressed: () => _catCallback(),
       child: Text(
         '看',
         style: _textStyle,
@@ -190,7 +250,7 @@ class _BtnComponent extends StatelessWidget {
   Widget _generateSaveBtn() {
     return RaisedButton(
       color: Colors.red,
-      onPressed: () => null,
+      onPressed: () => _saveCallback(),
       child: Text(
         '存',
         style: _textStyle,

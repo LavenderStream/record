@@ -95,9 +95,9 @@ class ArticleModelProvider {
     return await db.delete(tableName, where: '$columnId = ?', whereArgs: [id]);
   }
 
-  Future<int> update(ArticleModel todo) async {
-    return await db.update(tableName, todo.toMap(),
-        where: '$columnId = ?', whereArgs: [todo.id]);
+  Future<int> update(ArticleModel model) async {
+    return await db.update(tableName, model.toMap(),
+        where: '$columnId = ?', whereArgs: [model.id]);
   }
 
   Future close() async => db.close();

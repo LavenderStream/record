@@ -10,12 +10,13 @@ class ScaffoldWidget extends StatelessWidget {
     return MaterialApp(
       title: "Record",
       theme: ThemeData(
-        primaryColorDark: Colors.white,
-        accentColor: Colors.grey,
-        fontFamily: 'TrueType'
-      ),
+          primaryColorDark: Colors.white,
+          primaryColorLight: Colors.white,
+          accentColor: Colors.grey,
+          fontFamily: 'TrueType'),
       home: Builder(
         builder: (context) => Scaffold(
+              backgroundColor: Colors.white,
               body: SafeArea(child: child),
             ),
       ),

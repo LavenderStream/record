@@ -1,4 +1,8 @@
-import 'dart:math';
+import 'dart:async';
+import 'dart:io';
+
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 
 class Utils {
   static final numFormat = [
@@ -43,5 +47,10 @@ class Utils {
     }
 
     return year + "年" + month + "月" + day + "日 " + week;
+  }
+
+  static Future<String> getDataBasePath() async {
+    Directory directory = await getApplicationDocumentsDirectory();
+    return join(directory.path, "record.db");
   }
 }

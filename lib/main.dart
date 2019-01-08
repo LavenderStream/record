@@ -25,7 +25,7 @@ class _SplashPageState extends State<SplashPage>
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 1), () {
       Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => DisplayPage()),
           (router) => router == null);

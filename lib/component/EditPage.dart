@@ -1,18 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:record/bean/ArticleModel.dart';
 import 'package:record/component/ScaffoldWidget.dart';
 import 'package:record/utils/Utils.dart';
 
-class EditPage extends StatelessWidget {
-  final double id;
+class EditPage extends StatefulWidget {
+  final int id;
 
   EditPage(this.id);
+
+  @override
+  State<EditPage> createState() => _EditPageState(id);
+}
+
+class _EditPageState extends State<EditPage> {
+  int id;
+
+  _EditPageState(this.id);
+
+  String _title = '';
+  String _location = '';
+  String _content = '';
+
+  @override
+  void initState() {
+    super.initState();
+    if (id != -1) {
+      _generateArticles();
+    } else {
+      _title = Utils.coverDate2Chinese();
+    }
+  }
+
+  void _generateArticles() async {
+    ArticleModelProvider provider = ArticleModelProvider();
+    String path = await Utils.getDataBasePath();
+    await provider.open(path);
+    ArticleModel article = await provider.getArticle(id);
+    await provider.close();
+
+    setState(() {
+      _title = article.title;
+      _location = article.location;
+      _content = article.location;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return ScaffoldWidget(
       child: Stack(
         children: <Widget>[
-          _EditComponent(),
+          _EditComponent(_title, _location, _content),
           _BtnComponent(),
         ],
       ),
@@ -22,6 +60,12 @@ class EditPage extends StatelessWidget {
 
 // 编辑框
 class _EditComponent extends StatelessWidget {
+  String _title = '';
+  String _location = '';
+  String _content = '';
+
+  _EditComponent(this._title, this._location, this._content);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -38,6 +82,7 @@ class _EditComponent extends StatelessWidget {
     );
   }
 
+  // 标题
   Widget _generateDateView(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
@@ -45,7 +90,7 @@ class _EditComponent extends StatelessWidget {
       width: double.infinity,
       height: 60,
       child: Text(
-        Utils.coverDate2Chinese(),
+        _title == null ? "" : _title,
         style: Theme.of(context).textTheme.title.copyWith(
               fontSize: 16,
             ),
@@ -53,6 +98,7 @@ class _EditComponent extends StatelessWidget {
     );
   }
 
+  // 地理位置信息
   Widget _generateLocationView(BuildContext context) {
     return Row(
       children: <Widget>[
@@ -71,6 +117,17 @@ class _EditComponent extends StatelessWidget {
             width: double.infinity,
             height: 60,
             child: TextField(
+              controller: TextEditingController.fromValue(
+                TextEditingValue(
+                  text: _location == null ? '' : _location,
+                  selection: TextSelection.fromPosition(
+                    TextPosition(
+                      affinity: TextAffinity.downstream,
+                      offset: _content.length,
+                    ),
+                  ),
+                ),
+              ),
               decoration: InputDecoration(border: InputBorder.none),
               cursorColor: Colors.black,
               style: Theme.of(context).textTheme.title.copyWith(
@@ -83,11 +140,23 @@ class _EditComponent extends StatelessWidget {
     );
   }
 
+  // 正文内容
   Widget _generateEditView(BuildContext context) {
     return Expanded(
       child: Container(
         padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
         child: TextField(
+          controller: TextEditingController.fromValue(
+            TextEditingValue(
+              text: _content == null ? '' : _content,
+              selection: TextSelection.fromPosition(
+                TextPosition(
+                  affinity: TextAffinity.downstream,
+                  offset: _content.length,
+                ),
+              ),
+            ),
+          ),
           maxLines: 100,
           decoration: InputDecoration(border: InputBorder.none),
           cursorColor: Colors.black,

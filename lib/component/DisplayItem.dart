@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:record/bean/DisplayItemModel.dart';
+import 'package:record/bean/ArticleModel.dart';
+import 'package:record/component/EditPage.dart';
 
 class DisplayItem extends StatelessWidget {
-  final DisplayItemModel model;
+  final ArticleModel model;
 
   DisplayItem({Key k, @required this.model}) : super(key: k);
 
@@ -27,7 +28,7 @@ class DisplayItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              model.time,
+              model.title,
               style: _titleStyle,
             ),
             Container(
@@ -43,7 +44,7 @@ class DisplayItem extends StatelessWidget {
     }
 
     void _dispatchItemClick() {
-      print(model.id);
+      Navigator.push(context, MaterialPageRoute(builder: (ctx) => EditPage(model.id)));
     }
 
     Widget _assemblePressEvent(Widget widget) {

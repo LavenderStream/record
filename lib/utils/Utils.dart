@@ -23,7 +23,7 @@ class Utils {
     var thisInstant = new DateTime.now();
 
     int d = thisInstant.weekday;
-    String week = "星期" + "日一二三四五六".substring(d, (d + 1));
+    String week = "星期" + "日一二三四五六"[d];
 
     String year = "";
     int i = 0;

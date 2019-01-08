@@ -43,39 +43,46 @@ class _EditPageState extends State<EditPage> {
     setState(() {
       _title = article.title;
       _location = article.location;
-      _content = article.location;
+      _content = article.content;
     });
   }
 
+  // 将文章信息存入数据库
   void _saveArticle() async {
-    /*   ArticleModelProvider provider = ArticleModelProvider();
+    ArticleModelProvider provider = ArticleModelProvider();
     String path = await Utils.getDataBasePath();
     await provider.open(path);
     if (id == -1) {
-      ArticleModel article = ArticleModel();
-      article.title = 'x';
-      article.content = 'xxxxx';
-      article.location = 'xx';
+      if (_processResult == null) return;
+      ArticleModel article = _processResult.assembleArticleModel();
       await provider.insert(article);
     } else {
       ArticleModel article = await provider.getArticle(id);
+      ArticleModel newArticleModel = _processResult.assembleArticleModel();
+      article.title = newArticleModel.title;
+      article.content = newArticleModel.content;
+      article.location = newArticleModel.location;
       await provider.update(article);
     }
-    await provider.close();*/
-
-    if (_processResult != null) {
-      debugPrint(_processResult.assembleArticleModel().content);
-    }
+    await provider.close();
 
     Navigator.of(context).pop();
   }
 
+  // 点击保存按钮
   void _handleSaveBtnClick() {
     _saveArticle();
   }
 
+  // 点击预览按钮
   void _handleCatBtnClick() {
-    Navigator.push(context, MaterialPageRoute(builder: (ctx) => PreviewPage()));
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (ctx) =>
+                PreviewPage(
+                  _processResult.assembleArticleModel(),
+                )));
   }
 
   @override
@@ -91,17 +98,37 @@ class _EditPageState extends State<EditPage> {
   }
 }
 
-// 编辑框
-class _EditComponent extends StatelessWidget {
-  TextEditingController _contentTextEditingController;
-  TextEditingController _locationTextEditingController;
-
+class _EditComponent extends StatefulWidget {
   String _title = '';
   String _location = '';
   String _content = '';
 
   _EditComponent(this._title, this._location, this._content);
 
+/*
+  ArticleModel assembleArticleModel() {
+    debugPrint('callback ' + state.toString());
+    return state.assembleArticleModel();
+  }
+*/
+  @override
+  State<StatefulWidget> createState() {
+    return _EditComponentState(_title, _location, _content);
+  }
+}
+
+// 编辑框
+class _EditComponentState extends State<_EditComponent> {
+
+  TextEditingController _contentTextEditingController;
+  TextEditingController _locationTextEditingController;
+  String _title = '';
+  String _location = '';
+  String _content = '';
+
+  _EditComponentState(this._title, this._location, this._content);
+
+  // 获得页面的输入内容
   ArticleModel assembleArticleModel() {
     ArticleModel model = ArticleModel();
     model.title = _title;
@@ -129,6 +156,13 @@ class _EditComponent extends StatelessWidget {
     );
   }
 
+  @override
+  void dispose() {
+    _contentTextEditingController.dispose();
+    _locationTextEditingController.dispose();
+    super.dispose();
+  }
+
   // 标题
   Widget _generateDateView(BuildContext context) {
     return Container(
@@ -138,9 +172,13 @@ class _EditComponent extends StatelessWidget {
       height: 60,
       child: Text(
         _title == null ? "" : _title,
-        style: Theme.of(context).textTheme.title.copyWith(
-              fontSize: 16,
-            ),
+        style: Theme
+            .of(context)
+            .textTheme
+            .title
+            .copyWith(
+          fontSize: 16,
+        ),
       ),
     );
   }
@@ -152,9 +190,13 @@ class _EditComponent extends StatelessWidget {
         Container(
           child: Text(
             "于",
-            style: Theme.of(context).textTheme.title.copyWith(
-                  fontSize: 16,
-                ),
+            style: Theme
+                .of(context)
+                .textTheme
+                .title
+                .copyWith(
+              fontSize: 16,
+            ),
           ),
         ),
         Expanded(
@@ -167,9 +209,13 @@ class _EditComponent extends StatelessWidget {
               controller: _locationTextEditingController,
               decoration: InputDecoration(border: InputBorder.none),
               cursorColor: Colors.black,
-              style: Theme.of(context).textTheme.title.copyWith(
-                    fontSize: 16,
-                  ),
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .title
+                  .copyWith(
+                fontSize: 16,
+              ),
             ),
           ),
         )
@@ -187,29 +233,39 @@ class _EditComponent extends StatelessWidget {
           maxLines: 100,
           decoration: InputDecoration(border: InputBorder.none),
           cursorColor: Colors.black,
-          style: Theme.of(context).textTheme.title.copyWith(
-                fontSize: 20.0,
-              ),
-        ),
-      ),
-    );
-  }
-
-  void _generateLocationViewController() {
-    _locationTextEditingController = TextEditingController.fromValue(
-      TextEditingValue(
-        text: _location == null ? '' : _location,
-        selection: TextSelection.fromPosition(
-          TextPosition(
-            affinity: TextAffinity.downstream,
-            offset: _content.length,
+          style: Theme
+              .of(context)
+              .textTheme
+              .title
+              .copyWith(
+            fontSize: 20.0,
           ),
         ),
       ),
     );
   }
 
+  // 地理位置输入框的控制器
+  void _generateLocationViewController() {
+    if (_locationTextEditingController != null) return;
+
+    _locationTextEditingController = TextEditingController.fromValue(
+      TextEditingValue(
+        text: _location == null ? '' : _location,
+        selection: TextSelection.fromPosition(
+          TextPosition(
+            affinity: TextAffinity.downstream,
+            offset: _location.length,
+          ),
+        ),
+      ),
+    );
+  }
+
+  // 正文输入框的控制器
   void _generateContentViewController() {
+    if (_contentTextEditingController != null) return;
+
     _contentTextEditingController = TextEditingController.fromValue(
       TextEditingValue(
         text: _content == null ? '' : _content,

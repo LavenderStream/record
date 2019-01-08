@@ -29,6 +29,8 @@ class DisplayItem extends StatelessWidget {
           children: <Widget>[
             Text(
               model.title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: _titleStyle,
             ),
             Container(
@@ -36,6 +38,8 @@ class DisplayItem extends StatelessWidget {
             ),
             Text(
               model.content,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: _subtitleStyle,
             ),
           ],
@@ -44,7 +48,8 @@ class DisplayItem extends StatelessWidget {
     }
 
     void _dispatchItemClick() {
-      Navigator.push(context, MaterialPageRoute(builder: (ctx) => EditPage(model.id)));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (ctx) => EditPage(model.id)));
     }
 
     Widget _assemblePressEvent(Widget widget) {

@@ -102,31 +102,10 @@ class _EditComponent extends StatefulWidget {
   String _title = '';
   String _location = '';
   String _content = '';
-
-  _EditComponent(this._title, this._location, this._content);
-
-/*
-  ArticleModel assembleArticleModel() {
-    debugPrint('callback ' + state.toString());
-    return state.assembleArticleModel();
-  }
-*/
-  @override
-  State<StatefulWidget> createState() {
-    return _EditComponentState(_title, _location, _content);
-  }
-}
-
-// 编辑框
-class _EditComponentState extends State<_EditComponent> {
-
   TextEditingController _contentTextEditingController;
   TextEditingController _locationTextEditingController;
-  String _title = '';
-  String _location = '';
-  String _content = '';
 
-  _EditComponentState(this._title, this._location, this._content);
+  _EditComponent(this._title, this._location, this._content);
 
   // 获得页面的输入内容
   ArticleModel assembleArticleModel() {
@@ -136,6 +115,13 @@ class _EditComponentState extends State<_EditComponent> {
     model.location = _locationTextEditingController.text.toString();
     return model;
   }
+
+  @override
+  _EditComponentState createState() => _EditComponentState();
+}
+
+// 编辑框
+class _EditComponentState extends State<_EditComponent> {
 
   @override
   Widget build(BuildContext context) {
@@ -158,8 +144,8 @@ class _EditComponentState extends State<_EditComponent> {
 
   @override
   void dispose() {
-    _contentTextEditingController.dispose();
-    _locationTextEditingController.dispose();
+    widget._contentTextEditingController.dispose();
+    widget._locationTextEditingController.dispose();
     super.dispose();
   }
 
@@ -171,7 +157,7 @@ class _EditComponentState extends State<_EditComponent> {
       width: double.infinity,
       height: 60,
       child: Text(
-        _title == null ? "" : _title,
+        widget._title == null ? "" : widget._title,
         style: Theme
             .of(context)
             .textTheme
@@ -206,7 +192,7 @@ class _EditComponentState extends State<_EditComponent> {
             width: double.infinity,
             height: 60,
             child: TextField(
-              controller: _locationTextEditingController,
+              controller: widget._locationTextEditingController,
               decoration: InputDecoration(border: InputBorder.none),
               cursorColor: Colors.black,
               style: Theme
@@ -229,7 +215,7 @@ class _EditComponentState extends State<_EditComponent> {
       child: Container(
         padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
         child: TextField(
-          controller: _contentTextEditingController,
+          controller: widget._contentTextEditingController,
           maxLines: 100,
           decoration: InputDecoration(border: InputBorder.none),
           cursorColor: Colors.black,
@@ -247,15 +233,15 @@ class _EditComponentState extends State<_EditComponent> {
 
   // 地理位置输入框的控制器
   void _generateLocationViewController() {
-    if (_locationTextEditingController != null) return;
+    if (widget._locationTextEditingController != null) return;
 
-    _locationTextEditingController = TextEditingController.fromValue(
+    widget._locationTextEditingController = TextEditingController.fromValue(
       TextEditingValue(
-        text: _location == null ? '' : _location,
+        text: widget._location == null ? '' : widget._location,
         selection: TextSelection.fromPosition(
           TextPosition(
             affinity: TextAffinity.downstream,
-            offset: _location.length,
+            offset: widget._location.length,
           ),
         ),
       ),
@@ -264,15 +250,15 @@ class _EditComponentState extends State<_EditComponent> {
 
   // 正文输入框的控制器
   void _generateContentViewController() {
-    if (_contentTextEditingController != null) return;
+    if (widget._contentTextEditingController != null) return;
 
-    _contentTextEditingController = TextEditingController.fromValue(
+    widget._contentTextEditingController = TextEditingController.fromValue(
       TextEditingValue(
-        text: _content == null ? '' : _content,
+        text: widget._content == null ? '' : widget._content,
         selection: TextSelection.fromPosition(
           TextPosition(
             affinity: TextAffinity.downstream,
-            offset: _content.length,
+            offset: widget._content.length,
           ),
         ),
       ),
